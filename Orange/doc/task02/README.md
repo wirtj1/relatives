@@ -47,12 +47,12 @@ Since we got a limited time span for such an extensive project, we have to make 
 implement at least the “Critical success factor” (CSF is defined in Task01). The best way to guarantee this,
 is to develop features iterative, so we won’t have an incomplete project which is also not working.
 
-Our team is mostly working on the project separated, which makes it much difficult to have a working-progress
+Our team is mostly working on the project separately, which makes it much more difficult to have a working-progress
 overview. An agile process will give us a frequent visibility into the project’s progress. It also helps to identify
-and solve any issues early, and prevents big refactoring work later.
+and solve issues early, and prevents big refactoring work later.
 
-We all are in various field active, what brings us different point of views on problem/solution, as well as individual
+We all are in various fields active, which brings us different points of view on problems and solutions, as well as individual
 know-how. In a waterfall model, those things can get lost easily. We first plan everything to the end and assign each
 task to someone, and then everyone is just focusing on finishing their own job. In an agile way of working, there is
-more interaction between the developers. We can discuss our problems and the solutions together, and can exchange our
-knowledge very easily.
+more interaction between the developers. We can discuss our problems and the solutions together and exchange our
+knowledge in an easier way.
