@@ -21,7 +21,7 @@
 
 ### 3 Detailed use cases
 
-+ 
-+ 
-+ 
+![Use Case 1](UseCase_1.pdf)
+![Use Case 2](UseCase_2.pdf)
+![Use Case 3](UseCase_3.pdf)
 
