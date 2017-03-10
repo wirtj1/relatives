@@ -1,8 +1,8 @@
 # Task 02 - Elaborate Activity Diagram
 
-### Use case 1
+### Use case 1 - Manual insulin injection
 
-![Activity diagram use case 1](ActivityDiagramUseCase1.PNG)
+![Activity diagram use case 1](ActivityDiagramUseCase1.png)
 
 ### Use case 2 - Doctor reads long term statistics out 
 
