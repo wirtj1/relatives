@@ -8,6 +8,6 @@
 
 ![Activity diagram use case 2]()
 
-### Use case 3
+### Use case 3 - Pump notifies patient on low insulin level
 
 ![Activity diagram use case 3](ActivityDiagramUseCase3.PNG)
