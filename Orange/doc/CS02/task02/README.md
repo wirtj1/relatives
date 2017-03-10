@@ -4,7 +4,7 @@
 
 ![Activity diagram use case 1](ActivityDiagramUseCase1.PNG)
 
-### Use case 2
+### Use case 2 - Doctor reads long term statistics out 
 
 ![Activity diagram use case 2](ActivityDiagramUseCase2.PNG)
 
