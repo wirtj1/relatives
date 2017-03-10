@@ -8,8 +8,6 @@
 | The user can read the actual BSL at every time    | The text on display is large enough so that users with low vision can interact with it |        |
 | The user gets an alarm when BSL is low            | Relevant text messages are highlighted so that users get them faster                   |        |
 |                                                   | Smooth navigation to ensure user experience                                            |        |
-|                                                   |                                                                                        |        |
-|                                                   |                                                                                        |        |
 
 #### 3.2 System requirements
 
