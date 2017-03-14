@@ -1,6 +1,6 @@
 # Story boards
 
-## Story 1: Run away
+## Story 1: Runaway
 
 ![Story 1: Run Away](Stories/StoryOne.png)
 
