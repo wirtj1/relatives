@@ -22,4 +22,4 @@
 
 ## Story 5: Ubication
 
-![Story 5: New insurance](Stories/StorySix.png)
+![Story 5: Check ubication](Stories/StorySix.png)
