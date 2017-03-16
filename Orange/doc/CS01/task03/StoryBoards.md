@@ -19,3 +19,7 @@
 ## Story 5: New insurance
 
 ![Story 5: New insurance](Stories/StoryFive.png)
+
+## Story 5: Ubication
+
+![Story 5: New insurance](Stories/StorySix.png)
