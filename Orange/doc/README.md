@@ -9,4 +9,10 @@
 | 10.03.2017 | Created the activity diagrams for the three selected use cases of task01.                                                                                                                   | Beutler, Wirth, Wittwer |
 | 10.03.2017 | Summarized the user and system requirements including the stories of task01 and the activity diagrams. Detailed the found requirements into separate classes.                               | Djurdevic, Lerena |
 | 10.03.2017 | Updated the diary and linked all created files with the markdown. Summarized and generalized the names and descriptions.                                                                    | Beutler, Wittwer |
-
+| 13.03.2017 | Organized project structure for the following tasks.                                                                                                                                        | Lerena  |
+| 14.03.2017 | Discussed the influences of the app for relatives and how to improve their managing of their beloved ones. Collected basic features of our application and decided what's out of scope.     | All     |
+| 14.03.2017 | Created several storyboards for common user stories.                                                                                                                                        | Beutler, Djurdevic, Lerena, Wittwer |
+| 14.03.2017 | ...                                                                                                             | Thevathas, Wirth |
+| 17.03.2017 | Completed all storyboards.   | Beutler, Lerena, Wittwer |
+| 17.03.2017 | Created prototypes | Djurdevic, Thevathas |
+| 17.03.2017 | Interview Dayana | Beutler, Lerena, Wirth |
