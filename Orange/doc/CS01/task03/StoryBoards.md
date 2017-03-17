@@ -32,3 +32,6 @@
 
 ![Story 8: Getting help](Stories/StoryEight.png)
 
+## Story 9: Record activities
+
+![Story 9: Record activities](Stories/StoryNine.png)
