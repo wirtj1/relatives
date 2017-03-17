@@ -40,6 +40,11 @@
 
 ![Story 10: Emergency contact](Media/StoryTen.png)
 
-## Story 11: Entry and outcome times
+## Story 11: Pick up
 
-![Story 11: Entry and outcome times](Media/StoryEleven.png)
+![Story 11: Pick up](Media/StoryEleven.png)
+
+## Story 12: Party hard
+
+![Story 12: Party hard](Media/StoryTwelve.png)
+
