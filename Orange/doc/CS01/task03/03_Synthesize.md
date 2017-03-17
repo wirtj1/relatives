@@ -1,4 +1,4 @@
-# Scoping
+# Synthesize
 
 ## Abgrenzung 
 - Kein Unterschied ob Klinik gross oder klein

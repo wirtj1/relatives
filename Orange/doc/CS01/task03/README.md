@@ -1,9 +1,17 @@
 # Task 03
 Aus Sicht Relatives (Verwandte, Vormünder, Ermächtigte).
 
-## Scope
+## Scoping
 
-[Scope](01_Scoping.md)
+[Scoping](01_Scoping.md)
+
+## Research
+
+[Research](02_Research.md)
+
+## Synthesize
+
+[Synthesize](01_Synthesize.md)
 
 ## Storyboards
 
