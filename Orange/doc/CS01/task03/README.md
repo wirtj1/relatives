@@ -11,12 +11,12 @@ Aus Sicht Relatives (Verwandte, Vormünder, Ermächtigte).
 
 ## Synthesize
 
-[Synthesize](01_Synthesize.md)
+[Synthesize](03_Synthesize.md)
 
 ## Storyboards
 
-[Storyboards](StoryBoards.md)
+[Storyboards](04_StoryBoards.md)
 
 ## Prototypes
 
-[Prototypes](Prototypes.md)
+[Prototypes](05_Prototypes.md)
