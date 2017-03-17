@@ -35,3 +35,7 @@
 ## Story 9: Record activities
 
 ![Story 9: Record activities](Stories/StoryNine.png)
+
+## Story 10: Emergency contact
+
+![Story 10: Emergency contact](Stories/StoryTen.png)
