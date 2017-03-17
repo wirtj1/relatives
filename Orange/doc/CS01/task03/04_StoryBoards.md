@@ -39,3 +39,7 @@
 ## Story 10: Emergency contact
 
 ![Story 10: Emergency contact](Media/StoryTen.png)
+
+## Story 11: Entry and outcome times
+
+![Story 11: Entry and outcome times](Media/StoryEleven.png)
