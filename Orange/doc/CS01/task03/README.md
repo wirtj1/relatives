@@ -1,5 +1,5 @@
 # Task 03
-Aus Sicht Relatives (Verwandte, Vormünder, Ermächtigte).
+Selected user group: Relatives (kin, guardian, authorized)
 
 ## Scoping
 
