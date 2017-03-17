@@ -23,3 +23,12 @@
 ## Story 6: Tracking location
 
 ![Story 6: Tracking location](Stories/StorySix.png)
+
+## Story 7: Visiting time
+
+![Story 7: Visiting time](Stories/StorySeven.png)
+
+## Story 8: Getting help
+
+![Story 8: Getting help](Stories/StoryEight.png)
+
