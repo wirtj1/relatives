@@ -2,7 +2,7 @@
 
 Raw interview notes are available [here](Media/InterviewNotes.jpeg)
 
-## Interview
+## Interview summary
 Eltern haben keine Einsicht, Arzt sieht mehr Daten als Dayana
 
 Orbis heisst das aktuelle System.
@@ -28,7 +28,7 @@ Sinnvoll:
 - Daten wie:
     - belebte Räume meiden
     - wo muss man stehen, damit das Kind bspw. in den Zug einsteigt
-- Kontrolle über Medikation (manchmal werden Dosen vergessen oder man weiss nicht mehr genau ob diese genommen wurden). Ein Häkchen ist psychologisch aussagekräfitger als einfach nur bei den Eltern nachfragen.
+- Kontrolle über Medikation (manchmal werden Dosen vergessen oder man weiss nicht mehr genau ob diese genommen wurden). Ein gesetztes Häkchen geht nicht mehr verloren.
 - Bspw. Reminder für Eltern dass Medis genommen werden müssen (und sie fragen dann das Kind, da selbstständigkeit gefördert werden soll)
 - Meldenummern (bspw. Zugriff auf die Anwesenheitsliste an Wochenenden, welcher Arzt wann arbeitet)
 - Termine für Familientherapie, gemeinsame Agenda zwischen Eltern, Arzt, Pädagoge
