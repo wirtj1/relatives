@@ -1,8 +1,5 @@
-# Research
+### Interview mit Dayana
 
-Raw interview notes are available [here](Media/InterviewNotes.jpeg)
-
-## Interview
 Eltern haben keine Einsicht, Arzt sieht mehr Daten als Dayana
 
 Orbis heisst das aktuelle System.
