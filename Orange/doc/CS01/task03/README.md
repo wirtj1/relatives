@@ -3,22 +3,10 @@ Selected user group: Relatives (kin, guardian, authorized)
 
 * [Iterations](Iterations.md)
 
-## Scoping
+## Subtasks
 
-[Scoping](01_Scoping.md)
-
-## Research
-
-[Research](02_Research.md)
-
-## Synthesize
-
-[Synthesize](03_Synthesize.md)
-
-## Storyboards
-
-[Storyboards](04_StoryBoards.md)
-
-## Prototypes
-
-[Prototypes](05_Prototypes.md)
+1. [Scoping](01_Scoping.md)
+2. [Research](02_Research.md)
+3. [Synthesize](03_Synthesize.md)
+4. [Storyboards](04_StoryBoards.md)
+5. [Prototypes](05_Prototypes.md)
