@@ -1,12 +1,12 @@
 # Prototypes
 
-Prototypes created for the 3 most promising Use Cases
+These are the prototypes for our three most promising stories
 
-## Story 1: Runaway
-![Story 1: Run Away](Media/RunAwayPrototype.png)
+## Prototype for Story 1: Run away
+![Prototype 1: Run Away](Media/RunawayPrototype.png)
 
-## Story 3: Medication
-![Story 3: Run Away](Media/MedicationPrototype.png)
+## Prototype for Story 3: Medication
+![Prototype 3: Medication](Media/MedicationPrototype.png)
 
-## Story 7: Visiting Times
-![Story 7: Run Away](Media/VisitingtimesPrototype.png)
+## Prototype for Story 7: Visiting times
+![Prototype 7: Visiting times](Media/VisitingtimesPrototype.png)
