@@ -1,6 +1,8 @@
 # Task 03
 Selected user group: Relatives (kin, guardian, authorized)
 
+* [Iterations](Iterations.md)
+
 ## Scoping
 
 [Scoping](01_Scoping.md)
@@ -20,7 +22,3 @@ Selected user group: Relatives (kin, guardian, authorized)
 ## Prototypes
 
 [Prototypes](05_Prototypes.md)
-
-## Iterations
-
-[Iterations](06_Iterations.md)
