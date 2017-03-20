@@ -16,3 +16,10 @@
 | 17.03.2017 | Completed the remaining storyboards.       | Beutler, Lerena, Wittwer |
 | 17.03.2017 | Worked again on the card-based prototypes     | Djurdevic, Thevathas |
 | 17.03.2017 | Interviewed Dayana, a student who takes care of a schizophrenic teenage girl at a clinic in Spiez | Beutler, Lerena, Wirth |
+| 20.03.2017 | Worked on presentation | Wirth, Beuter |
+| 20.03.2017 | Worked on personas | Wirth, Lerena |
+| 20.03.2017 | Improved storyboards | Wittwer |
+| 20.03.2017 | Improved on prototypes| Thevathas |
+| 20.03.2017 | Worked on iterations and interview doc | Djurdjevic |
+| 20.03.2017 | Worked on validation doc | Thevathas, Djurdjevic |
+| 20.03.2017 | Reviewing of documentation | All |
