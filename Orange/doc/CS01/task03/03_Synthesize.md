@@ -56,3 +56,32 @@ Date reading:
 -- Lara switches between them on the weekends
 - shouldn't analyze the psychological progress
 - are not involved more than necesessary in the treatment of Lara
+
+
+## Main features
+
+### Stammdaten (alles formale
+- Name, Vorname, Adresse, Tel, Mail von allen relatives
+- Krankenkasse
+- andere Ärzte (Frauenarzt, Zahnarzt, Hausarzt)
+
+### Info über Patient
+- aktuelle Medikation
+- aktuelle Ziele (z.B. Berufsfindung)
+- Wochenendinfo (was soll gemieden werden, worauf Acht geben)
+- Jahresplanung (Projektwochen, Ausflüge, Skilager)
+- Ein-/Austritte (am Wochenende, fixer Eintrag)
+
+### Pinnwand
+- aktuelle Ereignisse/Vorfälle
+-- z.B Grippe/Arztbesuch/Tot Grossmutter
+-- keine Bewertung des Psychostatus
+- kein Ersatz des mündlichen Austausches
+
+### Kalender/Agenda
+- Tagesablauf/Therapie, Termine (auch privat)
+- Terminerfassung möglich (für ein Besuch oder Familientherapie)
+
+### Notifikation
+- Standortübermittlung (nur wenn von Patient ausgelöst)
+- Medikation
