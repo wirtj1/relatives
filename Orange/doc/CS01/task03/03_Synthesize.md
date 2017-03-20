@@ -1,33 +1,58 @@
 # Synthesize
 
-## Abgrenzung 
-- Kein Unterschied ob Klinik gross oder klein
-- Kein Zugriff auf ärztliche Daten
-- Kein Erfassen von weiteren Relatives
-- Notifikationen und Alarme laufen nicht über die Anwendung
+## Delimitation
+- No difference between a big and a small clinic
+- No access to sensitive medical data
+- No possibility to add more relatives by relatives
 
-## Fragen (Interview)
-- moralischer Aspekt "Überwachung"
-- Relatives: Mehr oder weniger Zugriff als Patient
-- Störfaktor Relatives
-- Zugriffsentscheid
+# Data recording:
+- address
+- personal information (base data)
+- activities
+- - weekly program
+- - medication intake
+- - meal
+- - free time
+- events
+- - psychotic attack
+- - messages
+- location based events
+- emergency contact
 
-# Daten erfassen:
-- Adresse
-- Stammdaten
-- Aktivitäten
-- - Wochenprogramm
-- - Medikamenteneinnahme
-- - Mahlzeiten
-- - Ausgang
-- Ereignisse
-- - Psychische Anfälle
-- - Nachrichten
-- Standortüberwachung
-- Notfallkontakte
+Date reading:
+- medication
+- support from doctor
 
-Daten lesen:
-- Medikation
-- Hilfestellungen vom Arzt
+## Users:
+
+### Lara (Patient)
+- 16 years old, in the career choice process
+- disease: schizophrenia
+
+#### Shizophrenia
+- fears monitoring
+-- application is only useful if patients can see the same as their relatives in the application
+- thinking cycles are very different to people not suffering from shizophrenia
+- self-reliance of patients should be supported
+
+### Dayana (pedagogical contact person / nurse)
+- exclusively responsible for Lara
+- relationship between her and Lara is is very much focussed on confidence
+- plans the pedagogic progress togethre with Lara
 
 
+## Target Users:
+
+### Hillary (Relative, mother)
+- Has a closer relationship with Lara than Donald has
+- Values the personal communication with Dayana and doesn't want it to be replaced by an app
+
+### Donald (Relative, father)
+- Lives further away from the clinic than Hillary does
+
+### In common
+- They live separated from each other
+-- Different address
+-- Lara switches between them on the weekends
+- shouldn't analyze the psychological progress
+- are not involved more than necesessary in the treatment of Lara
