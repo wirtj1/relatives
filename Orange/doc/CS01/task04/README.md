@@ -21,6 +21,12 @@
 
 1 - Jasmin (Use case diagram)
 
-2 - Yves, Sascha (Technische, Funktional, nicht funktional)
+2 - Sascha (Systemarchitektur, Models, Testing, Evolution)
 
-3 - 
+3 - Joy (Introduction, Glossary, Preface)
+
+4 - Leandro (System requirements)
+
+5 - Yves (Use case "Medikation bestätigen" detailliert beschreiben)
+
+6 - Joy (Use case "Kalender konsultieren" detailliert beschreiben)
