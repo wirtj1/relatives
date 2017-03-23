@@ -18,9 +18,6 @@ Berner Fachhochschule
 * Selected Use Case
 .image UseCaseAblauf2.png _ 900
 
-* System Architektur
-.image SystemArchitecture.png _ 600
-
 * Funktionale Requirements
 - Patiente und Relatives können exklusiv von der Administration als Datenelement erstellt werden.
 - Patiente und Relatives können exklusiv von der Administration als Datenelement gelöscht werden.
@@ -36,6 +33,9 @@ Berner Fachhochschule
 - Das System wird von mehreren Benutzern gleichzeitig verwendet. Das System muss in die breite skalieren. Auch Benachrichtigungen/Alarme müssen pünktlich ankommen.
 
 - Das System wird sensible Daten behandeln. Die Verbindung zu Endgeräten muss den aktuellen Sicherheitsstandards entsprechen. Das System muss sicherstellen, dass die Daten ausreichend geschützt sind.
+
+* System Architektur
+.image SystemArchitecture.png _ 600
 
 * Systemdesign
 Client
