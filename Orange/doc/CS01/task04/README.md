@@ -7,7 +7,7 @@
 2. Mediakation überprüfen (3)
 
 
-3. Kalender konsultieren und Termin erfassen (7)
+3. Kalender konsultieren und Termin verwalten (7)
 
 
 4. Fachstelle kontaktieren (8) 
