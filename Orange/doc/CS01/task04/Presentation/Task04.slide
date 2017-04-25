@@ -1,0 +1,68 @@
+Task 04
+
+24. März 2017
+Tags: CS01
+
+Thevathas, Wirth, Lerena, Wittwer, Beutler, Djurdjevic
+Berner Fachhochschule
+
+* Use Case Diagramm
+.image UseCaseDiagram.PNG _ 600
+
+* Selected Use Case
+.image UseCase.png _ 900
+
+* Selected Use Case
+.image UseCaseAblauf1.png _ 600
+
+* Selected Use Case
+.image UseCaseAblauf2.png _ 900
+
+* Funktionale Requirements
+- Patiente und Relatives können exklusiv von der Administration als Datenelement erstellt werden.
+- Patiente und Relatives können exklusiv von der Administration als Datenelement gelöscht werden.
+- Ein Berechtigungsmanagement muss vorhanden sein. Es muss zwischen Arzt und behandelnden Personen, Patient und Relatives einzeln unterschieden werden können. Jegliche Funktionalitäten müssen für einzelne Personen manuell freigeschalten und gesperrt werden können. 
+
+- Die Kontaktdaten der Relatives können durch diese aktualisiert werden
+- Weitere behandelnde Ärzte ausserhalb der Klinik können als Kontakt erfasst werden. 
+
+- Die Medikation kann eingesehen werden. Dies beinhaltet neben dem Medikament die Dosis und den Zeitplan.
+
+* Non-Funktionale Requirements
+- Die Bedienoberfläche muss für Personen von jung bis alt und insbesondere für Patienten mit psychischen Krankheiten ausgelegt sein. Eine klare Benutzerführung und gut lesbare Texte sind zentral.
+- Das System wird von mehreren Benutzern gleichzeitig verwendet. Das System muss in die breite skalieren. Auch Benachrichtigungen/Alarme müssen pünktlich ankommen.
+
+- Das System wird sensible Daten behandeln. Die Verbindung zu Endgeräten muss den aktuellen Sicherheitsstandards entsprechen. Das System muss sicherstellen, dass die Daten ausreichend geschützt sind.
+
+* System Architektur
+.image SystemArchitecture.png _ 600
+
+* Systemdesign
+Client
+- Webbasiert
+- Plattformunabhängig (Kein Flash, Silverlight, Quicktime)
+- Breit unterstützt (HTML5, CSS3, ES5)
+- https als Protokoll
+
+Backend
+- Möglichst plattformunabhängig (JVM)
+- Oracle Java SE und OpenJDK/HotSpot unterstützt
+
+* Testing
+- Unit tests auf Buildserver
+- Manuelle tests mit review von anderem Entwickler
+- Integrationstests nach jedem Sprint mit Fokus auf fachliche Umsetzung
+- Stress tests in End-To-End manier
+
+* Weitere Punkte
+Speicher:
+- Gespiegeltes und repliziertes Dateisystem
+
+Datenbank:
+- Relational
+- Synchron repliziert
+- Point in time recovery fähig
+
+Server:
+- Mindestenz zwei Instanzen für Applikationscluster
+- HTTP Loadbalancer mit Session stickiness
