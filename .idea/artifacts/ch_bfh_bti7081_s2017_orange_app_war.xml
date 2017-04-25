@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ch.bfh.bti7081.s2017.orange.app:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="vaadin-archetype-application-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ch.bfh.bti7081.s2017.orange.app:war exploded" />
+    </root>
+  </artifact>
+</component>
