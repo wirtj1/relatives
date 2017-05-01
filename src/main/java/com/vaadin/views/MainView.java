@@ -1,50 +1,49 @@
 package com.vaadin.views;
 
-import javax.servlet.annotation.WebServlet;
-
-import com.vaadin.annotations.Theme;
-import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.ComboBox;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * This UI is the application entry point. A UI may either represent a browser window 
- * (or tab) or some part of a html page where a Vaadin application is embedded.
- * <p>
- * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
- * overridden to add component to the user interface and initialize non-component functionality.
+ * Created by Sascha on 01/05/2017.
  */
-@Theme("mytheme")
-public class MainView extends UI {
+public class MainView extends CustomComponent implements IMainView, IMainView.IMainViewListener {
 
-    @Override
-    protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
-        
-        final TextField name = new TextField();
-        name.setCaption("Type your name here:");
+    private List<IMainViewListener> listeners;
+    private Label lblUserName;
+    private Button btnLogout;
 
-        ComboBox combo = new ComboBox("Sex");
-        combo.setItems(new String[]{"Male", "Female", "Yes baby.... (lele wtf)"});
-        combo.addValueChangeListener(e -> layout.addComponent(new Label("Are you really a " + e.getValue() + "?")));
+    public MainView(){
+        listeners = new ArrayList<>();
+        lblUserName = new Label();
+        btnLogout = new Button("Logout");
+        btnLogout.addClickListener(clickEvent -> this.logout());
 
-        Button button = new Button("Click Me");
-        button.addClickListener( e -> layout.addComponent(new Label("Thanks " + name.getValue()
-                + ", it works!")));
-        
-        layout.addComponents(name, combo, button);
-        
-        setContent(layout);
+        VerticalLayout layout = new VerticalLayout();
+        layout.addComponent(lblUserName);
+        layout.addComponent(btnLogout);
+
+        setCompositionRoot(layout);
     }
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MainView.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
+    @Override
+    public void setUsername(String value) {
+        lblUserName.setValue(value);
+    }
+
+    @Override
+    public void addListener(IMainViewListener listener) {
+        listeners.add(listener);
+    }
+
+    @Override
+    public void logout() {
+        for (IMainViewListener listener : listeners){
+            listener.logout();
+        }
     }
 }
