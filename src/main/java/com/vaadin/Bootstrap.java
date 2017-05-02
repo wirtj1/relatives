@@ -14,6 +14,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.presentation.views.MainView;
+import com.vaadin.ui.themes.ValoTheme;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -25,40 +26,69 @@ import com.vaadin.presentation.views.MainView;
 @Theme("mytheme")
 public class Bootstrap extends UI {
 
+    private GridLayout rootLayout;
+
+    private MainModel mainModel;
+    private MainView mainView;
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        initMVP();
+        buildLayout();
+    }
 
-        VerticalLayout content = new VerticalLayout();
+    private void initMVP()
+    {
+        initModels();
+        initViews();
 
-        GridLayout grid = new GridLayout(1, 3);
+        new MainPresenter(mainModel, mainView);
+    }
+
+
+    private void initModels()
+    {
+        mainModel = new MainModel();
+        mainModel.setUserName("Team orange");
+    }
+
+    private void initViews(){
+        mainView = new MainView();
+    }
+
+    private void buildLayout()
+    {
+        rootLayout = new GridLayout(1, 3);
         MenuBar menu = new MenuBar();
 
-        menu.addItem("Home", null, menuItem -> {
-            MainModel model = new MainModel();
-            model.setUserName("Team Orange");
+        menu.addItem("Home", null, menuItem -> navigateToView(mainView));
+        menu.addItem("Medication", null, null);
+        menu.addItem("Calendar", null, null);
 
-            MainView view = new MainView();
-
-            MainPresenter presenter = new MainPresenter(model, view);
-
-            content.removeAllComponents();
-            content.addComponent(view);
-        });
-        MenuItem medication = menu.addItem("Medication", null, null);
+        menu.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
 
-        grid.setWidth("100%");
-        grid.setHeight("100%");
+        // Initial config for grid layout
+        rootLayout.setWidth("100%");
+        rootLayout.setHeight("100%");
 
-        grid.addComponent(menu, 0,0);
-        grid.addComponent(content, 0,1);
-        grid.addComponent(footer, 0,2);
+        rootLayout.addComponent(menu, 0,0);
+        rootLayout.addComponent(footer, 0,2);
+        rootLayout.setComponentAlignment(menu, Alignment.TOP_CENTER);
 
-        grid.setColumnExpandRatio(0,1);
-        grid.setRowExpandRatio(1,1);
+        rootLayout.setColumnExpandRatio(0,1);
+        rootLayout.setRowExpandRatio(1,1);
 
-        setContent(grid);
+        // Set grid as root layout
+        setContent(rootLayout);
+    }
+
+    /** add view to grid and center align it **/
+    private void navigateToView(Component view){
+        rootLayout.removeComponent(0,1);
+        rootLayout.addComponent(view, 0,1);
+        rootLayout.setComponentAlignment(view, Alignment.MIDDLE_CENTER);
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

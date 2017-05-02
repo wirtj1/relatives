@@ -4,6 +4,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.TextField;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,15 +17,18 @@ public class MainView extends CustomComponent implements IMainView, IMainView.IM
     private List<IMainViewListener> listeners;
     private Label lblUserName;
     private Button btnLogout;
+    private TextField pwdTxt;
 
     public MainView(){
         listeners = new ArrayList<>();
         lblUserName = new Label();
         btnLogout = new Button("Logout");
         btnLogout.addClickListener(clickEvent -> this.logout());
+        pwdTxt = new TextField();
 
         VerticalLayout layout = new VerticalLayout();
         layout.addComponent(lblUserName);
+        layout.addComponent(pwdTxt);
         layout.addComponent(btnLogout);
 
         setCompositionRoot(layout);
