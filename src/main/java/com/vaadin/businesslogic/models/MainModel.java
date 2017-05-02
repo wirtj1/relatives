@@ -1,4 +1,4 @@
-package com.vaadin.models;
+package com.vaadin.businesslogic.models;
 
 /**
  * Created by Sascha on 01/05/2017.

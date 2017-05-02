@@ -4,8 +4,8 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.models.MainModel;
-import com.vaadin.presenter.MainPresenter;
+import com.vaadin.businesslogic.models.MainModel;
+import com.vaadin.presentation.presenter.MainPresenter;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
@@ -13,10 +13,7 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
-import com.vaadin.views.MainView;
-import com.vaadin.server.ThemeResource;
-
-import java.awt.*;
+import com.vaadin.presentation.views.MainView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 

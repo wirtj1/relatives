@@ -1,4 +1,4 @@
-package com.vaadin.views;
+package com.vaadin.presentation.views;
 
 /**
  * Created by Sascha on 01/05/2017.

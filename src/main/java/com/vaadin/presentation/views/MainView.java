@@ -1,4 +1,4 @@
-package com.vaadin.views;
+package com.vaadin.presentation.views;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
