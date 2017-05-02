@@ -10,9 +10,9 @@ import com.vaadin.views.MainView;
 public class MainPresenter implements IMainView.IMainViewListener {
 
     private MainModel model;
-    private MainView view;
+    private IMainView view;
 
-    public MainPresenter(MainModel model, MainView view){
+    public MainPresenter(MainModel model, IMainView view){
         this.model = model;
         this.view = view;
         view.setUsername(model.getUserName());
