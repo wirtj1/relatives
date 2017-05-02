@@ -66,8 +66,10 @@ public class Bootstrap extends UI {
         menu.addItem("Calendar", null, null);
 
         menu.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
+        menu.setResponsive(true);
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
+        footer.setResponsive(true);
 
         // Initial config for grid layout
         rootLayout.setWidth("100%");
@@ -76,9 +78,11 @@ public class Bootstrap extends UI {
         rootLayout.addComponent(menu, 0,0);
         rootLayout.addComponent(footer, 0,2);
         rootLayout.setComponentAlignment(menu, Alignment.TOP_CENTER);
+        rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 
         rootLayout.setColumnExpandRatio(0,1);
         rootLayout.setRowExpandRatio(1,1);
+        rootLayout.setResponsive(true);
 
         // Set grid as root layout
         setContent(rootLayout);
