@@ -1,4 +1,4 @@
-package com.vaadin.presentation.views;
+package ch.bfh.bti7081.s2017.orange.presentation.views;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;

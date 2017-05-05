@@ -1,19 +1,18 @@
-package com.vaadin;
+package ch.bfh.bti7081.s2017.orange;
 
 import javax.servlet.annotation.WebServlet;
 
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.businesslogic.models.MainModel;
-import com.vaadin.presentation.presenter.MainPresenter;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
-import com.vaadin.ui.MenuBar.MenuItem;
-import com.vaadin.presentation.views.MainView;
 import com.vaadin.ui.themes.ValoTheme;
 
 /**

@@ -1,7 +1,7 @@
-package com.vaadin.presentation.presenter;
+package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
-import com.vaadin.businesslogic.models.MainModel;
-import com.vaadin.presentation.views.IMainView;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
+import ch.bfh.bti7081.s2017.orange.presentation.views.IMainView;
 
 /**
  * Created by Sascha on 01/05/2017.

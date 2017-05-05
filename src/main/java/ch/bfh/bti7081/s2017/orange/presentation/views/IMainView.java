@@ -1,4 +1,4 @@
-package com.vaadin.presentation.views;
+package ch.bfh.bti7081.s2017.orange.presentation.views;
 
 /**
  * Created by Sascha on 01/05/2017.
