@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * Created by Sascha on 01/05/2017.
  */
-public class MainView extends CustomComponent implements IMainView, IMainView.IMainViewListener {
+public class MainView extends BaseView implements IMainView, IMainView.IMainViewListener {
 
     private List<IMainViewListener> listeners;
     private Label lblUserName;
@@ -23,7 +25,7 @@ public class MainView extends CustomComponent implements IMainView, IMainView.IM
         listeners = new ArrayList<>();
         lblUserName = new Label();
         btnLogout = new Button("Logout");
-        btnLogout.addClickListener(clickEvent -> this.logout());
+        btnLogout.addClickListener(clickEvent -> this.logout(getUI().getNavigator()));
         pwdTxt = new TextField();
 
         VerticalLayout layout = new VerticalLayout();
@@ -45,9 +47,24 @@ public class MainView extends CustomComponent implements IMainView, IMainView.IM
     }
 
     @Override
-    public void logout() {
+    public void logout(Navigator navigator) {
         for (IMainViewListener listener : listeners){
-            listener.logout();
+            listener.logout(getUI().getNavigator());
         }
+    }
+
+    @Override
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+
+    }
+
+    @Override
+    public String getViewName() {
+        return "Main";
+    }
+
+    @Override
+    public String getCaption() {
+        return "Main";
     }
 }
