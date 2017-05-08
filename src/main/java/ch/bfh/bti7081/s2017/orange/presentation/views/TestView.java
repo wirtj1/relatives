@@ -1,6 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import ch.bfh.bti7081.s2017.orange.presentation.Utils.ParameterSet;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;

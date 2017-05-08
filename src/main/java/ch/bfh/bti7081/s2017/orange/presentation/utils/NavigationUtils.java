@@ -1,8 +1,4 @@
-package ch.bfh.bti7081.s2017.orange.presentation.Utils;
-
-import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
-
-import java.util.Dictionary;
+package ch.bfh.bti7081.s2017.orange.presentation.utils;
 
 /**
  * Created by Leandro on 7/5/2017.

@@ -2,7 +2,7 @@ package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
 import ch.bfh.bti7081.s2017.orange.MvpNavigator;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
-import ch.bfh.bti7081.s2017.orange.presentation.Utils.ParameterSet;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
 import ch.bfh.bti7081.s2017.orange.presentation.views.IMainView;
 
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;

@@ -49,7 +49,7 @@ public class Bootstrap extends UI {
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
 
         setNavigator(navigator);
-        getNavigator().navigateTo("Main");
+        ((MvpNavigator)getNavigator()).navigateTo(MainView.class);
     }
 
     private void buildLayout()

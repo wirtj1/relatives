@@ -1,4 +1,4 @@
-package ch.bfh.bti7081.s2017.orange.presentation.Utils;
+package ch.bfh.bti7081.s2017.orange.presentation.utils;
 
 import java.util.Arrays;
 import java.util.HashMap;
