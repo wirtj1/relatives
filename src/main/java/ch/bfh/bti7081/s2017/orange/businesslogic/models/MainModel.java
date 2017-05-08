@@ -1,4 +1,4 @@
-package com.vaadin.models;
+package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
 /**
  * Created by Sascha on 01/05/2017.

@@ -1,8 +1,7 @@
-package com.vaadin.presenter;
+package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
-import com.vaadin.models.MainModel;
-import com.vaadin.views.IMainView;
-import com.vaadin.views.MainView;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
+import ch.bfh.bti7081.s2017.orange.presentation.views.IMainView;
 
 /**
  * Created by Sascha on 01/05/2017.
@@ -10,9 +9,9 @@ import com.vaadin.views.MainView;
 public class MainPresenter implements IMainView.IMainViewListener {
 
     private MainModel model;
-    private MainView view;
+    private IMainView view;
 
-    public MainPresenter(MainModel model, MainView view){
+    public MainPresenter(MainModel model, IMainView view){
         this.model = model;
         this.view = view;
         view.setUsername(model.getUserName());
