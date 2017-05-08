@@ -1,10 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import com.vaadin.ui.Button;
-import com.vaadin.ui.CustomComponent;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.TextField;
+import com.vaadin.ui.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +21,7 @@ public class MainView extends CustomComponent implements IMainView, IMainView.IM
         btnLogout = new Button("Logout");
         btnLogout.addClickListener(clickEvent -> this.logout());
         pwdTxt = new TextField();
+
 
         VerticalLayout layout = new VerticalLayout();
         layout.addComponent(lblUserName);

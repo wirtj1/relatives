@@ -1,19 +1,19 @@
 package ch.bfh.bti7081.s2017.orange;
 
-import javax.servlet.annotation.WebServlet;
-
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
-import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.themes.ValoTheme;
+
+import javax.servlet.annotation.WebServlet;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -30,6 +30,10 @@ public class Bootstrap extends UI {
     private MainModel mainModel;
     private MainView mainView;
 
+    //TODO (von joy) keine Ahnung ob das richtig ist wenn die View hier ist.. ich glaube laut vaadin sollte das ueber einen Navigator gemacht werden
+    private PersonDataView personDataView;
+    private PersonDataModel personDataModel;
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         initMVP();
@@ -42,6 +46,7 @@ public class Bootstrap extends UI {
         initViews();
 
         new MainPresenter(mainModel, mainView);
+        new PersonDataPresenter(personDataModel, personDataView);
     }
 
 
@@ -49,10 +54,12 @@ public class Bootstrap extends UI {
     {
         mainModel = new MainModel();
         mainModel.setUserName("Team orange");
+        personDataModel = new PersonDataModel();
     }
 
     private void initViews(){
         mainView = new MainView();
+        personDataView = new PersonDataView();
     }
 
     private void buildLayout()
@@ -63,6 +70,7 @@ public class Bootstrap extends UI {
         menu.addItem("Home", null, menuItem -> navigateToView(mainView));
         menu.addItem("Medication", null, null);
         menu.addItem("Calendar", null, null);
+        menu.addItem("Basic Data", null, menuItem -> navigateToView(personDataView));
 
         menu.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         menu.setResponsive(true);
