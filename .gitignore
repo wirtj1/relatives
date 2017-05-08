@@ -59,3 +59,4 @@ crashlytics-build.properties
 fabric.properties
 .idea/
 target/
+/ch.bfh.bti7081.s2017.orange.app.iml
