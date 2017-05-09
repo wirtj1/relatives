@@ -7,14 +7,27 @@ import javax.persistence.*;
 @Inheritance
 @DiscriminatorColumn(name="persontype")
 public class Person implements Serializable{
-    @Id
-    @GeneratedValue
-    private Long id;
-
     private String firstName;
     private String lastName;
     private String socialAssuranceNumber;
 
-    @Enumerated(EnumType.STRING)
-    private PersonRole Role;
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSocialAssuranceNumber() {
+        return socialAssuranceNumber;
+    }
 }

@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Entity
 public class Room implements Serializable {
     @Id
-    String name;
-    String location;
+    private String name;
+
+    private String location;
 }
