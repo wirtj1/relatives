@@ -30,4 +30,16 @@ public class Person implements Serializable{
     public String getSocialAssuranceNumber() {
         return socialAssuranceNumber;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setSocialAssuranceNumber(String socialAssuranceNumber) {
+        this.socialAssuranceNumber = socialAssuranceNumber;
+    }
 }

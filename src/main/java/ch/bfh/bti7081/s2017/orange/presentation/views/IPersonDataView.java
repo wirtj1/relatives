@@ -15,8 +15,6 @@ import com.vaadin.navigator.View;
 
 public interface IPersonDataView extends View {
 
-
-	//TODO wijo zu Personen aendern
 	void setToEditMode(Person person);
 
 	void setToViewMode(Person person);

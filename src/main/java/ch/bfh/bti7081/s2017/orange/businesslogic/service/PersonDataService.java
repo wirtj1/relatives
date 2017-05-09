@@ -29,6 +29,15 @@ public class PersonDataService {
 		Person p1 = new Person();
 		Person p2 = new Person();
 		Person p3 = new Person();
+		p1.setFirstName("Leandro");
+		p1.setLastName("Lerena");
+		p1.setSocialAssuranceNumber("731.099.344.1");
+		p2.setFirstName("Jasmin");
+		p2.setLastName("Thevathas");
+		p2.setSocialAssuranceNumber("731.566.122.3");
+		p3.setFirstName("Sascha");
+		p3.setLastName("Wittwer");
+		p3.setSocialAssuranceNumber("732.433.322.8");
 		ArrayList<Person> personList = new ArrayList<Person>();
 		personList.add(p1);
 		personList.add(p2);
