@@ -3,7 +3,10 @@ package ch.bfh.bti7081.s2017.orange;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.NavigationUtils;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.MenuBar;
@@ -18,11 +21,10 @@ import java.util.List;
 public class MvpNavigator extends BaseNavigator {
 
     private MenuBar navigationBar;
-
     private List<BaseView> views = new ArrayList<>();
 
 
-    public MvpNavigator(UI ui, ComponentContainer container, MenuBar navigation)
+    public MvpNavigator(BaseUI ui, ComponentContainer container, MenuBar navigation)
     {
         super(ui, container);
         this.navigationBar = navigation;
@@ -35,17 +37,20 @@ public class MvpNavigator extends BaseNavigator {
 
         if (addToMenu)
         {
-            navigationBar.addItem(presenter.view.getCaption(), null, menuItem -> getUI().getNavigator().navigateTo(presenter.view.getViewName()));
+            navigationBar.addItem(presenter.view.getCaption(), null, menuItem -> navigateTo(presenter.view.getClass()));
         }
 
     }
 
     public <T extends BaseView> void navigateTo(Class<T> destinationView, ParameterSet parameterSet)
     {
-        views.stream()
-                .filter(components -> components.getClass().equals(destinationView))
-                .findFirst()
-                .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameterSet)));
+        // Navigation to logon view is always possible
+        if (getUI().sessionRegistered() || destinationView.equals(LogonView.class)){
+            views.stream()
+                    .filter(components -> components.getClass().equals(destinationView))
+                    .findFirst()
+                    .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameterSet)));
+        }
     }
 
 

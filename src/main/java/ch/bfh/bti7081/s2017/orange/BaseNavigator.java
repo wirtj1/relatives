@@ -20,4 +20,8 @@ public abstract class BaseNavigator extends Navigator {
     public abstract <T extends BaseView> void navigateTo(Class<T> destinationView, ParameterSet parameterSet);
     public abstract <T extends BaseView> void navigateTo(Class<T> destinationView);
 
+    @Override
+    public BaseUI getUI() {
+        return (BaseUI) super.getUI();
+    }
 }

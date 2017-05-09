@@ -9,7 +9,7 @@ import com.vaadin.server.ClientConnector;
 /**
  * Created by Sascha on 01/05/2017.
  */
-public interface IMainView extends View, ClientConnector, MethodEventSource {
+public interface IMainView extends View {
     void setUsername(String username);
 
     interface IMainViewListener {

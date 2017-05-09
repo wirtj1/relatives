@@ -2,11 +2,15 @@ package ch.bfh.bti7081.s2017.orange;
 
 import javax.servlet.annotation.WebServlet;
 
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
+import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
@@ -45,11 +49,17 @@ public class Bootstrap extends BaseUI {
 
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
+        navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
         navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
 
         setNavigator(navigator);
-        getNavigator().navigateTo(MainView.class);
+
+        if(sessionRegistered()) {
+            getNavigator().navigateTo(MainView.class);
+        } else {
+            getNavigator().navigateTo(LogonView.class);
+        }
     }
 
     private void buildLayout()
