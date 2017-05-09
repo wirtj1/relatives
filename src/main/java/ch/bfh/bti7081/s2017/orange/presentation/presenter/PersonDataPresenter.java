@@ -10,23 +10,67 @@
 package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
+import ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import com.vaadin.navigator.ViewChangeListener;
 
-public class PersonDataPresenter implements PersonDataView.PersonDataViewListener {
+import java.util.List;
 
-	private PersonDataModel model;
-	private PersonDataView view;
+public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDataModel> implements IPersonDataView, IPersonDataView.IPersonDataListener {
 
-	public PersonDataPresenter(PersonDataModel model, PersonDataView view) {
-		this.model = model;
-		this.view = view;
-		view.setPersonen(model.getAllPersons("user"));
-		view.addListener(this);
+
+	private PersonDataService personDataService;
+
+	public PersonDataPresenter(PersonDataView view, PersonDataModel model) {
+		super(view, model);
+		personDataService = new PersonDataService();
 	}
 
 	@Override
-	public void listen() {
+	public void onSaveButtonClicked() {
+		Person person = model.getActivePerson();
+		personDataService.savePerson(person);
 
 	}
 
+	@Override
+	public void onDeleteButtonClicked() {
+		Person person = model.getActivePerson();
+		personDataService.deletePerson(person);
+
+	}
+
+	@Override
+	public void onEditButtonClicked() {
+		view.setToViewMode(model.getActivePerson());
+	}
+
+	@Override
+	public void setToEditMode(String person) {
+		//noop
+	}
+
+	@Override
+	public void setToViewMode(String person) {
+		//noop
+	}
+
+	@Override
+	public void setMessage(String message) {
+		//noop
+	}
+
+	@Override
+	public void addListener(IPersonDataListener listener) {
+		//noop
+	}
+
+	@Override
+	public void enter(ViewChangeListener.ViewChangeEvent event) {
+		List<Person> personen = personDataService.getPersonList();
+		model.setPersonList(personen);
+		model.setActivePerson(personen.get(0));
+		view.fillAccordion(model.getPersonList());
+		view.setToViewMode(model.getActivePerson());
+	}
 }

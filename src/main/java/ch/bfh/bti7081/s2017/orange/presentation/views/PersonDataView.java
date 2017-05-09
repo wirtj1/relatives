@@ -9,50 +9,111 @@
  */
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
+import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Accordion;
-import com.vaadin.ui.CustomComponent;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonDataView extends CustomComponent {
+public class PersonDataView extends BaseView implements IPersonDataView, IPersonDataView.IPersonDataListener {
 
-	private List<PersonDataModel.Person> personList = new ArrayList<>();
+	private List<IPersonDataListener> listeners;
+
+	private List<String> personList;
+
+	//TODO wijo define used view components here
 	private VerticalLayout layout;
-
+	private Label messageLabel;
+	private Accordion personAccordion;
+	private Button saveButton;
+	private Button deleteButton;
+	private Button editButton;
 
 	public PersonDataView() {
+		listeners = new ArrayList<>();
+		//TODO initialize defined view components here
+		messageLabel = new Label();
+
+		saveButton = new Button();
+		//saveButton.addClickListener();
+
+		deleteButton = new Button();
+		//deleteButton.addClickListener();
+
+		editButton = new Button();
+		//editButton.addClickListener();
+
 		layout = new VerticalLayout();
+		layout.addComponent(messageLabel);
 		setCompositionRoot(layout);
 	}
 
-	public void setPersonen(List<PersonDataModel.Person> personen) {
-		personList = personen;
-		Accordion accordion = new Accordion();
-		for (PersonDataModel.Person person : personList) {
-			VerticalLayout personTab = new VerticalLayout();
-			personTab.addComponent(new Label("Vorname: " + person.getVorname()));
-			personTab.addComponent(new Label("Nachname: " + person.getNachname()));
-			personTab.addComponent(new Label("Email Adresse: " + person.getEmailadresse()));
-			personTab.addComponent(new Label("Telefonnummer: " + person.getTelefonnummer()));
-			personTab.addComponent(new Label("Krankenkasse: " + person.getKrankenkasse()));
-			accordion.addTab(personTab, person.getVorname() + " " + person.getNachname());
-			layout.addComponent(accordion);
-		}
+
+	@Override
+	public void updatePerson(String person) {
+
 	}
 
-	public interface PersonDataViewListener {
-		void listen();
+	@Override
+	public void setToEditMode(Person person) {
+
 	}
 
-	private List<PersonDataViewListener> listeners = new ArrayList<>();
+	@Override
+	public void setToViewMode(Person person) {
 
-	public void addListener(PersonDataViewListener listener) {
+	}
+
+	@Override
+	public void setMessage(String value) {
+		messageLabel.setValue(value);
+	}
+
+	@Override
+	public void addListener(IPersonDataListener listener) {
 		listeners.add(listener);
 	}
 
 
+	@Override
+	public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+		//wird aufgerufen, wenn auf diese View gewechselt wird
+		String parameters = viewChangeEvent.getParameters();
+		ParameterSet decodeParameterSet = ParameterSet.decode(parameters);
+		messageLabel.setValue("Message was: " + decodeParameterSet.getParameter("message"));
+
+	}
+
+	@Override
+	public String getViewName() {
+		return "PersonDataView";
+	}
+
+	@Override
+	public String getCaption() {
+		return "Stammdaten Person";
+	}
+
+	@Override
+	public void onSaveButtonClicked() {
+		//noop
+	}
+
+	@Override
+	public void onDeleteButtonClicked() {
+		//noop
+	}
+
+	@Override
+	public void onEditButtonClicked() {
+		//noop
+	}
+
+	public void fillAccordion(List<Person> personList) {
+
+	}
 }

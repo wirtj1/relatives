@@ -7,29 +7,28 @@
  * elektronischer Form. Wird das Dokument einem Kunden im Rahmen der Projektarbeit zur
  * Ansicht uebergeben ist jede weitere Verteilung durch den Kunden an Dritte untersagt.
  */
-package ch.bfh.bti7081.s2017.orange.businesslogic.models;
+package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import java.util.List;
-
-public class PersonDataModel extends BaseModel {
-
-	private Person activePerson;
-	private List<Person> personList;
+import com.vaadin.navigator.View;
 
 
-	public void setPersonList(List<Person> personen) {
+public interface IPersonDataView extends View {
 
+
+	//TODO wijo zu Personen aendern
+	void setToEditMode(Person person);
+
+	void setToViewMode(Person person);
+
+	void setMessage(String message);
+
+	interface IPersonDataListener {
+		void onSaveButtonClicked();
+
+		void onDeleteButtonClicked();
+
+		void onEditButtonClicked();
 	}
 
-	public void setActivePerson(Person person) {
-
-	}
-
-	public List<Person> getPersonList() {
-		return personList;
-	}
-
-	public Person getActivePerson() {
-		return activePerson;
-	}
+	void addListener(IPersonDataListener listener);
 }

@@ -1,19 +1,16 @@
 package ch.bfh.bti7081.s2017.orange;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.navigator.Navigator;
-import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
@@ -35,13 +32,6 @@ public class Bootstrap extends UI {
     private VerticalLayout contentLayout;
     private MenuBar navigationBar;
 
-    private MainModel mainModel;
-    private MainView mainView;
-
-    //TODO (von joy) keine Ahnung ob das richtig ist wenn die View hier ist.. ich glaube laut vaadin sollte das ueber einen Navigator gemacht werden
-    private PersonDataView personDataView;
-    private PersonDataModel personDataModel;
-
     @Override
     protected void init(VaadinRequest vaadinRequest) {
 
@@ -51,6 +41,7 @@ public class Bootstrap extends UI {
 
         navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
 
         setNavigator(navigator);
         ((MvpNavigator)getNavigator()).navigateTo(MainView.class);
