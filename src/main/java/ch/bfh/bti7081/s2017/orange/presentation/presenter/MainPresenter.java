@@ -33,6 +33,5 @@ public class MainPresenter extends BasePresenter<MainView, MainModel> implements
         parameterSet.addParameter("message", "helloFromMainView");
         navigator.navigateTo(TestView.class, parameterSet);
 
-
     }
 }

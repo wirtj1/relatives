@@ -43,6 +43,10 @@ public class Bootstrap extends BaseUI {
     private MainModel mainModel;
     private MainView mainView;
 
+    /**
+     * Initializes and sets a MvpNavigator, builds the view
+     * @param vaadinRequest: The Vaadin request issued
+     */
     @Override
     protected void init(VaadinRequest vaadinRequest) {
 
@@ -64,6 +68,9 @@ public class Bootstrap extends BaseUI {
         }
     }
 
+    /**
+     * Builds the layout
+     */
     private void buildLayout()
     {
         rootLayout = new GridLayout(1, 3);

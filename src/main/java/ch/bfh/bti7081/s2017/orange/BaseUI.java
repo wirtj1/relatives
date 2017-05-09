@@ -6,7 +6,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.UI;
 
 /**
- * Created by Leandro on 9/5/2017.
+ * Base class for Vaadin Ui
  */
 public abstract class BaseUI extends UI {
     @Override
