@@ -39,6 +39,10 @@ public class ParameterSet {
         return parameters.get(key);
     }
 
+    /**
+     * Encodes the parameters, so it can be passed. Decode with ParameterSet.decode()
+     * @return: Encoded String
+     */
     @Override
     public String toString() {
         return parameters.entrySet()
