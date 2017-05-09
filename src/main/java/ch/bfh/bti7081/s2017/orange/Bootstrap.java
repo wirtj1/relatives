@@ -1,19 +1,31 @@
 package ch.bfh.bti7081.s2017.orange;
 
+import javax.servlet.annotation.WebServlet;
+
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
+import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
+import com.vaadin.ui.GridLayout;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.themes.ValoTheme;
 
 import javax.servlet.annotation.WebServlet;
@@ -26,11 +38,14 @@ import javax.servlet.annotation.WebServlet;
  * overridden to add component to the user interface and initialize non-component functionality.
  */
 @Theme("mytheme")
-public class Bootstrap extends UI {
+public class Bootstrap extends BaseUI {
 
     private GridLayout rootLayout;
     private VerticalLayout contentLayout;
     private MenuBar navigationBar;
+
+    private MainModel mainModel;
+    private MainView mainView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -39,12 +54,18 @@ public class Bootstrap extends UI {
 
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
+        navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
         navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
 
         setNavigator(navigator);
-        ((MvpNavigator)getNavigator()).navigateTo(MainView.class);
+
+        if(sessionRegistered()) {
+            getNavigator().navigateTo(MainView.class);
+        } else {
+            getNavigator().navigateTo(LogonView.class);
+        }
     }
 
     private void buildLayout()
