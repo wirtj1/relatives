@@ -35,6 +35,7 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-push:8.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.atmosphere:atmosphere-runtime:2.4.5.vaadin2" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin.external.slf4j:vaadin-slf4j-jdk14:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-client-compiled:8.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-themes:8.0.5" level="project" />
   </component>
