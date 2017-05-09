@@ -15,6 +15,7 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
@@ -50,8 +51,9 @@ public class Bootstrap extends BaseUI {
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
+        navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
+
 
         setNavigator(navigator);
 
@@ -68,6 +70,9 @@ public class Bootstrap extends BaseUI {
         navigationBar = new MenuBar();
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         navigationBar.setResponsive(true);
+        MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
+        settings.addItem("Account", VaadinIcons.USER, null);
+        settings.addItem("Logout", VaadinIcons.SIGN_OUT,menuItem -> doLogout());
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
         footer.setResponsive(true);

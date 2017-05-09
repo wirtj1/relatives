@@ -37,7 +37,8 @@ public class MvpNavigator extends BaseNavigator {
 
         if (addToMenu)
         {
-            navigationBar.addItem(presenter.view.getCaption(), null, menuItem -> navigateTo(presenter.view.getClass()));
+            MenuBar.MenuItem firstMenuItem = navigationBar.getItems().get(0);
+            navigationBar.addItemBefore(presenter.view.getCaption(), null, menuItem -> navigateTo(presenter.view.getClass()), firstMenuItem);
         }
 
     }
