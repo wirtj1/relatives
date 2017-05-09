@@ -26,6 +26,7 @@ public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDat
 	public PersonDataPresenter(PersonDataView view, PersonDataModel model) {
 		super(view, model);
 		personDataService = new PersonDataService();
+		view.addListener(this);
 	}
 
 	@Override

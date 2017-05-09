@@ -18,10 +18,12 @@ public class PersonDataModel extends BaseModel {
 
 
 	public void setPersonList(List<Person> personen) {
+		this.personList = personen;
 
 	}
 
 	public void setActivePerson(Person person) {
+		this.activePerson = person;
 
 	}
 
