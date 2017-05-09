@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Sascha on 01/05/2017.
  */
-public class TestView extends BaseView implements ITestView, ITestView.ITestViewListener {
+public class TestView extends BaseView implements ITestView {
 
     private List<ITestViewListener> listeners;
     private Label lblUserName;

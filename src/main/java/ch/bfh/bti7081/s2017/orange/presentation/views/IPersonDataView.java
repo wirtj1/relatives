@@ -29,6 +29,8 @@ public interface IPersonDataView extends View {
 		void onDeleteButtonClicked();
 
 		void onEditButtonClicked();
+
+		void onViewEnter();
 	}
 
 	void addListener(IPersonDataListener listener);

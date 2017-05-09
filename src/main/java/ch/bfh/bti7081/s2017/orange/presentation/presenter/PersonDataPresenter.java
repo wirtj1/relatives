@@ -18,7 +18,7 @@ import com.vaadin.navigator.ViewChangeListener;
 
 import java.util.List;
 
-public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDataModel> implements IPersonDataView, IPersonDataView.IPersonDataListener {
+public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDataModel> implements IPersonDataView.IPersonDataListener {
 
 
 	private PersonDataService personDataService;
@@ -48,31 +48,12 @@ public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDat
 	}
 
 	@Override
-	public void setToEditMode(Person person) {
-		//noop
-	}
-
-	@Override
-	public void setToViewMode(Person person) {
-		//noop
-	}
-
-	@Override
-	public void setMessage(String message) {
-		//noop
-	}
-
-	@Override
-	public void addListener(IPersonDataListener listener) {
-		//noop
-	}
-
-	@Override
-	public void enter(ViewChangeListener.ViewChangeEvent event) {
+	public void onViewEnter() {
 		List<Person> personen = personDataService.getPersonList();
 		model.setPersonList(personen);
 		model.setActivePerson(personen.get(0));
 		view.fillAccordion(model.getPersonList());
 		view.setToViewMode(model.getActivePerson());
 	}
+
 }

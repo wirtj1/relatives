@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Sascha on 01/05/2017.
  */
-public class MainView extends BaseView implements IMainView, IMainView.IMainViewListener {
+public class MainView extends BaseView implements IMainView {
 
     private List<IMainViewListener> listeners;
     private Label lblUserName;
@@ -47,7 +47,6 @@ public class MainView extends BaseView implements IMainView, IMainView.IMainView
         listeners.add(listener);
     }
 
-    @Override
     public void logout(BaseNavigator navigator) {
         for (IMainViewListener listener : listeners){
             listener.logout(getUI().getNavigator());

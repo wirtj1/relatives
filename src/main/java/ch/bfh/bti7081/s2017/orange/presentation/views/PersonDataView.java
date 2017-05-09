@@ -20,7 +20,7 @@ import com.vaadin.ui.VerticalLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonDataView extends BaseView implements IPersonDataView, IPersonDataView.IPersonDataListener {
+public class PersonDataView extends BaseView implements IPersonDataView{
 
 	private List<IPersonDataListener> listeners;
 
@@ -78,11 +78,9 @@ public class PersonDataView extends BaseView implements IPersonDataView, IPerson
 
 	@Override
 	public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
-		//wird aufgerufen, wenn auf diese View gewechselt wird
-		String parameters = viewChangeEvent.getParameters();
-		ParameterSet decodeParameterSet = ParameterSet.decode(parameters);
-		messageLabel.setValue("Message was: " + decodeParameterSet.getParameter("message"));
-
+		for (IPersonDataListener listener : listeners) {
+			listener.onViewEnter();
+		}
 	}
 
 	@Override
@@ -95,20 +93,6 @@ public class PersonDataView extends BaseView implements IPersonDataView, IPerson
 		return "Stammdaten Person";
 	}
 
-	@Override
-	public void onSaveButtonClicked() {
-		//noop
-	}
-
-	@Override
-	public void onDeleteButtonClicked() {
-		//noop
-	}
-
-	@Override
-	public void onEditButtonClicked() {
-		//noop
-	}
 
 	public void fillAccordion(List<Person> personList) {
 		if (personAccordion == null) {
