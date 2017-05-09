@@ -1,13 +1,19 @@
 package ch.bfh.bti7081.s2017.orange;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
@@ -26,6 +32,8 @@ import javax.servlet.annotation.WebServlet;
 public class Bootstrap extends UI {
 
     private GridLayout rootLayout;
+    private VerticalLayout contentLayout;
+    private MenuBar navigationBar;
 
     private MainModel mainModel;
     private MainView mainView;
@@ -36,44 +44,24 @@ public class Bootstrap extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        initMVP();
+
         buildLayout();
-    }
 
-    private void initMVP()
-    {
-        initModels();
-        initViews();
+        MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
-        new MainPresenter(mainModel, mainView);
-        new PersonDataPresenter(personDataModel, personDataView);
-    }
+        navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
+        navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
 
-
-    private void initModels()
-    {
-        mainModel = new MainModel();
-        mainModel.setUserName("Team orange");
-        personDataModel = new PersonDataModel();
-    }
-
-    private void initViews(){
-        mainView = new MainView();
-        personDataView = new PersonDataView();
+        setNavigator(navigator);
+        ((MvpNavigator)getNavigator()).navigateTo(MainView.class);
     }
 
     private void buildLayout()
     {
         rootLayout = new GridLayout(1, 3);
-        MenuBar menu = new MenuBar();
-
-        menu.addItem("Home", null, menuItem -> navigateToView(mainView));
-        menu.addItem("Medication", null, null);
-        menu.addItem("Calendar", null, null);
-        menu.addItem("Basic Data", null, menuItem -> navigateToView(personDataView));
-
-        menu.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
-        menu.setResponsive(true);
+        navigationBar = new MenuBar();
+        navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
+        navigationBar.setResponsive(true);
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
         footer.setResponsive(true);
@@ -82,25 +70,25 @@ public class Bootstrap extends UI {
         rootLayout.setWidth("100%");
         rootLayout.setHeight("100%");
 
-        rootLayout.addComponent(menu, 0,0);
+        rootLayout.addComponent(navigationBar, 0,0);
         rootLayout.addComponent(footer, 0,2);
-        rootLayout.setComponentAlignment(menu, Alignment.TOP_CENTER);
+        rootLayout.setComponentAlignment(navigationBar, Alignment.TOP_CENTER);
         rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
+
+        contentLayout = new VerticalLayout();
+
+        rootLayout.addComponent(contentLayout, 0, 1);
+        rootLayout.setComponentAlignment(contentLayout, Alignment.MIDDLE_CENTER);
 
         rootLayout.setColumnExpandRatio(0,1);
         rootLayout.setRowExpandRatio(1,1);
         rootLayout.setResponsive(true);
 
+
         // Set grid as root layout
         setContent(rootLayout);
     }
 
-    /** add view to grid and center align it **/
-    private void navigateToView(Component view){
-        rootLayout.removeComponent(0,1);
-        rootLayout.addComponent(view, 0,1);
-        rootLayout.setComponentAlignment(view, Alignment.MIDDLE_CENTER);
-    }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = Bootstrap.class, productionMode = false)
