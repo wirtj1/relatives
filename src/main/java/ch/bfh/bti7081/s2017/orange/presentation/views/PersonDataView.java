@@ -9,6 +9,7 @@
  */
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Accordion;
@@ -54,17 +55,13 @@ public class PersonDataView extends BaseView implements IPersonDataView, IPerson
 
 
 	@Override
-	public void updatePerson(String person) {
-
-	}
-
-	@Override
 	public void setToEditMode(Person person) {
-
+		//TODO wijo enable disable buttons usw, set open Person
 	}
 
 	@Override
 	public void setToViewMode(Person person) {
+		//TODO enable disable buttons usw, set open Person
 
 	}
 

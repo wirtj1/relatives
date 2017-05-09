@@ -9,6 +9,7 @@
  */
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
 import com.vaadin.navigator.View;
 
 

@@ -1,7 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
-import java.io.Serializable;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Inheritance
