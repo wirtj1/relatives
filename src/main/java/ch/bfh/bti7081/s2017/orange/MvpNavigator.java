@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Sascha on 05/05/2017.
+ * Navigator customized to meet MVP requirements and for easier navigation between views in MVP
  */
 public class MvpNavigator extends BaseNavigator {
 
@@ -30,18 +30,29 @@ public class MvpNavigator extends BaseNavigator {
         this.navigationBar = navigation;
     }
 
-
+    /**
+     * Adds the view to the navigator and optionally also to the menu of the Bootstrapper.
+     * @param presenter: Presenter (represents an MVP set) to be observed by the navigator.
+     * @param addToMenu: Switch, if the View should be available through the menu.
+     */
     public void addView(BasePresenter presenter, boolean addToMenu) {
-        addView(presenter.view.getViewName(), presenter.view);
-        views.add(presenter.view);
+        addView(presenter.getView().getViewName(), presenter.getView());
+        views.add(presenter.getView());
 
         if (addToMenu)
         {
-            navigationBar.addItem(presenter.view.getCaption(), null, menuItem -> navigateTo(presenter.view.getClass()));
+            MenuBar.MenuItem firstMenuItem = navigationBar.getItems().get(0);
+            navigationBar.addItemBefore(presenter.getView().getCaption(), null, menuItem -> navigateTo(presenter.getView().getClass()), firstMenuItem);
         }
 
     }
 
+    /**
+     * Navigates to the specified View
+     * @param destinationView: View to be navigated to
+     * @param parameterSet: Parameters to be passed to the view
+     * @param <T>: Class extending BaseView
+     */
     public <T extends BaseView> void navigateTo(Class<T> destinationView, ParameterSet parameterSet)
     {
         // Navigation to logon view is always possible
@@ -53,7 +64,11 @@ public class MvpNavigator extends BaseNavigator {
         }
     }
 
-
+    /**
+     * Navigates to the specified View
+     * @param destinationView: View to be navigated to
+     * @param <T>: Class extending BaseView
+     */
     public <T extends BaseView> void navigateTo(Class<T> destinationView)
     {
         navigateTo(destinationView, null);

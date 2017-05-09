@@ -9,7 +9,7 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.UI;
 
 /**
- * Created by Leandro on 9/5/2017.
+ * Base class for Vaadin Navigator
  */
 public abstract class BaseNavigator extends Navigator {
     public BaseNavigator(UI ui, ComponentContainer container)

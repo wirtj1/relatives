@@ -1,11 +1,12 @@
 package ch.bfh.bti7081.s2017.orange;
 
 import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
+import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.UI;
 
 /**
- * Created by Leandro on 9/5/2017.
+ * Base class for Vaadin Ui
  */
 public abstract class BaseUI extends UI {
     @Override
@@ -19,5 +20,15 @@ public abstract class BaseUI extends UI {
             return false;
 
         return session.get_active();
+    }
+
+    public void doLogout()
+    {
+        Session session = getSession().getAttribute(Session.class);
+        if (session != null)
+        {
+            getSession().setAttribute(Session.class, null);
+            getNavigator().navigateTo(LogonView.class);
+        }
     }
 }

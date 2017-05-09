@@ -4,15 +4,23 @@ import ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel;
 import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
 
 /**
- * Created by Sascha on 05/05/2017.
+ * Base class for presenter
  */
 public class BasePresenter<TView extends BaseView, TModel extends BaseModel> {
 
-    public TView view;
-    public TModel model;
+    TView view;
+    TModel model;
 
-    public BasePresenter(TView view, TModel model){
+    BasePresenter(TView view, TModel model){
         this.view = view;
         this.model = model;
+    }
+
+    public TView getView() {
+        return view;
+    }
+
+    public TModel getModel() {
+        return model;
     }
 }
