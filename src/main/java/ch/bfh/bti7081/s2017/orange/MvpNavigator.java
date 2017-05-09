@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Sascha on 05/05/2017.
  */
-public class MvpNavigator extends Navigator {
+public class MvpNavigator extends BaseNavigator {
 
     private MenuBar navigationBar;
 
