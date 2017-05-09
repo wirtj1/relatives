@@ -111,6 +111,19 @@ public class PersonDataView extends BaseView implements IPersonDataView, IPerson
 	}
 
 	public void fillAccordion(List<Person> personList) {
+		if (personAccordion == null) {
+			personAccordion = new Accordion();
+		} else {
+			personAccordion.removeAllComponents();
+		}
+		for (Person person : personList) {
+			VerticalLayout personTab = new VerticalLayout();
+			personTab.addComponent(new Label("Vorname"));
+			personTab.addComponent(new Label("Nachname"));
+			personTab.addComponent(new Label("AHV Nummer"));
+			personAccordion.addTab(personTab, "Vorname Nachname");
+		}
+		layout.addComponent(personAccordion);
 
 	}
 }
