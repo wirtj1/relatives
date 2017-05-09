@@ -1,9 +1,16 @@
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.Doctor;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.persistence.JPAHibernateCrud;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.metamodel.Type;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -15,62 +22,16 @@ import static org.junit.Assert.assertEquals;
 public class JPAHibernateCRUDTest
 {
 
-    private JPAHibernateCrud example = new JPAHibernateCrud();
-
-    MainModel user1;
-    MainModel user2;
-
-
-    //Only to use with a test database
-    private void deleteAllFromTable()
-    {
-//        em.createQuery("DELETE FROM User m")
-//                .executeUpdate();
-    }
-
-
     @Test
-    public void a_saveUser() throws Exception
+    public void boris() throws Exception
     {
-        System.out.println("After sucessful insertion ");
-
-        user1 = example.saveUser("Hans");
-        user2 = example.saveUser("Ruedi");
-
-        assertEquals(2, example.listUser().size());
-        assertEquals(example.getUserById(user1.getUserId()),user1);
-        assertEquals(example.getUserById(user2.getUserId()),user2);
+        EntityManagerFactory ef =  Persistence.createEntityManagerFactory("orange");
+        EntityManager em = ef.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(new Doctor());
+        em.getTransaction().commit();
+        em.close();
+        ef.close();
     }
-
-
-    public void listTestObjects(List mainModels) throws Exception
-    {
-
-        mainModels.forEach(System.out::println);
-    }
-
-    @Test
-    public void c_updateUser() throws Exception
-    {
-
-        System.out.println("After Sucessfully modification ");
-        example.updateUser(user1.getUserId(), "Hans2");
-        example.updateUser(user2.getUserId(), "Ruedi2");
-
-        assertEquals(example.getUserById(user1.getUserId()).getUserName(),"Hans2");
-        assertEquals(example.getUserById(user2.getUserId()).getUserName(),"Ruedi2");
-
-    }
-
-    @Test
-    public void d_deleteUser() throws Exception
-    {
-        System.out.println("After Sucessfully deletion ");
-        example.deleteUser(user2.getUserId());
-
-        assertEquals(0, example.listUser().size());
-    }
-
-
 
 }

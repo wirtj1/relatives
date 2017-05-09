@@ -1,6 +1,8 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -8,4 +10,7 @@ import java.io.Serializable;
  */
 @Entity
 public class Appointment implements Serializable{
+    @Id
+    @GeneratedValue
+    private Long id;
 }
