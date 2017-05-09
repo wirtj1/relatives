@@ -29,7 +29,7 @@ import com.vaadin.ui.themes.ValoTheme;
  * overridden to add component to the user interface and initialize non-component functionality.
  */
 @Theme("mytheme")
-public class Bootstrap extends UI {
+public class Bootstrap extends BaseUI {
 
     private GridLayout rootLayout;
     private VerticalLayout contentLayout;
@@ -49,7 +49,7 @@ public class Bootstrap extends UI {
         navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
 
         setNavigator(navigator);
-        ((MvpNavigator)getNavigator()).navigateTo(MainView.class);
+        getNavigator().navigateTo(MainView.class);
     }
 
     private void buildLayout()

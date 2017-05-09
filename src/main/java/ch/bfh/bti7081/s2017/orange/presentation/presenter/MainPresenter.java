@@ -1,5 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
+import ch.bfh.bti7081.s2017.orange.BaseNavigator;
 import ch.bfh.bti7081.s2017.orange.MvpNavigator;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
@@ -21,7 +22,7 @@ public class MainPresenter extends BasePresenter<MainView, MainModel> implements
     }
 
     @Override
-    public void logout(Navigator navigator) {
+    public void logout(BaseNavigator navigator) {
         // Do logout
         model.setUserName("");
         view.setUsername(model.getUserName());
@@ -30,7 +31,7 @@ public class MainPresenter extends BasePresenter<MainView, MainModel> implements
         //navigator.navigateTo("Test/fromMainView");
         ParameterSet parameterSet = new ParameterSet();
         parameterSet.addParameter("message", "helloFromMainView");
-        ((MvpNavigator)navigator).navigateTo(TestView.class, parameterSet);
+        navigator.navigateTo(TestView.class, parameterSet);
 
 
     }

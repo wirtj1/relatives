@@ -1,5 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
+import ch.bfh.bti7081.s2017.orange.BaseNavigator;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Button;
@@ -47,7 +48,7 @@ public class MainView extends BaseView implements IMainView, IMainView.IMainView
     }
 
     @Override
-    public void logout(Navigator navigator) {
+    public void logout(BaseNavigator navigator) {
         for (IMainViewListener listener : listeners){
             listener.logout(getUI().getNavigator());
         }
