@@ -1,17 +1,13 @@
 package ch.bfh.bti7081.s2017.orange;
 
-import javax.servlet.annotation.WebServlet;
-
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
@@ -19,14 +15,9 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.icons.VaadinIcons;
-import com.vaadin.navigator.Navigator;
-import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
-import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.themes.ValoTheme;
 
 import javax.servlet.annotation.WebServlet;

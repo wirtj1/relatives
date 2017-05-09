@@ -19,11 +19,11 @@ public class LogonPresenter extends BasePresenter<LogonView, LogonModel> impleme
 
     @Override
     public void doLogin(String user, String password) {
-        //if (user.equals("") && password.equals("")){
+        if (user.equals("") && password.equals("")){
             Session session = new Session(user);
             view.getUI().getSession().setAttribute(Session.class, session);
 
             view.getUI().getNavigator().navigateTo(MainView.class);
-        //}
+        }
     }
 }

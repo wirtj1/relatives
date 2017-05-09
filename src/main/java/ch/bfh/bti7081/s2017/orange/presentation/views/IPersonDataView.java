@@ -21,7 +21,11 @@ public interface IPersonDataView extends View {
 
 	void setMessage(String message);
 
+	void addListener(IPersonDataListener listener);
+
+
 	interface IPersonDataListener {
+
 		void onSaveButtonClicked();
 
 		void onDeleteButtonClicked();
@@ -31,5 +35,4 @@ public interface IPersonDataView extends View {
 		void onViewEnter();
 	}
 
-	void addListener(IPersonDataListener listener);
 }

@@ -20,8 +20,6 @@ public class PersonDataView extends BaseView implements IPersonDataView {
 
 	private List<IPersonDataListener> listeners;
 
-	private List<String> personList;
-
 	// define used view components here
 	private VerticalLayout layout;
 	private Label messageLabel;
