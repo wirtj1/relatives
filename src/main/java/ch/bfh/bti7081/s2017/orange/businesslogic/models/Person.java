@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="persontype")
-
 public class Person extends Identity implements Serializable {
     private String firstName;
     private String lastName;
