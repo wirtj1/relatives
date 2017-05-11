@@ -24,3 +24,7 @@
 | 20.03.2017 | Worked on validation doc | Thevathas, Djurdjevic |
 | 20.03.2017 | Reviewing of documentation | All |
 | 30.04.2017 | Create UML for Overview View MVP CS01/Task 9 | Djurdjevic, Lerena |
+| 02.05.2017 | Scrum setup: Backlog initialized, grouping of tasks | All |
+| 05.05.2017 | Start sprint 1 | Wittwer, Lerena, Djurdjevic |
+| 08.05.2017 | Work on Sprint 1 Tasks | All |
+| 09.05.2017 | Work on Sprint 1 Tasks | All |
