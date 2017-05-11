@@ -1,17 +1,23 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
 import ch.bfh.bti7081.s2017.orange.Identity;
-import java.io.Serializable;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Inheritance
-@DiscriminatorColumn(name="persontype")
+@DiscriminatorColumn(name = "persontype")
 public class Person extends Identity implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String firstName;
     private String lastName;
     private String socialAssuranceNumber;
+
 
     public String getFirstName() {
         return firstName;
@@ -24,7 +30,7 @@ public class Person extends Identity implements Serializable {
     public String getSocialAssuranceNumber() {
         return socialAssuranceNumber;
     }
-  
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
