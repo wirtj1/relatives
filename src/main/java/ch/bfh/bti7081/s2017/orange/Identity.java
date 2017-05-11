@@ -9,7 +9,6 @@ import java.util.UUID;
  * @author yvesbeutler
  * Base class for all entities in the application.
  */
-
 public abstract class Identity {
 
     @Id
@@ -24,6 +23,9 @@ public abstract class Identity {
         return id;
     }
 
+    /**
+     * Used for comparing any model instances of this abstract class.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,6 +39,9 @@ public abstract class Identity {
         return Objects.hash(id);
     }
 
+    /**
+     * Generic output for logging purposes.
+     */
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "[id=]" + id.substring(0,8) + "...]";

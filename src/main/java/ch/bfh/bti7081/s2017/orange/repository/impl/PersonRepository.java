@@ -21,6 +21,10 @@ public class PersonRepository implements Repository
 
   private EntityManager entityManager = EntityManagerUtil.getEntityManager();
 
+  /**
+   * Returns a person matching with the given id. To prevent {@link NullPointerException}
+   * an Optional is used.
+   */
   @Override public Optional get(String id)
   {
     Optional<Person> optPerson = Optional.empty();
@@ -37,11 +41,17 @@ public class PersonRepository implements Repository
     return optPerson;
   }
 
+  /**
+   * not implemented yet.
+   */
   @Override public List get(Predicate predicate)
   {
     return null;
   }
 
+  /**
+   * Returns a list of {@link Person}.
+   */
   @Override public List<Person> get()
   {
     List<Person> persons = new ArrayList<>();
@@ -58,6 +68,9 @@ public class PersonRepository implements Repository
     return persons;
   }
 
+  /**
+   * Inserts a {@link Person} into the database.
+   */
   @Override public Person add(Identity entity)
   {
     Person person = new Person();
@@ -75,6 +88,9 @@ public class PersonRepository implements Repository
     return person;
   }
 
+  /**
+   * Updates existing {@link Person} in the database.
+   */
   @Override public Person edit(Identity entity)
   {
     Person person = new Person();
@@ -94,6 +110,9 @@ public class PersonRepository implements Repository
     return person;
   }
 
+  /**
+   * Removes existing {@link Person} from the database.
+   */
   @Override public void delete(Identity entity)
   {
     try
