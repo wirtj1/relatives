@@ -23,3 +23,4 @@
 | 20.03.2017 | Worked on iterations and interview doc | Djurdjevic |
 | 20.03.2017 | Worked on validation doc | Thevathas, Djurdjevic |
 | 20.03.2017 | Reviewing of documentation | All |
+| 30.04.2017 | Create UML for Overview View MVP CS01/Task 9 | Djurdjevic, Lerena |
