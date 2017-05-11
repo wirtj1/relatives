@@ -1,20 +1,17 @@
 package ch.bfh.bti7081.s2017.orange.repository;
 
-/**
- * Created by Jasmin on 07.05.2017.
- */
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+/**
+ * @author Jasmin
+ * This factory class supports instantiation of EntityManager instances
+ * EntityManagerFactory itself has to get instantiated only once
+ */
 public class EntityManagerUtil {
-    /**
-     * this factory class supports instantiation of EntityManager instances
-     * EntityManagerFactory itself has to get instantiated only once
-     */
-    private static final EntityManagerFactory entityManagerFactory;
 
+    private static final EntityManagerFactory entityManagerFactory;
 
     static {
         try {
@@ -26,7 +23,6 @@ public class EntityManagerUtil {
         }
     }
 
-
     /**
      * EntityManager instance represents the connection to a database.
      * This object will also provide functionality for performing operations on the database
@@ -37,7 +33,6 @@ public class EntityManagerUtil {
         return entityManagerFactory.createEntityManager();
 
     }
-
 
     /**
      * TODO use before application ends
