@@ -10,7 +10,8 @@ import com.vaadin.ui.UI;
 import javafx.scene.input.TransferMode;
 
 /**
- * Created by Sascha on 05/05/2017.
+ * @author Sascha
+ * @author Leandro
  */
 public abstract class BaseView extends CustomComponent implements View {
 

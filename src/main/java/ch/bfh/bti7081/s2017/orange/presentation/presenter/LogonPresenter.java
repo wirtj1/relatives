@@ -8,7 +8,8 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 
 /**
- * Created by Sascha on 09/05/2017.
+ * Logon Presenter
+ * @author Sascha
  */
 public class LogonPresenter extends BasePresenter<LogonView, LogonModel> implements ILogonView.ILogonViewListener {
 

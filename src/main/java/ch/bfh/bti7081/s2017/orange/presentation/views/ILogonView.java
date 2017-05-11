@@ -4,7 +4,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 
 /**
- * Created by Sascha on 09/05/2017.
+ * @author Sascha
  */
 public interface ILogonView extends View {
     interface ILogonViewListener {

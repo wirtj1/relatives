@@ -17,6 +17,8 @@ import java.util.List;
 
 /**
  * Navigator customized to meet MVP requirements and for easier navigation between views in MVP
+ * @author Sascha
+ * @author Leandro
  */
 public class MvpNavigator extends BaseNavigator {
 

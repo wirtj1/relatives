@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * Set of key-value-parameters, which can be passed to a view. Encoding and decoding is handled here
  * (encode:toString(), decode:decode(String encoded)).
+ * @author Leandro
  */
 public class ParameterSet {
     private Map<String, String> parameters = new HashMap<String, String>();

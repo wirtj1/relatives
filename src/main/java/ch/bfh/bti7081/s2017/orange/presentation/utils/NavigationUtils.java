@@ -10,6 +10,8 @@ public class NavigationUtils {
      * @param name: name of the targetView
      * @param parameterSet: parameters to be passed
      * @return: String which combines name and parameters
+     *
+     * @author Leandro
      */
     public static String combineNameAndParams(String name, ParameterSet parameterSet)
     {

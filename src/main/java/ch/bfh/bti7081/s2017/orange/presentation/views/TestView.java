@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Sascha on 01/05/2017.
+ * Testview for navigation
  */
 public class TestView extends BaseView implements ITestView {
 

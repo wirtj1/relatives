@@ -3,7 +3,7 @@ package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 /**
  * Created by Sascha on 01/05/2017.
  */
-public class MainModel extends BaseModel {
+public class  MainModel extends BaseModel {
     private long userId;
 
     private String userName;

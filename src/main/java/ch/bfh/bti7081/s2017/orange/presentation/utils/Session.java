@@ -3,7 +3,8 @@ package ch.bfh.bti7081.s2017.orange.presentation.utils;
 import java.util.Date;
 
 /**
- * Created by Sascha on 09/05/2017.
+ * Representation class for User session
+ * @author Sascha
  */
 public class Session {
     public String get_user() {

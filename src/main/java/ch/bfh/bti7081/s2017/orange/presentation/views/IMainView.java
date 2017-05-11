@@ -7,7 +7,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.server.ClientConnector;
 
 /**
- * Created by Sascha on 01/05/2017.
+ * @author Sascha
  */
 public interface IMainView extends View {
     void setUsername(String username);

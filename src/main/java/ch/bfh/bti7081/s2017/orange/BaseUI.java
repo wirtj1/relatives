@@ -7,6 +7,9 @@ import com.vaadin.ui.UI;
 
 /**
  * Base class for Vaadin Ui
+ *
+ * @author Leandro
+ * @author Sascha
  */
 public abstract class BaseUI extends UI {
     @Override

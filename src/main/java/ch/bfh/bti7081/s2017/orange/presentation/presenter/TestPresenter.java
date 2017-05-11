@@ -5,7 +5,7 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.ITestView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 
 /**
- * Created by Leandro on 5/5/2017.
+ * Test presenter for navigation development
  */
 public class TestPresenter  extends BasePresenter<TestView, TestModel> implements ITestView.ITestViewListener {
 

@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Sascha on 09/05/2017.
+ * Login screen for application
+ *
+ * @author Sascha
  */
 public class LogonView extends BaseView implements ILogonView {
 

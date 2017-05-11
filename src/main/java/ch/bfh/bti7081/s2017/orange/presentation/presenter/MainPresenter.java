@@ -11,7 +11,7 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.navigator.Navigator;
 
 /**
- * Created by Sascha on 01/05/2017.
+ * Dummy Main Presenter
  */
 public class MainPresenter extends BasePresenter<MainView, MainModel> implements IMainView.IMainViewListener  {
 

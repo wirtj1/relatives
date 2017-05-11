@@ -10,6 +10,7 @@ import com.vaadin.ui.UI;
 
 /**
  * Base class for Vaadin Navigator
+ * @author Leandro
  */
 public abstract class BaseNavigator extends Navigator {
     public BaseNavigator(UI ui, ComponentContainer container)
