@@ -1,11 +1,10 @@
 package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
-import ch.bfh.bti7081.s2017.orange.MvpNavigator;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 
 /**
  * Logon Presenter
@@ -24,7 +23,7 @@ public class LogonPresenter extends BasePresenter<LogonView, LogonModel> impleme
             Session session = new Session(user);
             view.getUI().getSession().setAttribute(Session.class, session);
 
-            view.getUI().getNavigator().navigateTo(MainView.class);
+            view.getUI().getNavigator().navigateTo(PersonDataView.class);
         }
     }
 }
