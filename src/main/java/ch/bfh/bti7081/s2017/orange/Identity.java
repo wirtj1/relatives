@@ -13,11 +13,8 @@ public abstract class Identity {
 
     @Id
     @GeneratedValue
-    private final String id;
+    private String id;
 
-    public Identity() {
-        this.id = UUID.randomUUID().toString();
-    }
 
     public String getId() {
         return id;
