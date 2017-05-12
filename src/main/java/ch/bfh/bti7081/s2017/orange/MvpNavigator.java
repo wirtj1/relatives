@@ -3,14 +3,10 @@ package ch.bfh.bti7081.s2017.orange;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.NavigationUtils;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
-import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.ComponentContainer;
 import com.vaadin.ui.MenuBar;
-import com.vaadin.ui.UI;
 
 import java.util.ArrayList;
 import java.util.List;

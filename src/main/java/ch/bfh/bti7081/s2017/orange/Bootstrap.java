@@ -5,13 +5,9 @@ import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.MainPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.TestPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.MainView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.TestView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.icons.VaadinIcons;
@@ -39,9 +35,6 @@ public class Bootstrap extends BaseUI {
     private VerticalLayout contentLayout;
     private MenuBar navigationBar;
 
-    private MainModel mainModel;
-    private MainView mainView;
-
     /**
      * Initializes and sets a MvpNavigator, builds the view
      * @param vaadinRequest: The Vaadin request issued
@@ -54,14 +47,12 @@ public class Bootstrap extends BaseUI {
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        navigator.addView(new MainPresenter(new MainView(), new MainModel()), true);
-        navigator.addView(new TestPresenter(new TestView(), new TestModel()), true);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
 
         setNavigator(navigator);
 
         if(sessionRegistered()) {
-            getNavigator().navigateTo(MainView.class);
+            getNavigator().navigateTo(PersonDataView.class);
         } else {
             getNavigator().navigateTo(LogonView.class);
         }
