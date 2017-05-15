@@ -6,7 +6,8 @@ import java.util.Objects;
 
 /**
  * @author yvesbeutler
- * Base class for all entities in the application.
+ * Base class for all entities in the application. It provides basic functionality like
+ * optimized console output with additional information.
  */
 public abstract class Identity {
 

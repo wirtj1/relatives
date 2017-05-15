@@ -5,7 +5,8 @@ import java.util.Date;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of a single pinboard entry. This allows a direct
+ * communication between {@link Relative} and {@link Professional}.
  */
 @Entity
 public class PinBoardEntry extends Identity {

@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of a medication with the prescribed {@link Medicine}.
  */
 @Entity
 public class Medication extends Identity {

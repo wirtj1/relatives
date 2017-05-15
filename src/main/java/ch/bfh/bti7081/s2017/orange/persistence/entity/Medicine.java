@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of a medicin which provides medical information from
+ * the supplier.
  */
 @Entity
 public class Medicine extends Identity {

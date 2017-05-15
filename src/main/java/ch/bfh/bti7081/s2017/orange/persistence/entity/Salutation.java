@@ -2,9 +2,9 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Enumeration for most common salutations used on {@link Person}.
  */
-public enum AddressForm {
+public enum Salutation {
     HERR,
     FRAU,
 }

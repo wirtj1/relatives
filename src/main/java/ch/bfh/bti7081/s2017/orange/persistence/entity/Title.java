@@ -2,7 +2,7 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Enumeration for different titles used on {@link Person}.
  */
 public enum Title {
     PROF_DR,

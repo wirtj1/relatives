@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of a relative who takes care of a {@link Patient}.
  */
 @Entity
-public class Relative extends Person {
-
-}
+public class Relative extends Person {}

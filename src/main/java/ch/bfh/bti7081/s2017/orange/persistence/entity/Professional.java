@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of professional which can be any kind of medical staff.
  */
 @Entity
 public class Professional extends Person {

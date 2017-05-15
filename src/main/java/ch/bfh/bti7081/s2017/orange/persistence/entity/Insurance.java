@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of an insurance.
  */
 @Entity
 public class Insurance extends Identity {

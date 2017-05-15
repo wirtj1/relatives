@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of a patient with his prescribed {@link Medication}.
  */
 @Entity
 public class Patient extends Person {

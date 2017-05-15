@@ -2,7 +2,7 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Enumeration for different types of medical staff.
  */
 public enum Role {
     DOCTOR,
