@@ -1,9 +1,8 @@
-package ch.bfh.bti7081.s2017.orange;
+package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * @author yvesbeutler
@@ -14,7 +13,6 @@ public abstract class Identity {
     @Id
     @GeneratedValue
     private String id;
-
 
     public String getId() {
         return id;

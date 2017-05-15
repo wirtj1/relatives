@@ -7,6 +7,7 @@
           <element id="module-output" name="ch.bfh.bti7081.s2017.orange.app" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-server:8.0.5" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-sass-compiler:0.9.13" />
           <element id="library" level="project" name="Maven: org.w3c.css:sac:1.3" />
@@ -29,7 +30,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.0" />
           <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
-          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.193" />
           <element id="library" level="project" name="Maven: junit:junit:4.12" />
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
         </element>
