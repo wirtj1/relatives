@@ -1,3 +1,4 @@
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Movement;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import org.junit.Test;
 
@@ -15,8 +16,18 @@ public class JPAHibernateCRUDTest {
         EntityManagerFactory ef = Persistence.createEntityManagerFactory("orange");
         EntityManager em = ef.createEntityManager();
         em.getTransaction().begin();
-        em.persist(new Relative("Hans", "Muster"));
+
+        Movement mov = new Movement();
+
+        em.persist(mov);
         em.getTransaction().commit();
+
+        System.out.println("ID: " + mov.getId());
+
+        Movement mov2 = em.find(Movement.class, 1L);
+        System.out.println();
+        System.out.println("Mov2: " + mov2);
+
         em.close();
         ef.close();
     }
