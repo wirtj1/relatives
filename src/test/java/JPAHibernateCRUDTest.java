@@ -24,6 +24,10 @@ public class JPAHibernateCRUDTest {
 
         System.out.println("ID: " + mov.getId());
 
+        Movement mov2 = em.find(Movement.class, 1L);
+        System.out.println();
+        System.out.println("Mov2: " + mov2);
+
         em.close();
         ef.close();
     }
