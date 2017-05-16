@@ -13,7 +13,7 @@ import javafx.scene.input.TransferMode;
  * @author Sascha
  * @author Leandro
  */
-public abstract class BaseView extends CustomComponent implements View {
+public abstract class BaseView extends CustomComponent implements IBaseView {
 
     public abstract String getViewName();
     public abstract String getCaption();
