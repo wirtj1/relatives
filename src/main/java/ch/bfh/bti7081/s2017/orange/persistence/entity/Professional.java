@@ -8,7 +8,6 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Professional extends Person {
-
     private boolean onEmergency;
     private Role role;
 }

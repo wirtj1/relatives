@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -10,9 +12,12 @@ import java.util.Date;
 public abstract class Person extends Identity {
 
     private Salutation salutation;
+    @NotNull
     private String firstName;
-    private String lasttName;
+    @NotNull
+    private String lastName;
     private Date birthdate;
+    @OneToOne
     private Address address;
     private String phone;
     private Title title;
