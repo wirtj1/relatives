@@ -26,7 +26,7 @@ public class PersonRepository implements Repository
    * Returns a person matching with the given id. To prevent {@link NullPointerException}
    * an Optional is used.
    */
-  @Override public Optional get(String id)
+  @Override public Optional get(long id)
   {
     Optional<Person> optPerson = Optional.empty();
     try

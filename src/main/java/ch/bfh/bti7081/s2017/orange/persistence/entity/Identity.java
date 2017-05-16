@@ -1,7 +1,9 @@
 package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -10,10 +12,11 @@ import java.util.Objects;
  * Base class for all entities in the application. It provides basic functionality like
  * optimized console output with additional information.
  */
+@MappedSuperclass
 public abstract class Identity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     public long getId() {

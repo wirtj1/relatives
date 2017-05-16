@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.Date;
  * Representation of a person. This abstract class is used by {@link Patient},
  * {@link Professional} and {@link Relative}.
  */
+@Entity
 public abstract class Person extends Identity {
 
     private Salutation salutation;
@@ -21,6 +24,11 @@ public abstract class Person extends Identity {
     private Address address;
     private String phone;
     private Title title;
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public Salutation getSalutation() {
         return salutation;

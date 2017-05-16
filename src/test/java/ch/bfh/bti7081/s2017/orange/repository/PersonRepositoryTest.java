@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.repository;
 
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.repository.impl.PersonRepository;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -31,8 +33,8 @@ public class PersonRepositoryTest {
     {
         System.out.println("After sucessful insertion ");
 
-        person1 = example.add(new Person());
-        person2 = example.add(new Person());
+        person1 = example.add(new Relative());
+        person2 = example.add(new Relative());
 
         //assertEquals(2, example.get().size());
 
