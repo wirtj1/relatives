@@ -1,4 +1,3 @@
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Doctor;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
@@ -15,7 +14,7 @@ public class JPAHibernateCRUDTest {
         EntityManagerFactory ef = Persistence.createEntityManagerFactory("orange");
         EntityManager em = ef.createEntityManager();
         em.getTransaction().begin();
-        em.persist(new Doctor());
+//      em.persist(new Doctor());
         em.getTransaction().commit();
         em.close();
         ef.close();
