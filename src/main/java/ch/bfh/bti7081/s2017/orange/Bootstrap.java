@@ -1,12 +1,11 @@
 package ch.bfh.bti7081.s2017.orange;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.*;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.MedicationPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.MedicationView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -46,8 +45,13 @@ public class Bootstrap extends BaseUI {
 
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
+        // Views without menu entry
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
+        navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), true);
+
+        // Views with menu entry
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.USERS, true);
+
 
         setNavigator(navigator);
 
@@ -69,7 +73,7 @@ public class Bootstrap extends BaseUI {
         navigationBar.setResponsive(true);
         MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
         settings.addItem("Account", VaadinIcons.USER, null);
-        settings.addItem("Logout", VaadinIcons.SIGN_OUT,menuItem -> doLogout());
+        settings.addItem("Logout", VaadinIcons.SIGN_OUT, menuItem -> doLogout());
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
         footer.setResponsive(true);
