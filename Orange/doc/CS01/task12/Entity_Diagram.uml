@@ -3,185 +3,207 @@
   <ID>JAVA</ID>
   <OriginalElement>ch.bfh.bti7081.s2017.orange.persistence.entity</OriginalElement>
   <nodes>
-    <node x="1291.8785714285714" y="1700.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Professional</node>
-    <node x="1646.0" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Title</node>
-    <node x="313.9999999999999" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Movement</node>
-    <node x="911.7043367346935" y="0.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Identity</node>
-    <node x="1358.613265306122" y="1941.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Patient</node>
-    <node x="905.9999999999999" y="401.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Address</node>
-    <node x="1812.613265306122" y="1479.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Relative</node>
-    <node x="652.9999999999999" y="993.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Type</node>
-    <node x="1982.6418367346935" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine</node>
-    <node x="1519.6285714285714" y="1426.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Role</node>
-    <node x="742.4999999999999" y="1373.0">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry</node>
-    <node x="527.4999999999999" y="1726.5">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard</node>
-    <node x="0.0" y="533.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance</node>
-    <node x="1929.050765306122" y="966.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Medication</node>
-    <node x="1374.613265306122" y="887.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Person</node>
-    <node x="1400.0" y="533.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Salutation</node>
+    <node x="503.0" y="1700.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Professional</node>
+    <node x="766.6461538461538" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Title</node>
+    <node x="1590.4086538461538" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Movement</node>
+    <node x="1346.0" y="0.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Identity</node>
+    <node x="887.2711538461538" y="1931.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Patient</node>
+    <node x="1005.6461538461538" y="401.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Address</node>
+    <node x="961.4791666666666" y="1479.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Relative</node>
+    <node x="243.86444851444912" y="993.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Type</node>
+    <node x="1929.4086538461538" y="507.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine</node>
+    <node x="617.0211538461538" y="1426.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Role</node>
+    <node x="206.86444851444912" y="1373.0">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry</node>
+    <node x="0.0" y="1726.5">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard</node>
+    <node x="2373.408653846154" y="533.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance</node>
+    <node x="1500.9086538461538" y="993.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Permission</node>
+    <node x="1874.1586538461538" y="966.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Medication</node>
+    <node x="683.8961538461538" y="887.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Person</node>
+    <node x="475.81444851444894" y="533.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Salutation</node>
+    <node x="1292.9086538461538" y="1373.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Account</node>
   </nodes>
   <notes />
   <edges>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="-120.75" y="-59.0" />
-      <point x="648.2499999999999" y="1675.0" />
-      <point x="642.4999999999999" y="1675.0" />
-      <point x="642.4999999999999" y="371.0" />
-      <point x="1007.0168367346935" y="371.0" />
-      <point x="-57.1875" y="165.5" />
+      <point x="120.75" y="1675.0" />
+      <point x="196.36444851444912" y="1675.0" />
+      <point x="196.36444851444912" y="351.0" />
+      <point x="1362.9444444444443" y="351.0" />
+      <point x="-135.55555555555566" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
-      <point x="188.62499999999994" y="-218.0" />
-      <point x="1814.738265306122" y="862.0" />
-      <point x="1911.425765306122" y="862.0" />
-      <point x="1911.425765306122" y="371.0" />
-      <point x="1121.3918367346935" y="371.0" />
-      <point x="57.1875" y="165.5" />
+      <point x="62.875" y="-218.0" />
+      <point x="998.2711538461538" y="862.0" />
+      <point x="995.1461538461538" y="862.0" />
+      <point x="995.1461538461538" y="371.0" />
+      <point x="1430.7222222222222" y="371.0" />
+      <point x="-67.77777777777783" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Title">
-      <point x="62.875" y="-218.0" />
-      <point x="1688.988265306122" y="862.0" />
-      <point x="1755.0" y="862.0" />
+      <point x="-62.875" y="-218.0" />
+      <point x="872.5211538461538" y="862.0" />
+      <point x="875.6461538461538" y="862.0" />
       <point x="0.0" y="112.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
-      <point x="61.85714285714289" y="-297.5" />
-      <point x="1636.970408163265" y="1901.0" />
-      <point x="1735.3785714285714" y="1901.0" />
-      <point x="1735.3785714285714" y="1348.0" />
-      <point x="1688.988265306122" y="1348.0" />
-      <point x="62.875" y="218.0" />
+      <point x="-61.85714285714289" y="-297.5" />
+      <point x="1041.9140109890109" y="1891.0" />
+      <point x="946.5" y="1891.0" />
+      <point x="946.5" y="1348.0" />
+      <point x="935.3961538461538" y="1348.0" />
+      <point x="0.0" y="218.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine">
       <point x="78.0" y="-138.5" />
-      <point x="2163.0507653061222" y="862.0" />
-      <point x="2194.6418367346932" y="862.0" />
+      <point x="2108.158653846154" y="862.0" />
+      <point x="2141.408653846154" y="862.0" />
       <point x="0.0" y="112.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
-      <point x="-108.25" y="-85.5" />
-      <point x="1400.1285714285714" y="1675.0" />
-      <point x="1509.1285714285714" y="1675.0" />
-      <point x="1509.1285714285714" y="1348.0" />
-      <point x="1563.238265306122" y="1348.0" />
-      <point x="-62.875" y="218.0" />
+      <point x="108.25" y="-85.5" />
+      <point x="827.75" y="1675.0" />
+      <point x="821.5211538461538" y="1675.0" />
+      <point x="821.5211538461538" y="1348.0" />
+      <point x="834.7961538461537" y="1348.0" />
+      <point x="-100.60000000000002" y="218.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="-78.0" y="-138.5" />
-      <point x="2007.050765306122" y="862.0" />
-      <point x="1972.1418367346935" y="862.0" />
-      <point x="1972.1418367346935" y="361.0" />
-      <point x="1159.5168367346935" y="361.0" />
-      <point x="95.3125" y="165.5" />
+      <point x="1952.1586538461538" y="862.0" />
+      <point x="1918.9086538461538" y="862.0" />
+      <point x="1918.9086538461538" y="371.0" />
+      <point x="1566.2777777777778" y="371.0" />
+      <point x="67.77777777777783" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication">
-      <point x="185.57142857142838" y="-297.5" />
-      <point x="1760.6846938775504" y="1921.0" />
-      <point x="2085.0507653061222" y="1921.0" />
+      <point x="123.71428571428578" y="-297.5" />
+      <point x="1227.4854395604395" y="1901.0" />
+      <point x="2030.1586538461538" y="1901.0" />
       <point x="0.0" y="138.5" />
     </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-138.5" />
+      <point x="1490.4086538461538" y="381.0" />
+      <point x="1498.5" y="381.0" />
+      <point x="0.0" y="165.5" />
+    </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Address">
-      <point x="-188.625" y="-218.0" />
-      <point x="1437.488265306122" y="862.0" />
-      <point x="1143.0" y="862.0" />
+      <point x="188.625" y="-218.0" />
+      <point x="1124.0211538461538" y="862.0" />
+      <point x="1242.6461538461538" y="862.0" />
       <point x="0.0" y="218.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative">
-      <point x="123.71428571428567" y="-297.5" />
-      <point x="1698.8275510204078" y="1911.0" />
-      <point x="1911.113265306122" y="1911.0" />
+      <point x="0.0" y="-297.5" />
+      <point x="1103.7711538461538" y="1911.0" />
+      <point x="1059.9791666666665" y="1911.0" />
       <point x="0.0" y="32.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Role">
-      <point x="108.25" y="-85.5" />
+      <point x="-108.25" y="-85.5" />
+      <point x="611.25" y="1675.0" />
+      <point x="714.0211538461538" y="1675.0" />
       <point x="0.0" y="85.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Salutation">
-      <point x="-62.875" y="-218.0" />
-      <point x="1563.238265306122" y="862.0" />
-      <point x="1513.0" y="862.0" />
+      <point x="-188.625" y="-218.0" />
+      <point x="746.7711538461538" y="862.0" />
+      <point x="588.8144485144489" y="862.0" />
       <point x="0.0" y="85.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard" target="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry">
       <point x="120.75" y="-59.0" />
-      <point x="889.7499999999999" y="1675.0" />
-      <point x="895.4999999999999" y="1675.0" />
+      <point x="362.25" y="1675.0" />
+      <point x="359.8644485144491" y="1675.0" />
       <point x="0.0" y="138.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional">
-      <point x="0.0" y="-297.5" />
-      <point x="1575.113265306122" y="1891.0" />
-      <point x="1508.3785714285714" y="1891.0" />
+      <point x="-123.71428571428578" y="-297.5" />
+      <point x="980.056868131868" y="1901.0" />
+      <point x="719.5" y="1901.0" />
       <point x="0.0" y="85.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Permission">
+      <point x="131.66666666666674" y="-138.5" />
+      <point x="1622.0753205128203" y="1348.0" />
+      <point x="1619.9086538461538" y="1348.0" />
+      <point x="0.0" y="112.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="0.0" y="-85.5" />
-      <point x="147.0" y="351.0" />
-      <point x="930.7668367346935" y="351.0" />
-      <point x="-133.4375" y="165.5" />
+      <point x="2520.408653846154" y="351.0" />
+      <point x="1634.0555555555557" y="351.0" />
+      <point x="135.55555555555566" y="165.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="-131.66666666666652" y="-138.5" />
+      <point x="1358.7419871794873" y="1348.0" />
+      <point x="1136.5961538461538" y="1348.0" />
+      <point x="201.20000000000005" y="218.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="0.0" y="-112.0" />
-      <point x="2194.6418367346932" y="351.0" />
-      <point x="1197.6418367346935" y="351.0" />
-      <point x="133.4375" y="165.5" />
+      <point x="2141.408653846154" y="361.0" />
+      <point x="1600.1666666666667" y="361.0" />
+      <point x="101.66666666666674" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Type">
-      <point x="-102.0" y="-138.5" />
-      <point x="793.4999999999999" y="1348.0" />
-      <point x="768.9999999999999" y="1348.0" />
+      <point x="0.0" y="-138.5" />
       <point x="0.0" y="112.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Movement">
-      <point x="-123.71428571428578" y="-297.5" />
-      <point x="1451.3989795918362" y="1911.0" />
-      <point x="472.9999999999999" y="1911.0" />
+      <point x="61.85714285714289" y="-297.5" />
+      <point x="1165.6282967032967" y="1891.0" />
+      <point x="1749.4086538461538" y="1891.0" />
       <point x="0.0" y="112.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
       <point x="0.0" y="-32.5" />
-      <point x="1911.113265306122" y="1348.0" />
-      <point x="1814.738265306122" y="1348.0" />
-      <point x="188.625" y="218.0" />
+      <point x="1059.9791666666665" y="1348.0" />
+      <point x="1035.996153846154" y="1348.0" />
+      <point x="100.60000000000014" y="218.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance">
-      <point x="-185.57142857142856" y="-297.5" />
-      <point x="1389.5418367346936" y="1921.0" />
-      <point x="147.0" y="1921.0" />
+      <point x="185.57142857142844" y="-297.5" />
+      <point x="1289.3425824175822" y="1911.0" />
+      <point x="2520.408653846154" y="1911.0" />
       <point x="0.0" y="85.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Address" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="0.0" y="-218.0" />
-      <point x="1143.0" y="381.0" />
-      <point x="1083.2668367346935" y="381.0" />
-      <point x="19.0625" y="165.5" />
+      <point x="1242.6461538461538" y="381.0" />
+      <point x="1464.611111111111" y="381.0" />
+      <point x="-33.888888888888914" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
-      <point x="0.0" y="-138.5" />
-      <point x="895.4999999999999" y="381.0" />
-      <point x="1045.1418367346935" y="381.0" />
-      <point x="-19.0625" y="165.5" />
+      <point x="-102.0" y="-138.5" />
+      <point x="257.8644485144491" y="1348.0" />
+      <point x="232.021153846154" y="1348.0" />
+      <point x="232.021153846154" y="361.0" />
+      <point x="1396.8333333333333" y="361.0" />
+      <point x="-101.66666666666674" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard">
-      <point x="-61.85714285714289" y="-297.5" />
-      <point x="1513.256122448979" y="1901.0" />
-      <point x="768.9999999999999" y="1901.0" />
+      <point x="-185.57142857142856" y="-297.5" />
+      <point x="918.1997252747252" y="1911.0" />
+      <point x="241.5" y="1911.0" />
       <point x="0.0" y="59.0" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Movement" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
       <point x="0.0" y="-112.0" />
-      <point x="472.9999999999999" y="361.0" />
-      <point x="968.8918367346935" y="361.0" />
-      <point x="-95.3125" y="165.5" />
+      <point x="1749.4086538461538" y="381.0" />
+      <point x="1532.388888888889" y="381.0" />
+      <point x="33.888888888888914" y="165.5" />
     </edge>
     <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
       <point x="102.0" y="-138.5" />
-      <point x="997.4999999999999" y="1348.0" />
-      <point x="1437.488265306122" y="1348.0" />
-      <point x="-188.625" y="218.0" />
+      <point x="461.8644485144491" y="1348.0" />
+      <point x="734.1961538461537" y="1348.0" />
+      <point x="-201.20000000000005" y="218.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.6129370629370631" x="1181.4852904606082" y="885.3570617810979" />
+  <settings layout="Hierarchic Group" zoom="0.4897959183673469" x="1915.5" y="1215.8958333333333" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

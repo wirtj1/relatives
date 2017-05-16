@@ -1,11 +1,10 @@
 package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
-import com.vaadin.navigator.ViewChangeListener;
 
 import java.util.List;
 

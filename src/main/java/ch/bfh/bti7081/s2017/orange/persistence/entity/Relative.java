@@ -7,4 +7,11 @@ import javax.persistence.Entity;
  * Representation of a relative who takes care of a {@link Patient}.
  */
 @Entity
-public class Relative extends Person {}
+public class Relative extends Person {
+    public Relative() {
+        super("No", "Name");
+    }
+    public Relative(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+}

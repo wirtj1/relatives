@@ -29,10 +29,10 @@ public interface Repository<T extends Identity> {
     /**
      * return the entity with the given id.
      */
-    default Optional<T> get(String id) {
+    default Optional<T> get(long id) {
         return get()
                 .stream()
-                .filter(entity -> entity.getId().equals(id))
+                .filter(entity -> entity.getId() == id)
                 .findAny();
     }
 
