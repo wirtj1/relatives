@@ -1,20 +1,19 @@
-package ch.bfh.bti7081.s2017.orange;
+package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * @author yvesbeutler
- * Base class for all entities in the application.
+ * Base class for all entities in the application. It provides basic functionality like
+ * optimized console output with additional information.
  */
 public abstract class Identity {
 
     @Id
     @GeneratedValue
     private String id;
-
 
     public String getId() {
         return id;

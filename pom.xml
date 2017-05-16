@@ -45,6 +45,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
@@ -71,11 +76,11 @@
         <artifactId>hibernate-core</artifactId>
         <version>5.2.10.Final</version>
     </dependency>
-    <dependency>
+<!--    <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>1.4.193</version>
-    </dependency>
+    </dependency>-->
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
