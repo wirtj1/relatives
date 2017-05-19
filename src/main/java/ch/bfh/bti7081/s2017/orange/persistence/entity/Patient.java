@@ -31,4 +31,8 @@ public class Patient extends Person {
     private Movement movement;
     @OneToOne
     private PinBoard pinBoard;
+
+    public Patient(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
 }
