@@ -1,5 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+
 import java.util.List;
 
 /**

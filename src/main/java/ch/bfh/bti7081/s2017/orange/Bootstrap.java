@@ -1,9 +1,7 @@
 package ch.bfh.bti7081.s2017.orange;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.TestModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;

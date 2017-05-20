@@ -1,6 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
 
@@ -104,8 +104,8 @@ public class PersonDataView extends BaseView implements IPersonDataView {
 			grid.addComponent(new Label(person.getFirstName()));
 			grid.addComponent(new Label("Nachname"));
 			grid.addComponent(new Label(person.getLastName()));
-			grid.addComponent(new Label("AHV Nummer"));
-			grid.addComponent(new Label(person.getSocialAssuranceNumber()));
+			grid.addComponent(new Label("Telefon-Nummer"));
+			grid.addComponent(new Label(person.getPhone()));
 			personTab.addComponent(grid);
 			personAccordion.addTab(personTab, (person.getFirstName() + " " + person.getLastName()));
 		}
