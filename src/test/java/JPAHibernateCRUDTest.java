@@ -19,6 +19,10 @@ public class JPAHibernateCRUDTest {
 
         Movement mov = new Movement();
 
+        Relative rel = new Relative();
+        rel.setFirstName("John");
+        rel.setLastName("Smith");
+        em.persist(rel);
         em.persist(mov);
         em.getTransaction().commit();
 
