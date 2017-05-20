@@ -3,6 +3,7 @@ package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState;
 import ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import com.vaadin.navigator.ViewChangeListener;
@@ -13,14 +14,18 @@ import java.util.List;
  * Presenter that connects the view {@link PersonDataView} and the model {@link PersonDataModel}
  * @author Joy
  */
-public class PersonDataPresenter extends BasePresenter<PersonDataView, PersonDataModel> implements IPersonDataView.IPersonDataListener {
+public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, PersonDataModel, IPersonDataView.IPersonDataListener> implements IPersonDataView.IPersonDataListener {
 
 	private PersonDataService personDataService;
+
 
 	public PersonDataPresenter(PersonDataView view, PersonDataModel model) {
 		super(view, model);
 		personDataService = new PersonDataService();
 		view.addListener(this);
+
+		//Todo: Use State with getState and delegate methods from IPersonDataView.IPersonDataListener
+		setState(new PersonDataViewState(this));
 	}
 
 	@Override

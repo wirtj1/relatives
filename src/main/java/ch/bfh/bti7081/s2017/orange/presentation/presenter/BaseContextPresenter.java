@@ -8,7 +8,7 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
  */
 public abstract class BaseContextPresenter
         <TView extends BaseView, TModel extends BaseModel, TState extends BaseView.IBaseViewListener>
-        extends BasePresenter
+        extends BasePresenter<TView, TModel>
         implements BaseView.IBaseViewListener{
 
     TState state;
