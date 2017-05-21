@@ -8,7 +8,7 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
  * Allows the use of generic methods for initialisation and navigation
  * @author Leandro
  */
-public class BasePresenter<TView extends BaseView, TModel extends BaseModel> {
+public abstract class BasePresenter<TView extends BaseView, TModel extends BaseModel> {
 
     TView view;
     TModel model;
