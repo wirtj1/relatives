@@ -7,11 +7,15 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.BaseView;
  * @author Leandro
  */
 public class BasePresenterState <TPresenter extends BaseContextPresenter> implements BaseView.IBaseViewListener {
-
-    private final TPresenter baseContextPresenter;
+    private final TPresenter presenter;
 
     public BasePresenterState(TPresenter baseContextPresenter)
     {
-        this.baseContextPresenter = baseContextPresenter;
+        this.presenter = baseContextPresenter;
+    }
+
+
+    public TPresenter getPresenter() {
+        return presenter;
     }
 }
