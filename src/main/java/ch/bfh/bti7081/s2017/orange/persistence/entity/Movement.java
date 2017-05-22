@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 @Entity
 public class Movement extends Identity {
 
-
     public Movement() {
         this.arrival = "Montag, 08:00 Uhr";
         this.departure = "Freitag vor Feierabendbier";
