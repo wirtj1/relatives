@@ -2,7 +2,7 @@ package ch.bfh.bti7081.s2017.orange.repository;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
-import ch.bfh.bti7081.s2017.orange.repository.impl.PersonRepository;
+import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;

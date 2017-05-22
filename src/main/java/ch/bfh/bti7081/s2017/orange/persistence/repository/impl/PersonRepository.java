@@ -1,10 +1,10 @@
-package ch.bfh.bti7081.s2017.orange.repository.impl;
+package ch.bfh.bti7081.s2017.orange.persistence.repository.impl;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Identity;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.repository.EntityManagerUtil;
-import ch.bfh.bti7081.s2017.orange.repository.Repository;
+import ch.bfh.bti7081.s2017.orange.persistence.repository.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
