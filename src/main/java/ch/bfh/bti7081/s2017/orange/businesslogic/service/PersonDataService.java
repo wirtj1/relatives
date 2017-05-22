@@ -1,7 +1,8 @@
 
 package ch.bfh.bti7081.s2017.orange.businesslogic.service;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,22 +35,22 @@ public class PersonDataService {
 	 */
 	public List<Person> getPersonList() {
 		//TODO call Repo and getAll Persons
-		Person p1 = new Person();
-		Person p2 = new Person();
-		Person p3 = new Person();
-		p1.setFirstName("Leandro");
-		p1.setLastName("Lerena");
-		p1.setSocialAssuranceNumber("731.099.344.1");
-		p2.setFirstName("Jasmin");
-		p2.setLastName("Thevathas");
-		p2.setSocialAssuranceNumber("731.566.122.3");
-		p3.setFirstName("Sascha");
-		p3.setLastName("Wittwer");
-		p3.setSocialAssuranceNumber("732.433.322.8");
+		Relative r1 = new Relative();
+		Relative r2 = new Relative();
+		Relative r3 = new Relative();
+//		r1.setFirstName("Leandro");
+//		r1.setLastName("Lerena");
+//		r1.setSocialAssuranceNumber("731.099.344.1");
+//		r2.setFirstName("Jasmin");
+//		r2.setLastName("Thevathas");
+//		r2.setSocialAssuranceNumber("731.566.122.3");
+//		r3.setFirstName("Sascha");
+//		r3.setLastName("Wittwer");
+//		r3.setSocialAssuranceNumber("732.433.322.8");
 		ArrayList<Person> personList = new ArrayList<Person>();
-		personList.add(p1);
-		personList.add(p2);
-		personList.add(p3);
+		personList.add(r1);
+		personList.add(r2);
+		personList.add(r3);
 		return personList;
 	}
 }

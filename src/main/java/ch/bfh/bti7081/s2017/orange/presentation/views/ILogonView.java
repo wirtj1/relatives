@@ -6,8 +6,8 @@ import com.vaadin.navigator.View;
 /**
  * @author Sascha
  */
-public interface ILogonView extends View {
-    interface ILogonViewListener {
+public interface ILogonView extends IBaseView {
+    interface ILogonViewListener extends IBaseViewListener {
         void doLogin(String user, String password);
     }
 

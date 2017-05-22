@@ -1,7 +1,8 @@
 package ch.bfh.bti7081.s2017.orange.repository.impl;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Identity;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.repository.EntityManagerUtil;
 import ch.bfh.bti7081.s2017.orange.repository.Repository;
 
@@ -25,7 +26,7 @@ public class PersonRepository implements Repository
    * Returns a person matching with the given id. To prevent {@link NullPointerException}
    * an Optional is used.
    */
-  @Override public Optional get(String id)
+  @Override public Optional get(long id)
   {
     Optional<Person> optPerson = Optional.empty();
     try
@@ -73,7 +74,7 @@ public class PersonRepository implements Repository
    */
   @Override public Person add(Identity entity)
   {
-    Person person = new Person();
+    Person person = new Relative();
     try
     {
       transactionBegin(entityManager);
@@ -93,7 +94,7 @@ public class PersonRepository implements Repository
    */
   @Override public Person edit(Identity entity)
   {
-    Person person = new Person();
+    Person person = new Relative();
     try
     {
       transactionBegin(entityManager);

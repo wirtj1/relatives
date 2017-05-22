@@ -1,13 +1,13 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import com.vaadin.navigator.View;
 
 /**
  * View interface for the {@link PersonDataView} that includes the listener interface used in the presenter {@link ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter}
  * @author Joy
  */
-public interface IPersonDataView extends View {
+public interface IPersonDataView extends IBaseView {
 
 	/**
 	 * sets the view to the edit mode
@@ -36,7 +36,7 @@ public interface IPersonDataView extends View {
 	/**
 	 * this interface defines the methods for the presenter
 	 */
-	interface IPersonDataListener {
+	interface IPersonDataListener extends IBaseViewListener{
 		/**
 		 * called when the save button is clicked
 		 */
