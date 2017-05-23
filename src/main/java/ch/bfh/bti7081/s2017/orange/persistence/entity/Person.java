@@ -1,8 +1,6 @@
 package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -12,6 +10,7 @@ import java.util.Date;
  * {@link Professional} and {@link Relative}.
  */
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person extends Identity {
 
     private Salutation salutation;
