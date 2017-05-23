@@ -20,14 +20,19 @@ public abstract class Repository<T extends Identity> {
     private EntityManager em;
     private EntityManagerFactory emf;
 
-    public Repository() {
+    // Sadly java generics are not as powerful as C# generics....
+    // Thats why we need the class and the generic type T both :(
+    private Class<T> entityClass;
+
+    public Repository(Class<T> entityClass) {
         emf = Persistence.createEntityManagerFactory("orange");
         em = emf.createEntityManager();
+        this.entityClass = entityClass;
     }
 
     /**
      */
-    public <T extends Identity> T persist(T obj) {
+    public T persist(T obj) {
         em.getTransaction().begin();
 
         if (em.contains(obj)) {
@@ -41,7 +46,7 @@ public abstract class Repository<T extends Identity> {
         return obj;
     }
 
-    public <T extends Identity> boolean remove(T obj){
+    public boolean remove(T obj){
         em.getTransaction().begin();
 
         if (em.contains(obj)){
@@ -51,6 +56,11 @@ public abstract class Repository<T extends Identity> {
         }
 
         return false;
+    }
+
+    public Optional<T> find(long id){
+        T obj = em.find(entityClass, id);
+        return Optional.ofNullable(obj);
     }
 
 }
