@@ -17,14 +17,13 @@ import java.util.Optional;
 public abstract class Repository<T extends Identity> {
 
     private EntityManager em;
-    private EntityManagerFactory emf;
 
     // Sadly java generics are not as powerful as C# generics....
     // Thats why we need the class and the generic type T both :(
     private Class<T> entityClass;
 
     public Repository(Class<T> entityClass) {
-        emf = Persistence.createEntityManagerFactory("orange");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("orange");
         em = emf.createEntityManager();
         this.entityClass = entityClass;
     }
