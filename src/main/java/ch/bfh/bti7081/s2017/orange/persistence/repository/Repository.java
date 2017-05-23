@@ -2,7 +2,10 @@ package ch.bfh.bti7081.s2017.orange.persistence.repository;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Identity;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -10,63 +13,33 @@ import java.util.stream.Collectors;
 
 /**
  * @author yvesbeutler
- * Interface for the generic repository
+ * Abstract class for the generic repository
  */
-public interface Repository<T extends Identity> {
+public abstract class Repository<T extends Identity> {
 
-    default void transactionBegin(EntityManager em) {
+    private EntityManager em;
+    private EntityManagerFactory emf;
+
+    public Repository() {
+        emf = Persistence.createEntityManagerFactory("orange");
+        em = emf.createEntityManager();
+    }
+
+    /**
+     */
+    public T persist(T obj) {
         em.getTransaction().begin();
+        try {
+
+            Class<T> myClass = (Class<T>) obj.getClass();
+
+            em.find(myClass, obj);
+            em.persist(obj);
+
+        } catch (EntityExistsException eee) {
+//            em.getTransaction().
+        }
+        return null;
     }
-
-    default void transactionCommit(EntityManager em) {
-        em.getTransaction().commit();
-    }
-
-    default void transactionRollback(EntityManager em) {
-        em.getTransaction().rollback();
-    }
-
-
-//    *
-//     * return the entity with the given id.
-//
-//    default Optional<T> get(long id) {
-//
-//        return get()
-//                .stream()
-//                .filter(entity -> entity.getId() == id)
-//                .findAny();
-//    }
-//
-//    *
-//     * return all entities that match with the given predicate.
-//
-//    default List<T> get(Predicate<T> predicate) {
-//        return get()
-//                .stream()
-//                .filter(predicate)
-//                .collect(Collectors.toList());
-//    }
-//
-//
-//    *
-//     * return all entities
-//
-//    List<T> get();
-//
-//    *
-//     * persists the given entity
-//
-//    T add(T entity);
-//
-//    *
-//     * persists the given entity
-//
-//    T edit(T entity);
-
-//    /**
-//     * deletes the given entity
-//     */
-//    void delete(T entity);
 
 }
