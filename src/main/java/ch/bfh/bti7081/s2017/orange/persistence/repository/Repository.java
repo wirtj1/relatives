@@ -27,19 +27,19 @@ public abstract class Repository<T extends Identity> {
 
     /**
      */
-    public T persist(T obj) {
+    public <T extends Identity> T persist(T obj) {
         em.getTransaction().begin();
-        try {
 
-            Class<T> myClass = (Class<T>) obj.getClass();
-
-            em.find(myClass, obj);
-            em.persist(obj);
-
-        } catch (EntityExistsException eee) {
-//            em.getTransaction().
+        if (em.contains(obj))
+        {
+            em.merge(obj);
         }
-        return null;
+        else {
+            em.persist(obj);
+        }
+
+        em.getTransaction().commit();
+        return obj;
     }
 
 }
