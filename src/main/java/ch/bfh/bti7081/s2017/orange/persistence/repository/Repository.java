@@ -30,8 +30,7 @@ public abstract class Repository<T extends Identity> {
     public <T extends Identity> T persist(T obj) {
         em.getTransaction().begin();
 
-        if (em.contains(obj))
-        {
+        if (em.contains(obj)) {
             em.merge(obj);
         }
         else {
@@ -40,6 +39,18 @@ public abstract class Repository<T extends Identity> {
 
         em.getTransaction().commit();
         return obj;
+    }
+
+    public <T extends Identity> boolean remove(T obj){
+        em.getTransaction().begin();
+
+        if (em.contains(obj)){
+            em.remove(obj);
+            em.getTransaction().commit();
+            return true;
+        }
+
+        return false;
     }
 
 }
