@@ -9,6 +9,7 @@
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <!-- validate the schema, makes no changes to the database-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
             <property name="hibernate.hbm2ddl.auto" value="none"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>

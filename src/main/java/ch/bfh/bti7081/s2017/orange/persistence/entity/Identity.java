@@ -16,7 +16,7 @@ import java.util.Objects;
 public abstract class Identity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
     public long getId() {

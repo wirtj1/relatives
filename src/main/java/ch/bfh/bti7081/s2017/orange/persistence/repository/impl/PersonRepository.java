@@ -24,4 +24,10 @@ public class PersonRepository extends Repository<Person>
     {
         return getEm().createQuery("select p from Person p where p.id = :rel").setParameter("rel", relative.getId()).getResultList();
     }
+
+
+    protected List<Person> getAll()
+    {
+        return getEm().createQuery("select p from Person p").getResultList();
+    }
 }
