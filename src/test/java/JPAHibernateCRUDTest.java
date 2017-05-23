@@ -43,6 +43,6 @@ public class JPAHibernateCRUDTest {
         System.out.println("Mov2: " + mov2);
 
         em.close();
-        ef.close();
+        //ef.close();
     }
 }
