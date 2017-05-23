@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ch.bfh.bti7081.s2017.orange</OriginalElement>
+  <nodes>
+    <node x="2869.6103802491443" y="1955.0">ch.bfh.bti7081.s2017.orange.Bootstrap</node>
+    <node x="2238.8616837452273" y="1611.5">ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel</node>
+    <node x="4873.716111613419" y="1087.0">ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView</node>
+    <node x="5342.136912296563" y="1611.0">ch.bfh.bti7081.s2017.orange.MvpNavigator</node>
+    <node x="0.0" y="2141.0">ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet</node>
+    <node x="5377.886912296563" y="1266.5">ch.bfh.bti7081.s2017.orange.BaseNavigator</node>
+    <node x="437.9999999999998" y="255.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine</node>
+    <node x="0.0" y="1233.0">ch.bfh.bti7081.s2017.orange.persistence.repository.Repository</node>
+    <node x="4111.42857896323" y="1311.0">ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView.ILogonViewListener</node>
+    <node x="1071.2499999999998" y="266.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance</node>
+    <node x="908.2499999999998" y="1288.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Professional</node>
+    <node x="1676.2499999999998" y="255.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Title</node>
+    <node x="724.6116837452278" y="0.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Identity</node>
+    <node x="2626.130952380952" y="1611.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter</node>
+    <node x="4712.803350411894" y="1567.0">ch.bfh.bti7081.s2017.orange.presentation.views.LogonView</node>
+    <node x="3713.4285789632304" y="1266.5">ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataEditState</node>
+    <node x="1481.8616837452278" y="1065.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Relative</node>
+    <node x="587.7499999999998" y="655.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Type</node>
+    <node x="2453.4285789632304" y="1289.0">ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService</node>
+    <node x="1563.8616837452275" y="1611.5">ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel</node>
+    <node x="831.0" y="2141.0">ch.bfh.bti7081.s2017.orange.persistence.repository.Repository.PredicateBuilder</node>
+    <node x="3763.5077782800863" y="1053.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState</node>
+    <node x="380.7499999999998" y="644.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Medication</node>
+    <node x="1951.8616837452275" y="1645.0">ch.bfh.bti7081.s2017.orange.BaseUI</node>
+    <node x="2526.630952380952" y="655.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Permission</node>
+    <node x="5088.886912296563" y="1311.0">ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView</node>
+    <node x="2471.630952380952" y="1043.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Account</node>
+    <node x="1813.8616837452275" y="1678.0">ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel</node>
+    <node x="1753.7619122965634" y="1322.0">ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel</node>
+    <node x="1246.2499999999998" y="211.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Address</node>
+    <node x="2771.9285789632304" y="1031.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter</node>
+    <node x="47.0" y="1644.5">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository</node>
+    <node x="3077.030952380952" y="1043.0">ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener</node>
+    <node x="670.2499999999998" y="1311.0">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard</node>
+    <node x="3112.428350411894" y="688.0">ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener</node>
+    <node x="426.0" y="2141.0">ch.bfh.bti7081.s2017.orange.presentation.utils.NavigationUtils</node>
+    <node x="3238.9853802491443" y="1655.5">ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter</node>
+    <node x="219.99999999999977" y="243.5">ch.bfh.bti7081.s2017.orange.persistence.entity.Movement</node>
+    <node x="856.3633564396202" y="1523.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Patient</node>
+    <node x="4362.05357896323" y="1278.0">ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView</node>
+    <node x="4841.886912296563" y="1289.0">ch.bfh.bti7081.s2017.orange.presentation.views.BaseView</node>
+    <node x="3441.4285789632304" y="1244.0">ch.bfh.bti7081.s2017.orange.presentation.utils.Session</node>
+    <node x="3039.4285789632304" y="1266.5">ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState</node>
+    <node x="927.0059599156114" y="1065.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Role</node>
+    <node x="4137.803350411894" y="1501.0">ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView</node>
+    <node x="2713.4285789632304" y="1277.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter</node>
+    <node x="633.2499999999998" y="1043.0">ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry</node>
+    <node x="940.3633564396202" y="1999.5">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepositoryTest</node>
+    <node x="1346.7499999999998" y="445.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Person</node>
+    <node x="1552.2499999999998" y="266.0">ch.bfh.bti7081.s2017.orange.persistence.entity.Salutation</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="54.5" y="-26.0" />
+      <point x="833.7499999999998" y="1213.0" />
+      <point x="826.7499999999998" y="1213.0" />
+      <point x="826.7499999999998" y="191.0" />
+      <point x="818.6116837452278" y="191.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-59.0" />
+      <point x="3216.030952380952" y="1011.0" />
+      <point x="3183.928350411894" y="1011.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="74.875" y="-258.0" />
+      <point x="1721.1249999999998" y="420.0" />
+      <point x="1665.7499999999998" y="420.0" />
+      <point x="1665.7499999999998" y="171.0" />
+      <point x="881.2783504118943" y="171.0" />
+      <point x="62.666666666666515" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.BaseUI">
+      <point x="-84.375" y="-70.5" />
+      <point x="2920.2353802491443" y="1925.0" />
+      <point x="2085.3616837452273" y="1925.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter">
+      <point x="-106.0" y="-37.5" />
+      <point x="3291.9853802491443" y="1461.0" />
+      <point x="2929.4285789632304" y="1461.0" />
+      <point x="52.5" y="71.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative">
+      <point x="0.0" y="-48.0" />
+      <point x="2573.4285789632304" y="1213.0" />
+      <point x="1601.0283504118945" y="1213.0" />
+      <point x="47.66666666666674" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine">
+      <point x="46.75" y="-59.0" />
+      <point x="520.9999999999998" y="420.0" />
+      <point x="547.4999999999998" y="420.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataEditState" target="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener">
+      <point x="-94.25" y="-70.5" />
+      <point x="3807.6785789632304" y="1203.0" />
+      <point x="3250.780952380952" y="1203.0" />
+      <point x="34.75" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="57.5" y="-48.5" />
+      <point x="1080.7499999999998" y="1213.0" />
+      <point x="1045.5059599156114" y="1213.0" />
+      <point x="1045.5059599156114" y="991.0" />
+      <point x="1475.1071428571427" y="991.0" />
+      <point x="-171.1428571428571" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="-46.75" y="-59.0" />
+      <point x="427.4999999999998" y="171.0" />
+      <point x="755.9450170785612" y="171.0" />
+      <point x="-62.666666666666515" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Medication">
+      <point x="-110.28571428571422" y="-170.0" />
+      <point x="939.077642153906" y="1471.0" />
+      <point x="474.2499999999998" y="1471.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter" target="ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService">
+      <point x="-73.59999999999991" y="-82.0" />
+      <point x="2736.530952380952" y="1471.0" />
+      <point x="2633.4285789632304" y="1471.0" />
+      <point x="60.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Address">
+      <point x="-224.625" y="-258.0" />
+      <point x="1421.6249999999998" y="420.0" />
+      <point x="1389.2499999999998" y="420.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.presentation.views.LogonView">
+      <point x="84.375" y="-70.5" />
+      <point x="3088.9853802491443" y="1925.0" />
+      <point x="4929.803350411894" y="1925.0" />
+      <point x="0.0" y="126.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Salutation">
+      <point x="-74.875" y="-258.0" />
+      <point x="1571.3749999999998" y="420.0" />
+      <point x="1603.7499999999998" y="420.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard" target="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry">
+      <point x="-54.5" y="-26.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional">
+      <point x="0.0" y="-170.0" />
+      <point x="1049.3633564396202" y="1481.0" />
+      <point x="1023.2499999999998" y="1481.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.LogonView" target="ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView.ILogonViewListener">
+      <point x="-144.66666666666697" y="-126.0" />
+      <point x="4785.136683745228" y="1471.0" />
+      <point x="4274.17857896323" y="1471.0" />
+      <point x="54.25" y="26.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel" target="ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel">
+      <point x="0.0" y="-15.0" />
+      <point x="1872.8616837452275" y="1481.0" />
+      <point x="1807.7619122965634" y="1481.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-37.0" />
+      <point x="1148.7499999999998" y="191.0" />
+      <point x="839.5005726341167" y="191.0" />
+      <point x="20.888888888888914" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="-73.0" y="-59.0" />
+      <point x="2508.130952380952" y="991.0" />
+      <point x="1902.9642857142856" y="991.0" />
+      <point x="256.7142857142858" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Medicine" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-48.0" />
+      <point x="547.4999999999998" y="181.0" />
+      <point x="776.8339059674499" y="181.0" />
+      <point x="-41.77777777777783" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.LogonView" target="ch.bfh.bti7081.s2017.orange.presentation.views.BaseView">
+      <point x="0.0" y="-126.0" />
+      <point x="4929.803350411894" y="1481.0" />
+      <point x="4955.386912296563" y="1481.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.businesslogic.models.MainModel" target="ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel">
+      <point x="0.0" y="-81.5" />
+      <point x="1678.8616837452275" y="1481.0" />
+      <point x="1771.7619122965634" y="1481.0" />
+      <point x="-36.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState" target="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener">
+      <point x="-95.5" y="-70.5" />
+      <point x="3134.9285789632304" y="1213.0" />
+      <point x="3181.280952380952" y="1213.0" />
+      <point x="-34.75" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance">
+      <point x="55.14285714285711" y="-170.0" />
+      <point x="1104.5062135824774" y="1481.0" />
+      <point x="1148.7499999999998" y="1481.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Address" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-92.0" />
+      <point x="1389.2499999999998" y="181.0" />
+      <point x="860.3894615230056" y="181.0" />
+      <point x="41.77777777777783" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.MvpNavigator" target="ch.bfh.bti7081.s2017.orange.presentation.views.BaseView">
+      <point x="-73.75" y="-82.0" />
+      <point x="5415.886912296563" y="1471.0" />
+      <point x="5031.05357896323" y="1471.0" />
+      <point x="75.66666666666697" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.utils.Session">
+      <point x="0.0" y="-37.5" />
+      <point x="3397.9853802491443" y="1471.0" />
+      <point x="3567.4285789632304" y="1471.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepositoryTest" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="170.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard">
+      <point x="-55.14285714285711" y="-170.0" />
+      <point x="994.2204992967631" y="1461.0" />
+      <point x="779.2499999999998" y="1461.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.MvpNavigator">
+      <point x="118.125" y="-70.5" />
+      <point x="3122.7353802491443" y="1935.0" />
+      <point x="5489.636912296563" y="1935.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState">
+      <point x="95.5" y="-70.5" />
+      <point x="3325.9285789632304" y="1213.0" />
+      <point x="3818.2577782800863" y="1213.0" />
+      <point x="-54.75" y="49.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="61.0" y="-59.0" />
+      <point x="785.7499999999998" y="981.0" />
+      <point x="1389.535714285714" y="981.0" />
+      <point x="-256.7142857142858" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState">
+      <point x="147.19999999999982" y="-82.0" />
+      <point x="2957.3309523809517" y="1481.0" />
+      <point x="3230.4285789632304" y="1481.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Person" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Title">
+      <point x="224.625" y="-258.0" />
+      <point x="1870.8749999999998" y="420.0" />
+      <point x="1740.7499999999998" y="420.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter">
+      <point x="48.0" y="-60.0" />
+      <point x="2857.4285789632304" y="1213.0" />
+      <point x="2824.4285789632304" y="1213.0" />
+      <point x="-52.5" y="71.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel" target="ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel">
+      <point x="-92.33333333333348" y="-81.5" />
+      <point x="2285.028350411894" y="1471.0" />
+      <point x="1843.7619122965634" y="1471.0" />
+      <point x="36.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView">
+      <point x="0.0" y="-59.0" />
+      <point x="4502.55357896323" y="1213.0" />
+      <point x="4890.716111613419" y="1213.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.LogonView" target="ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView">
+      <point x="144.66666666666697" y="-126.0" />
+      <point x="5074.470017078562" y="1481.0" />
+      <point x="5223.386912296563" y="1481.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="92.33333333333348" y="-81.5" />
+      <point x="2469.695017078561" y="1481.0" />
+      <point x="2429.0283504118943" y="1481.0" />
+      <point x="2429.0283504118943" y="1001.0" />
+      <point x="1817.392857142857" y="1001.0" />
+      <point x="171.14285714285734" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="110.28571428571422" y="-170.0" />
+      <point x="1159.6490707253345" y="1471.0" />
+      <point x="1311.4125401848482" y="1471.0" />
+      <point x="1311.4125401848482" y="1001.0" />
+      <point x="1560.6785714285713" y="1001.0" />
+      <point x="-85.57142857142844" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-71.0" />
+      <point x="2876.9285789632304" y="1011.0" />
+      <point x="3155.328350411894" y="1011.0" />
+      <point x="-28.59999999999991" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView">
+      <point x="0.0" y="-192.0" />
+      <point x="4415.303350411894" y="1481.0" />
+      <point x="4502.55357896323" y="1481.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="73.0" y="-59.0" />
+      <point x="2654.130952380952" y="1011.0" />
+      <point x="2671.1785789632304" y="1011.0" />
+      <point x="2671.1785789632304" y="161.0" />
+      <point x="902.1672393007834" y="161.0" />
+      <point x="83.55555555555566" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative">
+      <point x="165.42857142857156" y="-170.0" />
+      <point x="1214.7919278681918" y="1481.0" />
+      <point x="1368.8768258991342" y="1481.0" />
+      <point x="1368.8768258991342" y="1213.0" />
+      <point x="1505.695017078561" y="1213.0" />
+      <point x="-47.66666666666674" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter">
+      <point x="0.0" y="-82.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener">
+      <point x="-185.0" y="-192.0" />
+      <point x="4230.303350411894" y="1471.0" />
+      <point x="4100.92857896323" y="1471.0" />
+      <point x="4100.92857896323" y="1193.0" />
+      <point x="3320.280952380952" y="1193.0" />
+      <point x="104.25" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView.ILogonViewListener">
+      <point x="106.0" y="-37.5" />
+      <point x="3503.9853802491443" y="1481.0" />
+      <point x="4165.67857896323" y="1481.0" />
+      <point x="-54.25" y="26.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter">
+      <point x="-16.875" y="-70.5" />
+      <point x="2987.7353802491443" y="1905.0" />
+      <point x="2810.130952380952" y="1905.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Professional" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Role">
+      <point x="-57.5" y="-48.5" />
+      <point x="965.7499999999998" y="1213.0" />
+      <point x="981.0059599156114" y="1213.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.BaseView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView">
+      <point x="0.0" y="-48.0" />
+      <point x="4955.386912296563" y="1213.0" />
+      <point x="4924.716111613419" y="1213.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Account" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Permission">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView.IPersonDataListener">
+      <point x="73.59999999999991" y="-82.0" />
+      <point x="2883.7309523809517" y="1471.0" />
+      <point x="3013.303350411894" y="1471.0" />
+      <point x="3013.303350411894" y="1213.0" />
+      <point x="3111.780952380952" y="1213.0" />
+      <point x="-104.25" y="59.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Type">
+      <point x="-61.0" y="-59.0" />
+      <point x="663.7499999999998" y="1011.0" />
+      <point x="655.2499999999998" y="1011.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.MvpNavigator" target="ch.bfh.bti7081.s2017.orange.BaseNavigator">
+      <point x="73.75" y="-82.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Patient" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Movement">
+      <point x="-165.42857142857133" y="-170.0" />
+      <point x="883.9347850110489" y="1481.0" />
+      <point x="318.4999999999998" y="1481.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Person">
+      <point x="0.0" y="-37.0" />
+      <point x="1553.3616837452278" y="1011.0" />
+      <point x="1646.2499999999998" y="1011.0" />
+      <point x="0.0" y="258.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-48.5" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView">
+      <point x="50.625" y="-70.5" />
+      <point x="3055.2353802491443" y="1915.0" />
+      <point x="4415.303350411894" y="1915.0" />
+      <point x="0.0" y="192.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView" target="ch.bfh.bti7081.s2017.orange.presentation.views.BaseView">
+      <point x="185.0" y="-192.0" />
+      <point x="4600.303350411894" y="1481.0" />
+      <point x="4879.720245629896" y="1481.0" />
+      <point x="-75.66666666666697" y="48.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataEditState" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState">
+      <point x="94.25" y="-70.5" />
+      <point x="3996.1785789632304" y="1213.0" />
+      <point x="3927.7577782800863" y="1213.0" />
+      <point x="54.75" y="49.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter">
+      <point x="16.875" y="-70.5" />
+      <point x="3021.4853802491443" y="1905.0" />
+      <point x="3397.9853802491443" y="1905.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel">
+      <point x="-50.625" y="-70.5" />
+      <point x="2953.9853802491443" y="1915.0" />
+      <point x="2377.3616837452273" y="1915.0" />
+      <point x="0.0" y="81.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-59.0" />
+      <point x="724.7499999999998" y="1011.0" />
+      <point x="733.2499999999998" y="1011.0" />
+      <point x="733.2499999999998" y="191.0" />
+      <point x="797.7227948563389" y="191.0" />
+      <point x="-20.888888888888914" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView">
+      <point x="0.0" y="-26.0" />
+      <point x="5223.386912296563" y="1203.0" />
+      <point x="4958.716111613419" y="1203.0" />
+      <point x="34.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepositoryTest" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Relative">
+      <point x="72.66666666666674" y="-26.0" />
+      <point x="1122.030023106287" y="1935.0" />
+      <point x="1553.3616837452278" y="1935.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel">
+      <point x="-118.125" y="-70.5" />
+      <point x="2886.4853802491443" y="1935.0" />
+      <point x="1872.8616837452275" y="1935.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.entity.Movement" target="ch.bfh.bti7081.s2017.orange.persistence.entity.Identity">
+      <point x="0.0" y="-59.5" />
+      <point x="318.4999999999998" y="161.0" />
+      <point x="735.0561281896721" y="161.0" />
+      <point x="-83.55555555555554" y="70.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepositoryTest" target="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository">
+      <point x="-72.66666666666674" y="-26.0" />
+      <point x="976.6966897729535" y="1935.0" />
+      <point x="154.0" y="1935.0" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView.ILogonViewListener" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-26.0" />
+      <point x="4219.92857896323" y="991.0" />
+      <point x="3241.1283504118937" y="991.0" />
+      <point x="57.19999999999982" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-49.0" />
+      <point x="3873.0077782800863" y="1001.0" />
+      <point x="3212.528350411894" y="1001.0" />
+      <point x="28.59999999999991" y="15.0" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="-48.0" y="-60.0" />
+      <point x="2761.4285789632304" y="1001.0" />
+      <point x="3126.728350411894" y="1001.0" />
+      <point x="-57.19999999999982" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="541.0" y="384.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
