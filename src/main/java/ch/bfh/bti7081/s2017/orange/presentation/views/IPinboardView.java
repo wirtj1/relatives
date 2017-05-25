@@ -5,10 +5,10 @@ import com.vaadin.navigator.View;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public interface IPinnboardView extends View
+public interface IPinboardView extends View
 {
 
-    interface IPinnboardViewListener
+    interface IPinboardViewListener
     {
 
     }

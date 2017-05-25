@@ -2,10 +2,13 @@ package ch.bfh.bti7081.s2017.orange;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.PinboardModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.PinboardPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.PinboardView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.icons.VaadinIcons;
@@ -17,17 +20,18 @@ import com.vaadin.ui.themes.ValoTheme;
 import javax.servlet.annotation.WebServlet;
 
 /**
- * This UI is the application entry point. A UI may either represent a browser window 
+ * This UI is the application entry point. A UI may either represent a browser window
  * (or tab) or some part of a html page where a Vaadin application is embedded.
- *
- * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
+ * <p>
+ * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be
  * overridden to add component to the user interface and initialize non-component functionality.
  *
  * @author Sascha
  * @author Leandro
  */
 @Theme("mytheme")
-public class Bootstrap extends BaseUI {
+public class Bootstrap extends BaseUI
+{
 
     private GridLayout rootLayout;
     private VerticalLayout contentLayout;
@@ -35,10 +39,12 @@ public class Bootstrap extends BaseUI {
 
     /**
      * Initializes and sets a MvpNavigator, builds the view
+     *
      * @param vaadinRequest: The Vaadin request issued
      */
     @Override
-    protected void init(VaadinRequest vaadinRequest) {
+    protected void init(VaadinRequest vaadinRequest)
+    {
 
         buildLayout();
 
@@ -46,12 +52,15 @@ public class Bootstrap extends BaseUI {
 
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
+        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), true);
 
         setNavigator(navigator);
 
-        if(sessionRegistered()) {
+        if (sessionRegistered())
+        {
             getNavigator().navigateTo(PersonDataView.class);
-        } else {
+        } else
+        {
             getNavigator().navigateTo(LogonView.class);
         }
     }
@@ -67,7 +76,8 @@ public class Bootstrap extends BaseUI {
         navigationBar.setResponsive(true);
         MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
         settings.addItem("Account", VaadinIcons.USER, null);
-        settings.addItem("Logout", VaadinIcons.SIGN_OUT,menuItem -> doLogout());
+        settings.addItem("Pinboard", VaadinIcons.CLIPBOARD_TEXT, null);
+        settings.addItem("Logout", VaadinIcons.SIGN_OUT, menuItem -> doLogout());
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
         footer.setResponsive(true);
@@ -76,8 +86,8 @@ public class Bootstrap extends BaseUI {
         rootLayout.setWidth("100%");
         rootLayout.setHeight("100%");
 
-        rootLayout.addComponent(navigationBar, 0,0);
-        rootLayout.addComponent(footer, 0,2);
+        rootLayout.addComponent(navigationBar, 0, 0);
+        rootLayout.addComponent(footer, 0, 2);
         rootLayout.setComponentAlignment(navigationBar, Alignment.TOP_CENTER);
         rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 
@@ -86,8 +96,8 @@ public class Bootstrap extends BaseUI {
         rootLayout.addComponent(contentLayout, 0, 1);
         rootLayout.setComponentAlignment(contentLayout, Alignment.MIDDLE_CENTER);
 
-        rootLayout.setColumnExpandRatio(0,1);
-        rootLayout.setRowExpandRatio(1,1);
+        rootLayout.setColumnExpandRatio(0, 1);
+        rootLayout.setRowExpandRatio(1, 1);
         rootLayout.setResponsive(true);
 
 
@@ -98,6 +108,7 @@ public class Bootstrap extends BaseUI {
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = Bootstrap.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
+    public static class MyUIServlet extends VaadinServlet
+    {
     }
 }
