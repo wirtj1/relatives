@@ -5,6 +5,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -22,8 +24,10 @@ public class Patient extends Person {
     private List<Insurance> insurances;
     @OneToMany
     private List<Medication> medications;
+
+
     @ManyToMany
-    private List<Relative> relatives;
+    private List<Relative> relatives = new ArrayList<>();
     private String goals;
     private String weekendInformation;
     private String yearPlanning;
@@ -34,5 +38,21 @@ public class Patient extends Person {
 
     public Patient(String firstName, String lastName) {
         super(firstName, lastName);
+    }
+
+    protected Patient()
+    {
+        super("", "");
+    }
+
+
+    public void addRelative(Relative relative)
+    {
+        relatives.add(relative);
+    }
+
+
+    public List<Relative> getRelatives() {
+        return Collections.unmodifiableList(relatives);
     }
 }

@@ -23,6 +23,16 @@ public class JPAHibernateCRUDTest {
         rel.setFirstName("John");
         rel.setLastName("Smith");
         em.persist(rel);
+
+        EntityManager em2 = ef.createEntityManager();
+        em2.getTransaction().begin();
+
+        Relative badRelative = new Relative();
+        badRelative.setFirstName("bad insert");
+        badRelative.setLastName("gugus");
+        em2.persist(badRelative);
+        em2.getTransaction().commit();
+
         em.persist(mov);
         em.getTransaction().commit();
 
@@ -33,6 +43,6 @@ public class JPAHibernateCRUDTest {
         System.out.println("Mov2: " + mov2);
 
         em.close();
-        ef.close();
+        //ef.close();
     }
 }
