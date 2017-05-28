@@ -6,7 +6,6 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
 import com.vaadin.icons.VaadinIcons;
-import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
 
@@ -19,76 +18,44 @@ import java.util.List;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public class PinboardView extends BaseView implements IPinboardView
-{
+public class PinboardView extends BaseView implements IPinboardView {
 
 
     private List<IPinboardViewListener> listeners;
-    private Navigator navigator;
 
-    public PinboardView()
-    {
+    public PinboardView() {
 
         listeners = new ArrayList<>();
 
         VerticalLayout mainLayout = new VerticalLayout();
 
-        navigator = new Navigator(UI.getCurrent(), mainLayout);
+        setViewTitle(mainLayout);
 
-
-        HorizontalLayout titleBar = new HorizontalLayout();
-        Label title = new Label("Pinnwand");
-        title.setStyleName("toolbarTitle");
-
-        titleBar.addComponent(title);
-        titleBar.setExpandRatio(title, 1.0f); // Expand
-        mainLayout.addComponent(titleBar);
-        mainLayout.setComponentAlignment(titleBar, Alignment.TOP_CENTER);
-
-
-        Button addButton = new Button(VaadinIcons.PLUS_CIRCLE);
-        mainLayout.addComponent(addButton);
-        mainLayout.setComponentAlignment(addButton, Alignment.TOP_RIGHT);
-//        addButton.addClickListener(c -> navigator.navigateTo(PinCreationView.class));
-
+        Button createPinButton = new Button(VaadinIcons.PLUS_CIRCLE);
+        mainLayout.addComponent(createPinButton);
+        mainLayout.setComponentAlignment(createPinButton, Alignment.TOP_RIGHT);
+        createPinButton.addClickListener(this::createNewPinEntry);
 
         mainLayout.addComponent(createPinboardLayoutWithPins(getPinBoardTEST()));
         setCompositionRoot(mainLayout);
     }
 
-    private PinboardModel getPinBoardTEST()
-    {
-        PinboardModel pinboard = new PinboardModel();
-        Relative relative = new Relative();
-        Patient patient = new Patient("Hans", "Muster");
-
-        pinboard.addEntry(new PinBoardEntry(Type.WARNING, "TitleBlabla", "blablablabla", relative, new Date()));
-        pinboard.addEntry(new PinBoardEntry(Type.ALERT, "TitleBlabla2", "blablablabla2", patient, new Date()));
-        pinboard.addEntry(new PinBoardEntry(Type.INFORMATION, "TitleBlabla3", "blablablabla3", patient, new Date()));
-        pinboard.addEntry(new PinBoardEntry(Type.WARNING, "TitleBlabla", "blablablabla", relative, new Date()));
-
-        return pinboard;
-    }
 
     @Override
-    public String getViewName()
-    {
+    public String getViewName() {
         return "PinboradView";
     }
 
     @Override
-    public String getCaption()
-    {
+    public String getCaption() {
         return "Pinnwand";
     }
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
-    {
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
     }
 
-    private static Layout createPinboardLayoutWithPins(PinboardModel pinboard)
-    {
+    private static Layout createPinboardLayoutWithPins(PinboardModel pinboard) {
         Layout pinboardLayout = new VerticalLayout();
         pinboardLayout.setSizeFull();
 
@@ -114,8 +81,7 @@ public class PinboardView extends BaseView implements IPinboardView
 //    }
 
 
-    private static Panel createPinEntry(PinBoardEntry entry)
-    {
+    private static Panel createPinEntry(PinBoardEntry entry) {
         Panel pinPanel = new Panel(entry.getTitle());
         Layout panelLayout = new VerticalLayout();
         panelLayout.setSizeFull();
@@ -131,4 +97,27 @@ public class PinboardView extends BaseView implements IPinboardView
         return pinPanel;
     }
 
+    private void createNewPinEntry(Button.ClickEvent event) {
+        for (IPinboardViewListener listener : listeners)
+            listener.addPinEntry();
+    }
+
+    @Override
+    public void addListener(IPinboardViewListener listener) {
+        listeners.add(listener);
+    }
+
+
+    private PinboardModel getPinBoardTEST() {
+        PinboardModel pinboard = new PinboardModel();
+        Relative relative = new Relative();
+        Patient patient = new Patient("Hans", "Muster");
+
+        pinboard.addEntry(new PinBoardEntry(Type.WARNING, "TitleBlabla", "blablablabla", relative, new Date()));
+        pinboard.addEntry(new PinBoardEntry(Type.ALERT, "TitleBlabla2", "blablablabla2", patient, new Date()));
+        pinboard.addEntry(new PinBoardEntry(Type.INFORMATION, "TitleBlabla3", "blablablabla3", patient, new Date()));
+        pinboard.addEntry(new PinBoardEntry(Type.WARNING, "TitleBlabla", "blablablabla", relative, new Date()));
+
+        return pinboard;
+    }
 }

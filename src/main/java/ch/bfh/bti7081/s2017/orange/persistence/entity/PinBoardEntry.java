@@ -10,8 +10,7 @@ import java.util.Date;
  *         communication between {@link Relative} and {@link Professional}.
  */
 @Entity
-public class PinBoardEntry extends Identity
-{
+public class PinBoardEntry extends Identity {
     private Type type;
     private String title;
     private String message;
@@ -20,8 +19,7 @@ public class PinBoardEntry extends Identity
     private Date creationDate;
 
 
-    public PinBoardEntry(Type type, String title, String message, Person author, Date creationDate)
-    {
+    public PinBoardEntry(Type type, String title, String message, Person author, Date creationDate) {
         this.type = type;
         this.title = title;
         this.message = message;
@@ -29,58 +27,58 @@ public class PinBoardEntry extends Identity
         this.creationDate = creationDate;
     }
 
-    public PinBoardEntry()
-    {
+    public PinBoardEntry() {
     }
 
 
-    public Type getType()
-    {
+    public Type getType() {
         return type;
     }
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title)
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setType(Type type)
-    {
+    public void setType(Type type) {
         this.type = type;
     }
 
-    public String getMessage()
-    {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message)
-    {
+    public void setMessage(String message) {
         this.message = message;
     }
 
-    public Person getAuthor()
-    {
+    public Person getAuthor() {
         return author;
     }
 
-    public void setAuthor(Person author)
-    {
+    public void setAuthor(Person author) {
         this.author = author;
     }
 
-    public Date getCreationDate()
-    {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate)
-    {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() +
+                "[type=]" + type.toString() +
+                "[title=]" + title +
+                "[message=]" + message +
+                "[author=]" + author.toString() +
+                "[date=]" + creationDate.toString() + "]";
     }
 }

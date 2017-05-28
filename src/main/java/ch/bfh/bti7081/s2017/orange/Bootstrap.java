@@ -5,9 +5,11 @@ import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PinboardModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.PinCreationPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PinboardPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.PinCreationView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PinboardView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -30,8 +32,7 @@ import javax.servlet.annotation.WebServlet;
  * @author Leandro
  */
 @Theme("mytheme")
-public class Bootstrap extends BaseUI
-{
+public class Bootstrap extends BaseUI {
 
     private GridLayout rootLayout;
     private VerticalLayout contentLayout;
@@ -43,8 +44,7 @@ public class Bootstrap extends BaseUI
      * @param vaadinRequest: The Vaadin request issued
      */
     @Override
-    protected void init(VaadinRequest vaadinRequest)
-    {
+    protected void init(VaadinRequest vaadinRequest) {
 
         buildLayout();
 
@@ -53,14 +53,13 @@ public class Bootstrap extends BaseUI
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
         navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), true);
+        navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
 
         setNavigator(navigator);
 
-        if (sessionRegistered())
-        {
+        if (sessionRegistered()) {
             getNavigator().navigateTo(PersonDataView.class);
-        } else
-        {
+        } else {
             getNavigator().navigateTo(LogonView.class);
         }
     }
@@ -68,15 +67,13 @@ public class Bootstrap extends BaseUI
     /**
      * Builds the layout
      */
-    private void buildLayout()
-    {
+    private void buildLayout() {
         rootLayout = new GridLayout(1, 3);
         navigationBar = new MenuBar();
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         navigationBar.setResponsive(true);
         MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
         settings.addItem("Account", VaadinIcons.USER, null);
-        settings.addItem("Pinboard", VaadinIcons.CLIPBOARD_TEXT, null);
         settings.addItem("Logout", VaadinIcons.SIGN_OUT, menuItem -> doLogout());
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");
@@ -108,7 +105,6 @@ public class Bootstrap extends BaseUI
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = Bootstrap.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet
-    {
+    public static class MyUIServlet extends VaadinServlet {
     }
 }
