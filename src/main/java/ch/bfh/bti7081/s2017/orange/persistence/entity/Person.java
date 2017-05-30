@@ -6,8 +6,8 @@ import java.util.Date;
 
 /**
  * @author yvesbeutler
- *         Representation of a person. This abstract class is used by {@link Patient},
- *         {@link Professional} and {@link Relative}.
+ * Representation of a person. This abstract class is used by {@link Patient},
+ * {@link Professional} and {@link Relative}.
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

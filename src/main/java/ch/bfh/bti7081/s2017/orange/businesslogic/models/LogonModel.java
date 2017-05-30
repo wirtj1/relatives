@@ -1,7 +1,9 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
 /**
- * Created by Sascha on 09/05/2017.
+ * @author Sascha
+ * This model is used by the logon view to provide logon functionality
+ * for the users.
  */
 public class LogonModel extends BaseModel {
 }

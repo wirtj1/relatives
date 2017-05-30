@@ -1,7 +1,8 @@
 package ch.bfh.bti7081.s2017.orange.presentation.utils;
 
 /**
- * Created by Leandro on 7/5/2017.
+ * @author Leandro
+ * This helper class provides additional functionality for the navigation.
  */
 public class NavigationUtils {
 
