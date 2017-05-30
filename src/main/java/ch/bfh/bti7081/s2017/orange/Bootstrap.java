@@ -3,10 +3,8 @@ package ch.bfh.bti7081.s2017.orange;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.MedicationPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.MedicationView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -37,6 +35,7 @@ public class Bootstrap extends BaseUI {
 
     /**
      * Initializes and sets a MvpNavigator, builds the view
+     *
      * @param vaadinRequest: The Vaadin request issued
      */
     @Override
@@ -48,6 +47,9 @@ public class Bootstrap extends BaseUI {
 
         // Views without menu entry
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
+        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), true);
+        navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
         navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), true);
 
         // Views with menu entry
@@ -56,7 +58,7 @@ public class Bootstrap extends BaseUI {
 
         setNavigator(navigator);
 
-        if(sessionRegistered()) {
+        if (sessionRegistered()) {
             getNavigator().navigateTo(PersonDataView.class);
         } else {
             getNavigator().navigateTo(LogonView.class);
@@ -66,8 +68,7 @@ public class Bootstrap extends BaseUI {
     /**
      * Builds the layout
      */
-    private void buildLayout()
-    {
+    private void buildLayout() {
         rootLayout = new GridLayout(1, 3);
         navigationBar = new MenuBar();
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
@@ -83,8 +84,8 @@ public class Bootstrap extends BaseUI {
         rootLayout.setWidth("100%");
         rootLayout.setHeight("100%");
 
-        rootLayout.addComponent(navigationBar, 0,0);
-        rootLayout.addComponent(footer, 0,2);
+        rootLayout.addComponent(navigationBar, 0, 0);
+        rootLayout.addComponent(footer, 0, 2);
         rootLayout.setComponentAlignment(navigationBar, Alignment.TOP_CENTER);
         rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 
@@ -93,8 +94,8 @@ public class Bootstrap extends BaseUI {
         rootLayout.addComponent(contentLayout, 0, 1);
         rootLayout.setComponentAlignment(contentLayout, Alignment.MIDDLE_CENTER);
 
-        rootLayout.setColumnExpandRatio(0,1);
-        rootLayout.setRowExpandRatio(1,1);
+        rootLayout.setColumnExpandRatio(0, 1);
+        rootLayout.setRowExpandRatio(1, 1);
         rootLayout.setResponsive(true);
 
 
