@@ -27,8 +27,9 @@ public class PinboardView extends BaseView implements IPinboardView {
 
         listeners = new ArrayList<>();
 
-        VerticalLayout mainLayout = new VerticalLayout();
 
+        VerticalLayout mainLayout = new VerticalLayout();
+        //mainLayout.setMargin(false);
         setViewTitle(mainLayout);
 
         Button createPinButton = new Button(VaadinIcons.PLUS_CIRCLE);
