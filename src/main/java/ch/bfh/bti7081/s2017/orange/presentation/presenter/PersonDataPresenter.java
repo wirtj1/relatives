@@ -11,48 +11,55 @@ import java.util.List;
 
 /**
  * Presenter that connects the view {@link PersonDataView} and the model {@link PersonDataModel}
+ *
  * @author Joy
  */
-public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, PersonDataModel, IPersonDataView.IPersonDataListener> implements IPersonDataView.IPersonDataListener {
+public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, PersonDataModel, IPersonDataView.IPersonDataListener> implements IPersonDataView.IPersonDataListener
+{
 
-	private PersonDataService personDataService;
+    private PersonDataService personDataService;
 
 
-	public PersonDataPresenter(PersonDataView view, PersonDataModel model) {
-		super(view, model);
-		personDataService = new PersonDataService();
-		view.addListener(this);
+    public PersonDataPresenter(PersonDataView view, PersonDataModel model)
+    {
+        super(view, model);
+        personDataService = new PersonDataService();
+        view.addListener(this);
 
-		//Todo: Use State with getState and delegate methods from IPersonDataView.IPersonDataListener
-		setState(new PersonDataViewState(this));
-	}
+        //Todo: Use State with getState and delegate methods from IPersonDataView.IPersonDataListener
+        setState(new PersonDataViewState(this));
+    }
 
-	@Override
-	public void onSaveButtonClicked() {
-		Person person = model.getActivePerson();
-		personDataService.savePerson(person);
+    @Override
+    public void onSaveButtonClicked()
+    {
+        Person person = model.getActivePerson();
+        personDataService.savePerson(person);
 
-	}
+    }
 
-	@Override
-	public void onDeleteButtonClicked() {
-		Person person = model.getActivePerson();
-		personDataService.deletePerson(person);
+    @Override
+    public void onDeleteButtonClicked()
+    {
+        Person person = model.getActivePerson();
+        personDataService.deletePerson(person);
 
-	}
+    }
 
-	@Override
-	public void onEditButtonClicked() {
-		view.setToViewMode(model.getActivePerson());
-	}
+    @Override
+    public void onEditButtonClicked()
+    {
+        view.setToViewMode(model.getActivePerson());
+    }
 
-	@Override
-	public void onViewEnter() {
-		List<Person> personen = personDataService.getPersonList();
-		model.setPersonList(personen);
-		model.setActivePerson(personen.get(0));
-		view.fillAccordion(model.getPersonList());
-		view.setToViewMode(model.getActivePerson());
-	}
+    @Override
+    public void onViewEnter()
+    {
+        List<Person> personen = personDataService.getPersonList();
+        model.setPersonList(personen);
+        model.setActivePerson(personen.get(0));
+        view.fillAccordion(model.getPersonList());
+        view.setToViewMode(model.getActivePerson());
+    }
 
 }
