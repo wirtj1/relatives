@@ -1,11 +1,8 @@
 package ch.bfh.bti7081.s2017.orange;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.LogonPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter;
-import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import ch.bfh.bti7081.s2017.orange.businesslogic.models.*;
+import ch.bfh.bti7081.s2017.orange.presentation.presenter.*;
+import ch.bfh.bti7081.s2017.orange.presentation.views.*;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.icons.VaadinIcons;
@@ -45,16 +42,12 @@ public class Bootstrap extends BaseUI {
 
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
-        // Views without menu entry
+        // Add views
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
-        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), true);
+        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), VaadinIcons.TASKS, true);
         navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
-        navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), true);
-
-        // Views with menu entry
-        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.USERS, true);
-
+        navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS ,true);
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
 
         setNavigator(navigator);
 
