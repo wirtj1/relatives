@@ -22,8 +22,8 @@ public class PinBoard extends Identity
         return entries;
     }
 
-    public void setEntries(List<PinBoardEntry> entries)
+    public void addEntry(PinBoardEntry entry)
     {
-        this.entries = entries;
+        this.entries.add(entry);
     }
 }
