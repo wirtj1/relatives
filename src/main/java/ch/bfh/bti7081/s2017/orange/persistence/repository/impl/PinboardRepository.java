@@ -25,7 +25,7 @@ public class PinboardRepository extends Repository<PinBoard> {
 
     @Override
     public PinBoard persist(PinBoard obj) {
-        obj.getEntries().forEach(entry -> pinBoardEntryRepository.persist(entry));
+        obj.getEntries().stream().filter(entry -> entry.getId() == 0).forEach(entry -> pinBoardEntryRepository.persist(entry));
         return super.persist(obj);
     }
 
