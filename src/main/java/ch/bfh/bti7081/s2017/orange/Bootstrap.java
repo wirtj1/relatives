@@ -70,6 +70,9 @@ public class Bootstrap extends BaseUI {
      */
     private void buildLayout() {
         rootLayout = new GridLayout(1, 3);
+        //1 rootLayout.setStyleName(ValoTheme.PANEL_BORDERLESS);
+        //2 rootLayout.setMargin(false);
+
         navigationBar = new MenuBar();
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         navigationBar.setResponsive(true);
@@ -90,9 +93,21 @@ public class Bootstrap extends BaseUI {
         rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 
         contentLayout = new VerticalLayout();
+        //3 contentLayout.setHeight("100%");
 
-        rootLayout.addComponent(contentLayout, 0, 1);
-        rootLayout.setComponentAlignment(contentLayout, Alignment.MIDDLE_CENTER);
+
+        Panel panel = new Panel();
+        panel.setSizeFull();
+        panel.setContent(contentLayout);
+        panel.setResponsive(true);
+        panel.setStyleName(ValoTheme.PANEL_BORDERLESS);
+
+        rootLayout.addComponent(panel, 0, 1);
+        rootLayout.setComponentAlignment(panel, Alignment.MIDDLE_CENTER);
+
+
+        contentLayout.setResponsive(true);
+
 
         rootLayout.setColumnExpandRatio(0, 1);
         rootLayout.setRowExpandRatio(1, 1);

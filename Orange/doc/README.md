@@ -16,15 +16,22 @@
 | 17.03.2017 | Completed the remaining storyboards.       | Beutler, Lerena, Wittwer |
 | 17.03.2017 | Worked again on the card-based prototypes     | Djurdevic, Thevathas |
 | 17.03.2017 | Interviewed Dayana, a student who takes care of a schizophrenic teenage girl at a clinic in Spiez | Beutler, Lerena, Wirth |
-| 20.03.2017 | Worked on presentation | Wirth, Beuter |
-| 20.03.2017 | Worked on personas | Wirth, Lerena |
-| 20.03.2017 | Improved storyboards | Wittwer |
-| 20.03.2017 | Improved on prototypes| Thevathas |
-| 20.03.2017 | Worked on iterations and interview doc | Djurdjevic |
-| 20.03.2017 | Worked on validation doc | Thevathas, Djurdjevic |
+| 20.03.2017 | Worked on the next presentation | Wirth, Beuter |
+| 20.03.2017 | Worked on the personas task | Wirth, Lerena |
+| 20.03.2017 | Improved our current storyboards | Wittwer |
+| 20.03.2017 | Improved our card-based prototypes| Thevathas |
+| 20.03.2017 | Worked on the iterations and interview document | Djurdjevic |
+| 20.03.2017 | Worked on the validation document | Thevathas, Djurdjevic |
 | 20.03.2017 | Reviewing of documentation | All |
 | 30.04.2017 | Create UML for Overview View MVP CS01/Task 9 | Djurdjevic, Lerena |
 | 02.05.2017 | Scrum setup: Backlog initialized, grouping of tasks | All |
-| 05.05.2017 | Start sprint 1 | Wittwer, Lerena, Djurdjevic |
-| 08.05.2017 | Work on Sprint 1 Tasks | All |
-| 09.05.2017 | Work on Sprint 1 Tasks | All |
+| 05.05.2017 | Started working on the tasks of Sprint 1 | Wittwer, Lerena, Djurdjevic |
+| 08.05.2017 | Working on the tasks of Sprint 1 | All |
+| 09.05.2017 | Working on the tasks of Sprint 1 | All |
+| 12.05.2017 | Working on the tasks of Sprint 1 | All |
+| 15.05.2017 | Working on the tasks of Sprint 1 | All |
+| 16.05.2017 | Working on the tasks of Sprint 1 | All |
+| 19.05.2017 | Finished sprint 1 and did a short retrospective | All
+| 22.05.2017 | Did the sprint planing of Sprint 2 | All
+| 23.05.2017 | Started working on the tasks of Sprint 2 | All
+| 30.05.2017 | Working on the tasks of Sprint 2 | All

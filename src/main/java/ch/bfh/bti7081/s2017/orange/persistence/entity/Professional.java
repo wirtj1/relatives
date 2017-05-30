@@ -15,4 +15,5 @@ public class Professional extends Person {
     public Professional(String firstName, String lastName) {
         super(firstName, lastName);
     }
+    protected Professional() { super("", ""); }
 }
