@@ -17,7 +17,6 @@ public class PinboardModel extends BaseModel
     public PinboardModel()
     {
         pinboard = new PinBoard();
-        pinboard.setEntries(new ArrayList<>());
     }
 
     public List<PinBoardEntry> getEntries()
@@ -27,9 +26,7 @@ public class PinboardModel extends BaseModel
 
     public void addEntry(PinBoardEntry entry)
     {
-        List<PinBoardEntry> entries = getEntries();
-        entries.add(entry);
-        pinboard.setEntries(entries);
+        pinboard.addEntry(entry);
     }
 
 

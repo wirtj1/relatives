@@ -2,6 +2,7 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
 public class PinBoard extends Identity
 {
     @OneToMany
-    private List<PinBoardEntry> entries;
+    private List<PinBoardEntry> entries = new ArrayList<>();
 
 
 
@@ -22,8 +23,8 @@ public class PinBoard extends Identity
         return entries;
     }
 
-    public void setEntries(List<PinBoardEntry> entries)
+    public void addEntry(PinBoardEntry entry)
     {
-        this.entries = entries;
+        this.entries.add(entry);
     }
 }

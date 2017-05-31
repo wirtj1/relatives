@@ -55,4 +55,40 @@ public class Patient extends Person {
     public List<Relative> getRelatives() {
         return Collections.unmodifiableList(relatives);
     }
+
+    public String getOasi() {
+        return oasi;
+    }
+
+    public List<Professional> getProfessionals() {
+        return professionals;
+    }
+
+    public List<Insurance> getInsurances() {
+        return insurances;
+    }
+
+    public List<Medication> getMedications() {
+        return medications;
+    }
+
+    public String getGoals() {
+        return goals;
+    }
+
+    public String getWeekendInformation() {
+        return weekendInformation;
+    }
+
+    public String getYearPlanning() {
+        return yearPlanning;
+    }
+
+    public Movement getMovement() {
+        return movement;
+    }
+
+    public PinBoard getPinBoard() {
+        return pinBoard;
+    }
 }
