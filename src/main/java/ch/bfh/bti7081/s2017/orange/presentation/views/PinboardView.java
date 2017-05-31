@@ -18,12 +18,14 @@ import java.util.List;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public class PinboardView extends BaseView implements IPinboardView {
+public class PinboardView extends BaseView implements IPinboardView
+{
 
 
     private List<IPinboardViewListener> listeners;
 
-    public PinboardView() {
+    public PinboardView()
+    {
 
         listeners = new ArrayList<>();
 
@@ -42,20 +44,24 @@ public class PinboardView extends BaseView implements IPinboardView {
 
 
     @Override
-    public String getViewName() {
+    public String getViewName()
+    {
         return "PinboradView";
     }
 
     @Override
-    public String getCaption() {
+    public String getCaption()
+    {
         return "Pinnwand";
     }
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
+    {
     }
 
-    private static Layout createPinboardLayoutWithPins(PinboardModel pinboard) {
+    private static Layout createPinboardLayoutWithPins(PinboardModel pinboard)
+    {
         Layout pinboardLayout = new VerticalLayout();
         pinboardLayout.setSizeFull();
 
@@ -66,49 +72,44 @@ public class PinboardView extends BaseView implements IPinboardView {
         return pinboardLayout;
     }
 
-//    private static Panel createPinboardEntryPanel(PinboardModel pinboard)
-//    {
-//        Panel pinEntryPanel = new Panel();
-//        pinEntryPanel.setScrollLeft(10);
-//        Layout entriesLayout = new VerticalLayout();
-//        pinEntryPanel.setContent(entriesLayout);
-//
-//        pinboard.getEntries().forEach(entry ->
-//                entriesLayout.addComponent(createPinEntry(entry)));
-//
-//
-//        return pinEntryPanel;
-//    }
 
-
-    private static Panel createPinEntry(PinBoardEntry entry) {
+    private static Panel createPinEntry(PinBoardEntry entry)
+    {
         Panel pinPanel = new Panel(entry.getTitle());
-        Layout panelLayout = new VerticalLayout();
+        VerticalLayout panelLayout = new VerticalLayout();
+
         panelLayout.setSizeFull();
+
 
         pinPanel.setContent(panelLayout);
         pinPanel.setSizeFull();
 
+        Label lblType = new Label(entry.getType().name().toUpperCase());
         String nameAuthor = entry.getAuthor().getFirstName() + entry.getAuthor().getLastName();
         String formattedDate = new SimpleDateFormat("dd.MM.yyyy").format(entry.getCreationDate());
 
-        panelLayout.addComponents(new Label(nameAuthor), new Label(formattedDate), new Label(entry.getMessage()));
+
+        panelLayout.addComponents(lblType, new Label(nameAuthor), new Label(formattedDate), new Label(entry.getMessage()));
+        panelLayout.setComponentAlignment(lblType, Alignment.TOP_RIGHT);
 
         return pinPanel;
     }
 
-    private void createNewPinEntry(Button.ClickEvent event) {
+    private void createNewPinEntry(Button.ClickEvent event)
+    {
         for (IPinboardViewListener listener : listeners)
             listener.addPinEntry();
     }
 
     @Override
-    public void addListener(IPinboardViewListener listener) {
+    public void addListener(IPinboardViewListener listener)
+    {
         listeners.add(listener);
     }
 
 
-    private PinboardModel getPinBoardTEST() {
+    private PinboardModel getPinBoardTEST()
+    {
         PinboardModel pinboard = new PinboardModel();
         Relative relative = new Relative();
         Patient patient = new Patient("Hans", "Muster");

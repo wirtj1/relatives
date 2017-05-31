@@ -17,7 +17,8 @@ import java.util.List;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public class PinCreationView extends BaseView {
+public class PinCreationView extends BaseView
+{
 
     private List<IPinCreationViewListener> listeners;
 
@@ -29,13 +30,13 @@ public class PinCreationView extends BaseView {
     private ComboBox<Type> cmdMsgType;
     private TextArea txtaMessage;
 
-    public PinCreationView() {
+    public PinCreationView()
+    {
         listeners = new ArrayList<>();
         VerticalLayout mainLayout = new VerticalLayout();
         mainLayout.setSizeFull();
 
         setViewTitle(mainLayout);
-
         //TODO test
         Relative relative = new Relative();
         relative.setFirstName("TESTAuthor");
@@ -46,29 +47,35 @@ public class PinCreationView extends BaseView {
     }
 
 
-    public void setAuthor(Person author) {
+    public void setAuthor(Person author)
+    {
         PinBoardEntry pinBoardEntry =
                 new PinBoardEntry(null, null, null, author, null);
 
         binderPinBoardEntry.readBean(pinBoardEntry);
     }
 
+
     @Override
-    public String getViewName() {
+    public String getViewName()
+    {
         return "PinboradCreationView";
     }
 
     @Override
-    public String getCaption() {
+    public String getCaption()
+    {
         return "Pinnwand Eintrag erstellen";
     }
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
+    {
 
     }
 
-    private FormLayout createFormLayout() {
+    private FormLayout createFormLayout()
+    {
         FormLayout form = new FormLayout();
         form.setSizeFull();
 
@@ -103,9 +110,8 @@ public class PinCreationView extends BaseView {
     /**
      * TODO they say only one binder per instance....
      */
-    private void bindFieldsToPinEntry() {
-
-
+    private void bindFieldsToPinEntry()
+    {
         binderPinBoardEntry.forField(txtTitle)
                 // Shorthand for requiring the field to be non-empty
                 .asRequired("Title cannot be empty")
@@ -116,29 +122,44 @@ public class PinCreationView extends BaseView {
 
         binderPinBoardEntry.forField(txtaMessage)
                 .asRequired("Message cannot be empty")
+
                 .bind(PinBoardEntry::getMessage, PinBoardEntry::setMessage);
 
         binderPerson.bind(txtAuthor, Person::getFirstName, Person::setFirstName);
     }
 
-    private void saveNewPinEntry(Button.ClickEvent event) {
+    private PinBoardEntry bindFieldsToPinEntryPrimitive()
+    {
+        String title = txtTitle.getValue();
+        String message = txtaMessage.getValue();
+        Type type = cmdMsgType.getSelectedItem().get();
+        String author = txtAuthor.getValue();
+        Relative relative = new Relative(author, "");
 
-        bindFieldsToPinEntry();
 
-        PinBoardEntry newPinBoardEntry = binderPinBoardEntry.getBean();
+        return new PinBoardEntry(type, title, message, relative, getCurrentDate());
+    }
 
-        if (newPinBoardEntry == null) return;
 
-        newPinBoardEntry.setCreationDate(getCurrentDate());
-        newPinBoardEntry.setAuthor(binderPerson.getBean());
+    private void saveNewPinEntry(Button.ClickEvent event)
+    {
 
-        for (IPinCreationViewListener listener : listeners) {
+//        bindFieldsToPinEntry();
+        PinBoardEntry newPinBoardEntry = bindFieldsToPinEntryPrimitive();
+
+
+//        newPinBoardEntry.setCreationDate(getCurrentDate());
+//        newPinBoardEntry.setAuthor(binderPerson.getBean());
+//
+        for (IPinCreationViewListener listener : listeners)
+        {
             listener.createPinEntry(newPinBoardEntry);
         }
     }
 
 
-    private Date getCurrentDate() {
+    private Date getCurrentDate()
+    {
         return new Date();
     }
 
