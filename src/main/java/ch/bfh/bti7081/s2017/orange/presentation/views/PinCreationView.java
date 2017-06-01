@@ -4,7 +4,6 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
-import ch.bfh.bti7081.s2017.orange.presentation.views.IPinboardView.IPinCreationViewListener;
 import com.vaadin.data.Binder;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
@@ -17,8 +16,7 @@ import java.util.List;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public class PinCreationView extends BaseView
-{
+public class PinCreationView extends BaseView implements IPinboardView {
 
     private List<IPinCreationViewListener> listeners;
 
@@ -30,58 +28,49 @@ public class PinCreationView extends BaseView
     private ComboBox<Type> cmdMsgType;
     private TextArea txtaMessage;
 
-    public PinCreationView()
-    {
+    public PinCreationView() {
         listeners = new ArrayList<>();
         VerticalLayout mainLayout = new VerticalLayout();
         mainLayout.setSizeFull();
 
         setViewTitle(mainLayout);
-        //TODO test
-        Relative relative = new Relative();
-        relative.setFirstName("TESTAuthor");
-        setAuthor(relative);
 
         mainLayout.addComponent(createFormLayout());
         setCompositionRoot(mainLayout);
     }
 
 
-    public void setAuthor(Person author)
-    {
-        PinBoardEntry pinBoardEntry =
-                new PinBoardEntry(null, null, null, author, null);
+    public void setAuthorName(String author) {
 
-        binderPinBoardEntry.readBean(pinBoardEntry);
+        if (author.isEmpty()) author = "Current User";
+        txtAuthor.setValue(author);
     }
 
 
     @Override
-    public String getViewName()
-    {
+    public String getViewName() {
         return "PinboradCreationView";
     }
 
     @Override
-    public String getCaption()
-    {
+    public String getCaption() {
         return "Pinnwand Eintrag erstellen";
     }
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
-    {
-
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+        for (IPinCreationViewListener listener : listeners) {
+            listener.onViewEnter();
+        }
     }
 
-    private FormLayout createFormLayout()
-    {
+    private FormLayout createFormLayout() {
         FormLayout form = new FormLayout();
         form.setSizeFull();
 
         txtAuthor = new TextField("Author");
-        txtAuthor.setRequiredIndicatorVisible(true);
         form.addComponent(txtAuthor);
+        txtAuthor.setEnabled(false);
 
         txtTitle = new TextField("Title");
         txtTitle.setRequiredIndicatorVisible(true);
@@ -97,8 +86,6 @@ public class PinCreationView extends BaseView
         txtaMessage = new TextArea("Message");
         txtaMessage.setRequiredIndicatorVisible(true);
         form.addComponent(txtaMessage);
-//        //TODO normally comes from validation by Binder
-//        txtaMessage.setComponentError(new UserError("TESTESTEST!"));
 
         Button pin = new Button("Post new entry");
         pin.addClickListener(this::saveNewPinEntry);
@@ -107,11 +94,7 @@ public class PinCreationView extends BaseView
         return form;
     }
 
-    /**
-     * TODO they say only one binder per instance....
-     */
-    private void bindFieldsToPinEntry()
-    {
+    private void bindFieldsToPinEntry() {
         binderPinBoardEntry.forField(txtTitle)
                 // Shorthand for requiring the field to be non-empty
                 .asRequired("Title cannot be empty")
@@ -128,39 +111,34 @@ public class PinCreationView extends BaseView
         binderPerson.bind(txtAuthor, Person::getFirstName, Person::setFirstName);
     }
 
-    private PinBoardEntry bindFieldsToPinEntryPrimitive()
-    {
+    private PinBoardEntry bindFieldsToPinEntryWithoutBinder() {
         String title = txtTitle.getValue();
         String message = txtaMessage.getValue();
         Type type = cmdMsgType.getSelectedItem().get();
         String author = txtAuthor.getValue();
         Relative relative = new Relative(author, "");
 
-
         return new PinBoardEntry(type, title, message, relative, getCurrentDate());
     }
 
 
-    private void saveNewPinEntry(Button.ClickEvent event)
-    {
+    private void saveNewPinEntry(Button.ClickEvent event) {
 
-//        bindFieldsToPinEntry();
-        PinBoardEntry newPinBoardEntry = bindFieldsToPinEntryPrimitive();
+        PinBoardEntry newPinBoardEntry = bindFieldsToPinEntryWithoutBinder();
 
-
-//        newPinBoardEntry.setCreationDate(getCurrentDate());
-//        newPinBoardEntry.setAuthor(binderPerson.getBean());
-//
-        for (IPinCreationViewListener listener : listeners)
-        {
+        for (IPinCreationViewListener listener : listeners) {
             listener.createPinEntry(newPinBoardEntry);
         }
     }
 
 
-    private Date getCurrentDate()
-    {
+    private Date getCurrentDate() {
         return new Date();
     }
 
+
+    @Override
+    public void addListener(IBaseViewListener listener) {
+        listeners.add((IPinCreationViewListener) listener);
+    }
 }

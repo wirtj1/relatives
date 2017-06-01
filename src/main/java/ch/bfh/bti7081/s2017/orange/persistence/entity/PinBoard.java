@@ -7,24 +7,24 @@ import java.util.List;
 
 /**
  * @author yvesbeutler
- * Representation of a pinboard which contains of several {@link PinBoardEntry}.
+ *         Representation of a pinboard which contains of several {@link PinBoardEntry}.
  */
 @Entity
-public class PinBoard extends Identity
-{
+public class PinBoard extends Identity {
     @OneToMany
     private List<PinBoardEntry> entries = new ArrayList<>();
 
 
-
-
-    public List<PinBoardEntry> getEntries()
-    {
+    public List<PinBoardEntry> getEntries() {
         return entries;
     }
 
-    public void addEntry(PinBoardEntry entry)
-    {
+    public void addEntry(PinBoardEntry entry) {
         this.entries.add(entry);
+    }
+
+
+    public void setEntries(List<PinBoardEntry> entries) {
+        this.entries = entries;
     }
 }

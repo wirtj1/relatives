@@ -74,11 +74,12 @@ public class PinBoardEntry extends Identity {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() +
-                "[type=]" + type.toString() +
-                "[title=]" + title +
-                "[message=]" + message +
-                "[author=]" + author.toString() +
-                "[date=]" + creationDate.toString() + "]";
+        return "PinBoardEntry{" +
+                "type=" + type.name() +
+                ", title='" + title + '\'' +
+                ", message='" + message + '\'' +
+                ", author=" + author.getFirstName() +
+                ", creationDate=" + creationDate +
+                '}';
     }
 }

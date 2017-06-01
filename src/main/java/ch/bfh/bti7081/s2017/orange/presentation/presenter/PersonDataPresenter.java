@@ -14,7 +14,8 @@ import java.util.List;
  *
  * @author Joy
  */
-public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, PersonDataModel, IPersonDataView.IPersonDataListener> implements IPersonDataView.IPersonDataListener
+public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, PersonDataModel, IPersonDataView.IPersonDataListener>
+        implements IPersonDataView.IPersonDataListener
 {
 
     private PersonDataService personDataService;

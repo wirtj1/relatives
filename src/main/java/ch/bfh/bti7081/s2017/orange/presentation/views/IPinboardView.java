@@ -10,12 +10,14 @@ import com.vaadin.navigator.View;
 public interface IPinboardView extends View {
 
     interface IPinboardViewListener extends IBaseViewListener {
-        void addPinEntry();
+        void navigateToAddPinEntry();
+        void onViewEnter();
     }
 
     interface IPinCreationViewListener extends IBaseViewListener {
         void createPinEntry(PinBoardEntry entry);
+        void onViewEnter();
     }
 
-    void addListener(IPinboardViewListener listener);
+    void addListener(IBaseViewListener listener);
 }
