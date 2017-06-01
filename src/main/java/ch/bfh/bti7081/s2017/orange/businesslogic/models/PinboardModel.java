@@ -8,6 +8,8 @@ import java.util.List;
 
 /**
  * @author Jasmin
+ * This model is used by the pinboard view to present all pinboard
+ * entries to the user.
  **/
 public class PinboardModel extends BaseModel
 {

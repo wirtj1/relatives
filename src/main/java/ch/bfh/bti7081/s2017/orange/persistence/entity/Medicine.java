@@ -9,6 +9,10 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Medicine extends Identity {
+    public String getProductName() {
+        return productName;
+    }
+
     private String productName;
     private String description;
     private byte[] document;

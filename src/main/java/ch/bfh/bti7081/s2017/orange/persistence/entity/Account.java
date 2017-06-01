@@ -5,7 +5,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author yvesbeutler
- *         INSERT DESCRIPTION HERE
+ * Representation of an user account.
  */
 @Entity
 public class Account extends Identity {

@@ -16,5 +16,22 @@ public class Medication extends Identity {
     @NotNull
     @ManyToOne
     private Medicine medicine;
+
+    public int getInterval() {
+        return interval;
+    }
+
+    public String getDose() {
+        return dose;
+    }
+
+    public Medicine getMedicine() {
+        return medicine;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
     private String notes;
 }

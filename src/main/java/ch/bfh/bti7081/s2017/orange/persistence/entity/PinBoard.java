@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @author yvesbeutler
- *         Representation of a pinboard which contains of several {@link PinBoardEntry}.
+ * Representation of a pinboard which contains of several {@link PinBoardEntry}.
  */
 @Entity
 public class PinBoard extends Identity
