@@ -1,10 +1,12 @@
 
 package ch.bfh.bti7081.s2017.orange.businesslogic.service;
 
-import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
-import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.*;
+import ch.bfh.bti7081.s2017.orange.persistence.repository.Repository;
+import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,6 +15,7 @@ import java.util.List;
  * @author Joy
  */
 public class PersonDataService {
+	PersonRepository personRepository = new PersonRepository();
 	/**
 	 * saves person
 	 * @param person
@@ -34,23 +37,46 @@ public class PersonDataService {
 	 * @return
 	 */
 	public List<Person> getPersonList() {
-		//TODO call Repo and getAll Persons
-		Relative r1 = new Relative();
-		Relative r2 = new Relative();
-		Relative r3 = new Relative();
-//		r1.setFirstName("Leandro");
-//		r1.setLastName("Lerena");
-//		r1.setSocialAssuranceNumber("731.099.344.1");
-//		r2.setFirstName("Jasmin");
-//		r2.setLastName("Thevathas");
-//		r2.setSocialAssuranceNumber("731.566.122.3");
-//		r3.setFirstName("Sascha");
-//		r3.setLastName("Wittwer");
-//		r3.setSocialAssuranceNumber("732.433.322.8");
-		ArrayList<Person> personList = new ArrayList<Person>();
-		personList.add(r1);
-		personList.add(r2);
-		personList.add(r3);
-		return personList;
+
+		//TODO sobald das holen von der DB keine Null-Were mehr liefert
+		// und die Daten Sinn machen, kann dies entfernt werden
+		Patient p = new Patient("John", "Doe");
+		p.setBirthdate(new Date());
+		p.setPhone("079 456 45 45");
+		p.setSalutation(Salutation.HERR);
+		p.setTitle(Title.PROF);
+		Address address = new Address();
+		address.setStreetName("somestrasse");
+		address.setCompany("Firma");
+		address.setCity("Bern");
+		address.setPostBox("");
+		address.setCountry("CH");
+		address.setPostalCode("3023");
+		address.setStreetNumber("12");
+		p.setAddress(address);
+		p.setWeekendInformation("some info for the weekend");
+		p.setYearPlanning("this is the plan for the year");
+		p.setOasi("751.654.980.2");
+		p.setGoals("goal one: be polite, goal two: be super polite");
+		p.setInsurances(new ArrayList<Insurance>());
+		p.setMedications(new ArrayList<Medication>());
+		p.setMovement(new Movement());
+		p.setPinBoard(new PinBoard());
+		p.setRelatives(new ArrayList<Relative>());
+		p.setProfessionals(new ArrayList<Professional>());
+
+		Relative r = new Relative();
+		r.setFirstName("Maria");
+		r.setLastName("Doe");
+		r.setAddress(address);
+		r.setBirthdate(new Date());
+		r.setPhone("031 232 99 23");
+		r.setSalutation(Salutation.FRAU);
+		r.setTitle(Title.DR);
+
+		List<Person> all = new ArrayList<>();
+		all.add(p);
+		all.add(r);
+		return all;
 	}
 }

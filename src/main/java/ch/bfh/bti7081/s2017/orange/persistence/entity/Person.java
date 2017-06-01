@@ -2,6 +2,8 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -86,5 +88,14 @@ public abstract class Person extends Identity {
 
     public void setTitle(Title title) {
         this.title = title;
+    }
+
+    public String getBirthdateAsString() {
+        return new SimpleDateFormat("dd.MM.YYYY").format(getBirthdate());
+    }
+    public void setBirthdateAsString(String bday) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.YYYY");
+        Date date = sdf.parse(bday);
+        this.birthdate = date;
     }
 }

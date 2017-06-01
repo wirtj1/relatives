@@ -6,5 +6,5 @@ package ch.bfh.bti7081.s2017.orange.persistence.entity;
  */
 public enum Salutation {
     HERR,
-    FRAU,
+    FRAU
 }

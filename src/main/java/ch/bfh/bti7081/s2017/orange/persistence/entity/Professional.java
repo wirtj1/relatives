@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 
 /**
  * @author yvesbeutler
- * Representation of professional which can be any kind of medical staff.
+ *         Representation of professional which can be any kind of medical staff.
  */
 @Entity
 public class Professional extends Person {
@@ -15,5 +15,24 @@ public class Professional extends Person {
     public Professional(String firstName, String lastName) {
         super(firstName, lastName);
     }
-    protected Professional() { super("", ""); }
+
+    protected Professional() {
+        super("", "");
+    }
+
+    public boolean isOnEmergency() {
+        return onEmergency;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void setOnEmergency(boolean onEmergency) {
+        this.onEmergency = onEmergency;
+    }
 }

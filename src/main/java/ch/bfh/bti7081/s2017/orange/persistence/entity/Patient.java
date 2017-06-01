@@ -60,16 +60,8 @@ public class Patient extends Person {
         return oasi;
     }
 
-    public List<Professional> getProfessionals() {
-        return professionals;
-    }
-
     public List<Insurance> getInsurances() {
         return insurances;
-    }
-
-    public List<Medication> getMedications() {
-        return medications;
     }
 
     public String getGoals() {
@@ -86,6 +78,50 @@ public class Patient extends Person {
 
     public Movement getMovement() {
         return movement;
+    }
+
+    public void setGoals(String goals) {
+        this.goals = goals;
+    }
+
+    public void setOasi(String oasi) {
+        this.oasi = oasi;
+    }
+
+    public void setProfessionals(List<Professional> professionals) {
+        this.professionals = professionals;
+    }
+
+    public void setInsurances(List<Insurance> insurances) {
+        this.insurances = insurances;
+    }
+
+    public void setMedications(List<Medication> medications) {
+        this.medications = medications;
+    }
+
+    public void setRelatives(List<Relative> relatives) {
+        this.relatives = relatives;
+    }
+
+    public void setWeekendInformation(String weekendInformation) {
+        this.weekendInformation = weekendInformation;
+    }
+
+    public void setYearPlanning(String yearPlanning) {
+        this.yearPlanning = yearPlanning;
+    }
+
+    public void setMovement(Movement movement) {
+        this.movement = movement;
+    }
+
+    public void setPinBoard(PinBoard pinBoard) {
+        this.pinBoard = pinBoard;
+    }
+
+    public List<Professional> getProfessionals() {
+        return professionals;
     }
 
     public PinBoard getPinBoard() {

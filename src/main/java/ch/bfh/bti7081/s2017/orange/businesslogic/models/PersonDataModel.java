@@ -1,6 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+import ch.bfh.bti7081.s2017.orange.presentation.views.components.PersonGrid;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  **/
 public class PersonDataModel extends BaseModel {
 
-	private Person activePerson;
+	private PersonGrid activePersonGrid;
 	private List<Person> personList;
 
 	/**
@@ -24,10 +25,10 @@ public class PersonDataModel extends BaseModel {
 
 	/**
 	 * sets the active person to the model that will be used in the view
-	 * @param person
+	 * @param activePersonGrid
 	 */
-	public void setActivePerson(Person person) {
-		this.activePerson = person;
+	public void setActivePersonGrid(PersonGrid activePersonGrid) {
+		this.activePersonGrid = activePersonGrid;
 
 	}
 
@@ -43,7 +44,7 @@ public class PersonDataModel extends BaseModel {
 	 * returns the active person that is showed in the view
 	 * @return activePerson
 	 */
-	public Person getActivePerson() {
-		return activePerson;
+	public PersonGrid getActivePersonGrid() {
+		return activePersonGrid;
 	}
 }
