@@ -17,7 +17,12 @@ public class PinboardRepository extends Repository<PinBoard> {
 
     public PinboardRepository(Class<PinBoard> entityClass) {
         super(entityClass);
-        pinBoardEntryRepository = new PinBoardEntryRepository(PinBoardEntry.class);
+        pinBoardEntryRepository = new PinBoardEntryRepository();
+    }
+
+    public PinboardRepository() {
+        super(PinBoard.class);
+        pinBoardEntryRepository = new PinBoardEntryRepository();
     }
 
 
@@ -38,13 +43,6 @@ public class PinboardRepository extends Repository<PinBoard> {
         return super.persist(obj);
 
 
-    }
-
-
-    private class PinBoardEntryRepository extends Repository<PinBoardEntry> {
-        public PinBoardEntryRepository(Class<PinBoardEntry> entityClass) {
-            super(entityClass);
-        }
     }
 
 
