@@ -47,7 +47,7 @@ public class Bootstrap extends BaseUI {
         navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), VaadinIcons.TASKS, true);
         navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
         navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS ,true);
-        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), true);
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP,true);
 
         setNavigator(navigator);
 

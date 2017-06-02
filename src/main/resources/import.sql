@@ -2,9 +2,13 @@
 -- Create medicine
 INSERT INTO PUBLIC.MEDICINE (ID, DESCRIPTION, DOCUMENT, PRODUCTNAME) VALUES (1, 'Makes you calm', null, 'Antiripper');
 INSERT INTO PUBLIC.MEDICINE (ID, DESCRIPTION, DOCUMENT, PRODUCTNAME) VALUES (10, 'Makes you headbanging', null, 'Black Sabbathzilin');
+INSERT INTO PUBLIC.MEDICINE (ID, DESCRIPTION, DOCUMENT, PRODUCTNAME) VALUES (2, 'Stuff', null, 'MDMA');
+INSERT INTO PUBLIC.MEDICINE (ID, DESCRIPTION, DOCUMENT, PRODUCTNAME) VALUES (3, 'Something', null, 'Antibiotic');
 
 -- Create medication
 INSERT INTO PUBLIC.MEDICATION (ID, DOSE, INTERVAL, NOTES, MEDICINE_ID) VALUES (1, '200mg', 2, 'Not so important', 1);
+INSERT INTO PUBLIC.MEDICATION (ID, DOSE, INTERVAL, NOTES, MEDICINE_ID) VALUES (2, '50mg', 3, 'Take while eating, not on empty stomach', 2);
+INSERT INTO PUBLIC.MEDICATION (ID, DOSE, INTERVAL, NOTES, MEDICINE_ID) VALUES (3, '100mg', 1, 'Can make sleepy, but this is normal and no problem', 3);
 
 -- Create addresses
 INSERT INTO PUBLIC.ADDRESS (ID, CITY, COMPANY, COUNTRY, POSTBOX, POSTALCODE, STREETNAME, STREETNUMBER) VALUES (1, 'Münsigen', null, null, null, null, 'Linkenweg', '42');
