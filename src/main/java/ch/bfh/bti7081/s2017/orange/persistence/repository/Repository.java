@@ -23,8 +23,7 @@ public abstract class Repository<T extends Identity> {
     private Class<T> entityClass;
 
     public Repository(Class<T> entityClass) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("orange");
-        em = emf.createEntityManager();
+        em = EntityManagerFactoryOrange.getEntityManager();
         this.entityClass = entityClass;
     }
 
@@ -36,7 +35,7 @@ public abstract class Repository<T extends Identity> {
     public T persist(T obj) {
         em.getTransaction().begin();
 
-        if (em.contains(obj)) {
+        if (obj.getId() > 0 ) {
             em.merge(obj);
         }
         else {
