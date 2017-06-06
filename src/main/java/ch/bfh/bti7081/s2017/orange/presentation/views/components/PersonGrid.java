@@ -25,9 +25,6 @@ import java.util.Date;
  * @author Joy Wirth
  */
 public abstract class PersonGrid<P extends Person> extends VerticalLayout {
-
-    private final SimpleDateFormat format = new SimpleDateFormat("dd MM yyyy");
-
     private Binder<P> binder;
     private P person;
     private GridLayout personalGrid;

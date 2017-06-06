@@ -34,7 +34,7 @@ public class PersonRepositoryTest {
 //
 //
 //        personRepository.persist(kevin);
-//        kevin.setPinBoard(pinBoard);
+//        kevin.setPinboard(pinBoard);
 //
 //        pinboardRepository.persist(pinBoard);
 //

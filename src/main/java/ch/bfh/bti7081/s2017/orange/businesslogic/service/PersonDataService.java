@@ -2,7 +2,6 @@
 package ch.bfh.bti7081.s2017.orange.businesslogic.service;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.*;
-import ch.bfh.bti7081.s2017.orange.persistence.repository.Repository;
 import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository;
 
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.List;
  * @author Joy
  */
 public class PersonDataService {
-	PersonRepository personRepository = new PersonRepository();
 	/**
 	 * saves person
 	 * @param person
@@ -61,7 +59,7 @@ public class PersonDataService {
 		p.setInsurances(new ArrayList<Insurance>());
 		p.setMedications(new ArrayList<Medication>());
 		p.setMovement(new Movement());
-		p.setPinBoard(new PinBoard());
+		p.setPinboard(new PinBoard());
 		p.setRelatives(new ArrayList<Relative>());
 		p.setProfessionals(new ArrayList<Professional>());
 

@@ -94,23 +94,6 @@ public class PinCreationView extends BaseView implements IPinboardView {
         return form;
     }
 
-    private void bindFieldsToPinEntry() {
-        binderPinBoardEntry.forField(txtTitle)
-                // Shorthand for requiring the field to be non-empty
-                .asRequired("Title cannot be empty")
-                .bind(PinBoardEntry::getTitle, PinBoardEntry::setTitle);
-
-        binderPinBoardEntry.forField(cmdMsgType)
-                .bind(PinBoardEntry::getType, PinBoardEntry::setType);
-
-        binderPinBoardEntry.forField(txtaMessage)
-                .asRequired("Message cannot be empty")
-
-                .bind(PinBoardEntry::getMessage, PinBoardEntry::setMessage);
-
-        binderPerson.bind(txtAuthor, Person::getFirstName, Person::setFirstName);
-    }
-
     private PinBoardEntry bindFieldsToPinEntryWithoutBinder() {
         String title = txtTitle.getValue();
         String message = txtaMessage.getValue();
@@ -139,6 +122,8 @@ public class PinCreationView extends BaseView implements IPinboardView {
 
     @Override
     public void addListener(IBaseViewListener listener) {
-        listeners.add((IPinCreationViewListener) listener);
+        if (listener instanceof IPinCreationViewListener) {
+            listeners.add((IPinCreationViewListener) listener);
+        }
     }
 }
