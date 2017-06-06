@@ -11,6 +11,8 @@ import java.util.Date;
  */
 @Entity
 public class PinBoardEntry extends Identity {
+    private static final long serialVersionUID = 1L;
+
     private Type type;
     private String title;
     private String message;

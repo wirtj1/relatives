@@ -14,7 +14,6 @@ import java.util.Objects;
  */
 @MappedSuperclass
 public abstract class Identity implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;

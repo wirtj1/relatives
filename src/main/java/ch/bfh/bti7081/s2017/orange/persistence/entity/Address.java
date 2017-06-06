@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Address extends Identity {
+    private static final long serialVersionUID = 1L;
 
     @NotNull
     private String streetName;
