@@ -40,7 +40,7 @@ public class PinboardRepositoryTest {
     public void persist() throws Exception {
         List<Person> all = personRepository.getAll();
         Patient patient = (Patient) all.stream().filter(person -> person.getClass().equals(Patient.class)).findFirst().orElse(null);
-        pinBoard = patient.getPinBoard();
+        pinBoard = patient.getPinboard();
         PinBoardEntry pinBoardEntry = new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date());
         pinBoardEntryRepository.persist(pinBoardEntry);
         //pinBoard.addEntry(new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date()));
