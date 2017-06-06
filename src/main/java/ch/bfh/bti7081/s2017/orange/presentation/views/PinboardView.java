@@ -9,6 +9,7 @@ import com.vaadin.ui.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -80,7 +81,7 @@ public class PinboardView extends BaseView implements IPinboardView {
         pinPanel.setContent(panelLayout);
         pinPanel.setSizeFull();
 
-        Label lblType = new Label(entry.getType().name().toUpperCase());
+        Label lblType = new Label(entry.getType().name().toUpperCase(Locale.ENGLISH));
         String nameAuthor = entry.getAuthor().getFirstName() + entry.getAuthor().getLastName();
         String formattedDate = new SimpleDateFormat("dd.MM.yyyy").format(entry.getCreationDate());
 
@@ -105,7 +106,9 @@ public class PinboardView extends BaseView implements IPinboardView {
 
     @Override
     public void addListener(IBaseViewListener listener) {
-        listeners.add((IPinboardViewListener) listener);
+        if (listener instanceof IPinboardViewListener) {
+            listeners.add((IPinboardViewListener) listener);
+        }
 
     }
 }

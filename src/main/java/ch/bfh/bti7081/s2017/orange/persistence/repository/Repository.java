@@ -83,7 +83,6 @@ public abstract class Repository<T extends Identity> {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<T> q = cb.createQuery(entityClass);
         Root<T> root = q.from(entityClass);
-        ParameterExpression<Integer> p = cb.parameter(Integer.class);
         CriteriaQuery<T> criteriaQuery = q.select(root);
         criteriaQuery.where(pb.build(cb, root));
         TypedQuery<T> typedQuery = em.createQuery(criteriaQuery);

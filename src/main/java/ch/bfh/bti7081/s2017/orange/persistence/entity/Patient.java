@@ -116,7 +116,7 @@ public class Patient extends Person {
         this.movement = movement;
     }
 
-    public void setPinBoard(PinBoard pinBoard) {
+    public void setPinboard(PinBoard pinBoard) {
         this.pinBoard = pinBoard;
     }
 
@@ -124,7 +124,7 @@ public class Patient extends Person {
         return professionals;
     }
 
-    public PinBoard getPinBoard() {
+    public PinBoard getPinboard() {
         return pinBoard;
     }
 }
