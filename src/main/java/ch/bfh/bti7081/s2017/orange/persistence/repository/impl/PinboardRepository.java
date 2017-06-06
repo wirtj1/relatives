@@ -26,21 +26,22 @@ public class PinboardRepository extends Repository<PinBoard> {
     }
 
 
-    public PinBoard getAll() {
-        List<PinBoardEntry> pinBoardEntries = getEm().createQuery("select p from PinBoardEntry p").getResultList();
-        PinBoard pinBoard = new PinBoard();
-        pinBoard.setEntries(pinBoardEntries);
-
-        return pinBoard;
+    public List<PinBoard> getAll() {
+        List<PinBoard> pinBoards = getEm().createQuery("select p from PinBoard p").getResultList();
+        return pinBoards;
     }
 
     @Override
     public PinBoard persist(PinBoard obj) {
+
+
         obj.getEntries().stream()
                 .filter(entry -> entry.getId() == 0)
                 .forEach(entry -> pinBoardEntryRepository.persist(entry));
 
-        return super.persist(obj);
+        super.persist(obj);
+
+        return obj;
 
 
     }
