@@ -37,7 +37,10 @@ public class ParameterSet {
      */
     public String getParameter(String key)
     {
-        return parameters.get(key);
+        if(parameters.containsKey(key))
+            return parameters.get(key);
+
+        return "";
     }
 
     /**

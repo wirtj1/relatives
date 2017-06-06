@@ -28,7 +28,7 @@ public class PinCreationPresenter extends BasePresenter<PinCreationView, Pinboar
     @Override
     public void onViewEnter() {
 
-        String user = view.getUI().getSession().getAttribute(Session.class).get_user();
+        String user = view.getUI().getSession().getAttribute(Session.class).getUser();
         view.setAuthorName(user);
     }
 }

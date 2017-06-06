@@ -11,6 +11,22 @@ import javax.persistence.OneToOne;
 public class Account extends Identity {
     private static final long serialVersionUID = 1L;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public Permission getPermission() {
+        return permission;
+    }
+
     private String userName;
     private String password;
     @OneToOne
