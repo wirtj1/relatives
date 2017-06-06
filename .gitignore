@@ -64,3 +64,7 @@ fabric.properties
 .idea/
 target/
 /ch.bfh.bti7081.s2017.orange.app.iml
+lib/
+
+# vaadin stuff
+/src/main/webapp/VAADIN/themes/mytheme/styles.css

@@ -1,38 +1,84 @@
-/*
- * Copyright (c) 2015 DV Bern AG, Switzerland
- *
- * Das vorliegende Dokument, einschliesslich aller seiner Teile, ist urheberrechtlich
- * geschuetzt. Jede Verwertung ist ohne Zustimmung der DV Bern AG unzulaessig. Dies gilt
- * insbesondere fuer Vervielfaeltigungen, die Einspeicherung und Verarbeitung in
- * elektronischer Form. Wird das Dokument einem Kunden im Rahmen der Projektarbeit zur
- * Ansicht uebergeben ist jede weitere Verteilung durch den Kunden an Dritte untersagt.
- */
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
-import ch.bfh.bti7081.s2017.orange.businesslogic.models.Person;
-import com.vaadin.navigator.View;
+import ch.bfh.bti7081.s2017.orange.presentation.views.components.PersonGrid;
+
+/**
+ * View interface for the {@link PersonDataView} that includes the listener interface used in the presenter {@link ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter}
+ *
+ * @author Joy
+ */
+public interface IPersonDataView extends IBaseView {
+
+    /**
+     * sets the view to the edit mode
+     *
+     * @param personGrid
+     */
+    void setToEditMode(PersonGrid personGrid);
+
+    /**
+     * sets the view to the view mode
+     *
+     * @param personGrid
+     */
+    void setToViewMode(PersonGrid personGrid);
+
+    /**
+     * sets a message to the view
+     *
+     * @param message
+     */
+    void setMessage(String message);
+
+    /**
+     * add a listener to the view
+     *
+     * @param listener
+     */
+    void addListener(IPersonDataListener listener);
 
 
-public interface IPersonDataView extends View {
+    /**
+     * aremove a listener from  the view
+     *
+     * @param listener
+     */
+    void removeListener(IPersonDataListener listener);
 
-	void setToEditMode(Person person);
+    /**
+     * this interface defines the methods for the presenter
+     */
+    interface IPersonDataListener extends IBaseViewListener {
+        /**
+         * called when the save button is clicked
+         */
+        void onSaveButtonClicked(PersonGrid personGrid);
 
-	void setToViewMode(Person person);
+        /**
+         * called when the delete button is clicked
+         */
+        void onDeleteButtonClicked(PersonGrid personGrid);
 
-	void setMessage(String message);
+        /**
+         * called when the edit button is clicked
+         */
+        void onEditButtonClicked(PersonGrid personGrid);
 
-	void addListener(IPersonDataListener listener);
+        /**
+         * called when the cacnel button is clicked
+         */
+        void onCancelButtonClicked(PersonGrid personGrid);
 
+        /**
+         * called when the view is entered
+         */
+        void onViewEnter();
 
-	interface IPersonDataListener {
+        /**
+         * set Mode on View
+         */
+        void setMode();
 
-		void onSaveButtonClicked();
-
-		void onDeleteButtonClicked();
-
-		void onEditButtonClicked();
-
-		void onViewEnter();
-	}
+    }
 
 }
