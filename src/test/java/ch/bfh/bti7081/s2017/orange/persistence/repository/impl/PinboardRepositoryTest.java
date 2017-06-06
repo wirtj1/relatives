@@ -43,7 +43,7 @@ public class PinboardRepositoryTest {
         pinBoard = patient.getPinboard();
         PinBoardEntry pinBoardEntry = new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date());
         pinBoardEntryRepository.persist(pinBoardEntry);
-        //pinBoard.addEntry(new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date()));
+        pinBoard.addEntry(new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date()));
         pinboardRepository.persist(pinBoard);
     }
 
