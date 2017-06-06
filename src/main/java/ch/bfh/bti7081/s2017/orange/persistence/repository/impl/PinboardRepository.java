@@ -58,7 +58,7 @@ public class PinboardRepository extends Repository<PinBoard> {
             pinboard.addEntry(new PinBoardEntry(Type.INFORMATION, "Alone", "John was alone yesterday", relative,
                     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.GERMAN).parse("2017-05-21 15:02:32")));
 
-            pinboard.addEntry(new PinBoardEntry(Type.WARNING, "Not cured", "It seams John is not cured", patient,
+            pinboard.addEntry(new PinBoardEntry(Type.WARNING, "Not cured", "John seems  not to be cured", patient,
                     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.GERMAN).parse("2017-05-21 19:46:47")));
 
         } catch (ParseException e) {

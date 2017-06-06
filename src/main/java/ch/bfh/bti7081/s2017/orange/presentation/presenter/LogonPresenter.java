@@ -4,7 +4,7 @@ import ch.bfh.bti7081.s2017.orange.businesslogic.models.LogonModel;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.ILogonView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.LogonView;
-import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
+import ch.bfh.bti7081.s2017.orange.presentation.views.PinboardView;
 
 /**
  * Logon Presenter
@@ -27,7 +27,7 @@ public class LogonPresenter extends BasePresenter<LogonView, LogonModel> impleme
         {
             Session session = new Session(user);
             view.getUI().getSession().setAttribute(Session.class, session);
-            view.getUI().getNavigator().navigateTo(PersonDataView.class);
+            view.getUI().getNavigator().navigateTo(PinboardView.class);
         }
     }
 }
