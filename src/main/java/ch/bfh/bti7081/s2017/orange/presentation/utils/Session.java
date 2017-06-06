@@ -1,5 +1,8 @@
 package ch.bfh.bti7081.s2017.orange.presentation.utils;
 
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Account;
+import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.AccountRepository;
+
 import java.util.Date;
 
 /**
@@ -7,28 +10,38 @@ import java.util.Date;
  * @author Sascha
  */
 public class Session {
-    public String get_user() {
-        return _user;
+
+    private Integer TIMEOUT = 60 * 1000 * 5;
+    private Account account;
+    private Date lastAction;
+
+    public String getUser() {
+        return account.getUserName();
     }
 
-    private String _user;
-
-    public Date get_logonTime() {
-        return _logonTime;
-    }
-
-    private Date _logonTime;
-
-    public Boolean get_active() {
-        return _active;
-    }
-
-    private Boolean _active;
-
-    public Session(String user)
+    public Session(Account account)
     {
-        this._user = user;
-        this._active = true;
+        this.account = account;
+        this.lastAction = new Date();
     }
 
+    public void resetTimeout()
+    {
+        this.lastAction = new Date();
+    }
+
+    public Boolean isActive() {
+        Date validUntil = new Date(System.currentTimeMillis() - this.TIMEOUT);
+        return this.lastAction.after(validUntil);
+    }
+
+    public static Session logon(String user, String password){
+
+        AccountRepository repo = new AccountRepository(Account.class);
+        Account account = repo.getByNameAndPwd(user, password);
+        if (account == null)
+            return null;
+
+        return new Session(account);
+    }
 }

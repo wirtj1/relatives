@@ -12,17 +12,18 @@ import com.vaadin.ui.UI;
  * @author Sascha
  */
 public abstract class BaseUI extends UI {
+
     @Override
     public BaseNavigator getNavigator() {
         return (BaseNavigator) super.getNavigator();
     }
 
-    public Boolean sessionRegistered(){
+    public Boolean sessionActive(){
         Session session = getSession().getAttribute(Session.class);
         if (session == null)
             return false;
 
-        return session.get_active();
+        return session.isActive();
     }
 
     public void doLogout()

@@ -9,6 +9,22 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Account extends Identity {
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public Permission getPermission() {
+        return permission;
+    }
+
     private String userName;
     private String password;
     @OneToOne

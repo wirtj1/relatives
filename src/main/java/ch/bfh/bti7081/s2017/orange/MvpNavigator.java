@@ -59,11 +59,18 @@ public class MvpNavigator extends BaseNavigator {
     public <T extends BaseView> void navigateTo(Class<T> destinationView, ParameterSet parameterSet)
     {
         // Navigation to logon view is always possible
-        if (getUI().sessionRegistered() || destinationView.equals(LogonView.class)){
+        if (getUI().sessionActive() || destinationView.equals(LogonView.class)){
             views.stream()
                     .filter(components -> components.getClass().equals(destinationView))
                     .findFirst()
                     .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameterSet)));
+        } else { // Navigation to other view than logon despite no valid session
+            ParameterSet parameter = new ParameterSet();
+            parameter.addParameter("timeout", "true");
+            views.stream()
+                    .filter(components -> components.getClass().equals(LogonView.class))
+                    .findFirst()
+                    .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameter)));
         }
     }
 
