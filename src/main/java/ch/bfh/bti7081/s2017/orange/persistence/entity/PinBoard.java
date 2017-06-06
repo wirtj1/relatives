@@ -11,6 +11,8 @@ import java.util.List;
  */
 @Entity
 public class PinBoard extends Identity {
+    private static final long serialVersionUID = 1L;
+
     @OneToMany
     private List<PinBoardEntry> entries = new ArrayList<>();
 

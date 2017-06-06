@@ -11,6 +11,8 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Medication extends Identity {
+    private static final long serialVersionUID = 1L;
+
     private int interval;
     private String dose;
     @NotNull

@@ -9,6 +9,8 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Medicine extends Identity {
+    private static final long serialVersionUID = 1L;
+
     public String getProductName() {
         return productName;
     }
