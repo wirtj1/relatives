@@ -66,7 +66,8 @@ public class PinBoardEntry extends Identity {
     }
 
     public Date getCreationDate() {
-        return creationDate;
+        // Return a new object to prevent mutations from outside
+        return new Date(creationDate.getTime());
     }
 
     public void setCreationDate(Date creationDate) {
