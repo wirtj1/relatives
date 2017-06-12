@@ -64,7 +64,8 @@ public abstract class Person extends Identity {
     }
 
     public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+        // Prevent storing a object which is mutable from outside
+        this.birthdate = new Date(birthdate.getTime());
     }
 
     public Address getAddress() {
