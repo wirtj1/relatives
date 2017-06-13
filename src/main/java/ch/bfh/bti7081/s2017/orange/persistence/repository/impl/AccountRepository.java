@@ -15,8 +15,9 @@ public class AccountRepository extends Repository<Account> {
     }
 
     public Account getByNameAndPwd(String user, String password){
-        List<Account> accounts = getEm().createQuery("select a from Account a where a.userName = '" + user + "' and a.password = '" + password + "'").getResultList();
-        if (accounts.size() <= 0)
+        List<Account> accounts = getEm().createQuery("select a from Account a where a.userName = :user and a.password = :password").setParameter("user",user).setParameter("password", password).getResultList();
+
+        if (accounts.size() != 1)
             return null;
 
         return accounts.get(0);
