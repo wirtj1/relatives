@@ -44,4 +44,9 @@ public class Session {
 
         return new Session(account);
     }
+
+    public Account getAccount()
+    {
+        return account;
+    }
 }

@@ -50,6 +50,9 @@ public class LogonView extends BaseView implements ILogonView {
     }
 
     private void doLogonClick(Button.ClickEvent event){
+
+        
+
         for (ILogonViewListener listener : listeners){
             listener.doLogin(_userName.getValue(), _password.getValue());
         }
@@ -77,6 +80,7 @@ public class LogonView extends BaseView implements ILogonView {
         }
 
         _password.setValue("");
+        _userName.focus();
         UI.getCurrent().addWindow(win);
     }
 

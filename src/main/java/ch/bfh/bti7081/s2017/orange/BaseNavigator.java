@@ -20,6 +20,8 @@ public abstract class BaseNavigator extends Navigator {
     public abstract void addView(BasePresenter presenter, boolean addToMenu);
     public abstract <T extends BaseView> void navigateTo(Class<T> destinationView, ParameterSet parameterSet);
     public abstract <T extends BaseView> void navigateTo(Class<T> destinationView);
+    public abstract void navigateBack();
+    public abstract void resetViewHistory();
 
     @Override
     public BaseUI getUI() {
