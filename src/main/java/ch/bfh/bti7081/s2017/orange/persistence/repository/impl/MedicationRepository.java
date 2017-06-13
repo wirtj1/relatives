@@ -15,8 +15,8 @@ public class MedicationRepository extends Repository<Medication> {
         super(entityClass);
     }
 
-    public List<Medication> getAll()
+/*    public List<Medication> getAll()
     {
         return getEm().createQuery("select m from Medication m").getResultList();
-    }
+    }*/
 }

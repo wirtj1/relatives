@@ -21,10 +21,10 @@ public class PersonRepositoryTest {
         personRepository = new PersonRepository();
     }
 
+    // TODO: check if this repository is used by someone
 
     @Test
-    public void getPatientsByRelative() throws Exception {
-
+    public void getPatientsByExistingRelative() throws Exception {
     }
 
     @Test
