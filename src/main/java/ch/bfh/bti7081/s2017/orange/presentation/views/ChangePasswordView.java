@@ -48,7 +48,7 @@ public class ChangePasswordView extends BaseView implements IChangePasswordView 
         windowContent.addComponent(changePassword);
         windowContent.addComponent(cancel);
 
-        win = new Window("Login");
+        win = new Window("Change password");
         win.setContent(windowContent);
         win.center();
         win.setModal(true);
@@ -64,12 +64,12 @@ public class ChangePasswordView extends BaseView implements IChangePasswordView 
 
     @Override
     public String getViewName() {
-        return "Account";
+        return "ChangePassword";
     }
 
     @Override
     public String getCaption() {
-        return "Account";
+        return "Change password";
     }
 
     @Override
