@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ch.bfh.bti7081.s2017.orange.BaseNavigator</OriginalElement>
+  <nodes>
+    <node x="396.5" y="79.0">ch.bfh.bti7081.s2017.orange.Bootstrap</node>
+    <node x="205.0" y="236.0">ch.bfh.bti7081.s2017.orange.businesslogic.models.BaseModel</node>
+    <node x="884.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.MedicineRepository</node>
+    <node x="390.5" y="158.0">ch.bfh.bti7081.s2017.orange.Bootstrap.MyUIServlet</node>
+    <node x="0.0" y="553.0">ch.bfh.bti7081.s2017.orange.MvpNavigator</node>
+    <node x="177.5" y="0.0">ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView</node>
+    <node x="20.5" y="158.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter</node>
+    <node x="169.0" y="474.0">ch.bfh.bti7081.s2017.orange.persistence.repository.EntityManagerFactoryOrange</node>
+    <node x="248.5" y="79.0">ch.bfh.bti7081.s2017.orange.presentation.views.BaseView</node>
+    <node x="659.0" y="231.0">ch.bfh.bti7081.s2017.orange.presentation.utils.ParameterSet</node>
+    <node x="520.0" y="232.0">ch.bfh.bti7081.s2017.orange.presentation.utils.Session</node>
+    <node x="368.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository</node>
+    <node x="712.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PinboardRepository</node>
+    <node x="0.0" y="474.0">ch.bfh.bti7081.s2017.orange.BaseNavigator</node>
+    <node x="528.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.MedicationRepository</node>
+    <node x="472.0" y="311.0">ch.bfh.bti7081.s2017.orange.persistence.repository.Repository</node>
+    <node x="0.0" y="237.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter</node>
+    <node x="161.5" y="158.0">ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState</node>
+    <node x="199.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.AccountRepository</node>
+    <node x="87.49999999999999" y="79.0">ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener</node>
+    <node x="0.0" y="400.0">ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PinBoardEntryRepository</node>
+    <node x="404.5" y="0.0">ch.bfh.bti7081.s2017.orange.BaseUI</node>
+    <node x="354.0" y="235.0">ch.bfh.bti7081.s2017.orange.presentation.utils.NavigationUtils</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PinBoardEntryRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="89.5" y="360.0" />
+      <point x="480.66666666666663" y="360.0" />
+      <point x="-43.333333333333314" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.BaseContextPresenter" target="ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap" target="ch.bfh.bti7081.s2017.orange.BaseUI">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.MvpNavigator" target="ch.bfh.bti7081.s2017.orange.BaseNavigator">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.AccountRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="273.5" y="370.0" />
+      <point x="498.0" y="370.0" />
+      <point x="-26.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PersonRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="438.0" y="380.0" />
+      <point x="515.3333333333334" y="380.0" />
+      <point x="-8.666666666666629" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.Bootstrap.MyUIServlet" target="ch.bfh.bti7081.s2017.orange.Bootstrap">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.BasePresenter" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-14.5" />
+      <point x="81.0" y="133.0" />
+      <point x="122.74999999999999" y="133.0" />
+      <point x="-35.25" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PinboardRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="788.0" y="370.0" />
+      <point x="550.0" y="370.0" />
+      <point x="26.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.presenter.states.BasePresenterState" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener">
+      <point x="0.0" y="-14.5" />
+      <point x="235.0" y="133.0" />
+      <point x="193.25" y="133.0" />
+      <point x="35.25" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView.IBaseViewListener" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView">
+      <point x="0.0" y="-14.5" />
+      <point x="158.0" y="54.0" />
+      <point x="202.5" y="54.0" />
+      <point x="-25.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.MedicationRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="610.0" y="380.0" />
+      <point x="532.6666666666666" y="380.0" />
+      <point x="8.666666666666629" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.presentation.views.BaseView" target="ch.bfh.bti7081.s2017.orange.presentation.views.IBaseView">
+      <point x="0.0" y="-14.5" />
+      <point x="297.0" y="54.0" />
+      <point x="252.5" y="54.0" />
+      <point x="25.0" y="14.5" />
+    </edge>
+    <edge source="ch.bfh.bti7081.s2017.orange.persistence.repository.impl.MedicineRepository" target="ch.bfh.bti7081.s2017.orange.persistence.repository.Repository">
+      <point x="0.0" y="-14.5" />
+      <point x="960.5" y="360.0" />
+      <point x="567.3333333333334" y="360.0" />
+      <point x="43.33333333333337" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="518.5" y="365.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,4 +1,4 @@
-# Backlog spring 2
+# Backlog sprint 2
 
 | ID | Title                                         | Work Item Type       | State | Effort | Value Area | Iteration Path     |
 |----|-----------------------------------------------|----------------------|-------|--------|------------|--------------------|
