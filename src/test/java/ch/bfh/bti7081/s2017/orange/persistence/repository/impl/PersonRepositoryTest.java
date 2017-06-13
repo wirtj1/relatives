@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -30,6 +31,18 @@ public class PersonRepositoryTest {
     @Test
     public void getAll() throws Exception {
         List<Person> persons = personRepository.getAll();
+
+        List<List<Patient>> patients = persons.stream()
+                                        .filter(person -> person.getClass().equals(Relative.class))
+                                        .map(relative -> personRepository.getPatientsByRelative((Relative) relative))
+                                        .collect(Collectors.toList());
+
+        System.out.println(patients.size());
+        for (List<Patient> patient : patients) {
+            for (Patient patient1 : patient) {
+                System.out.println(patient1.getFirstName());
+            }
+        }
     }
 
     @Test
