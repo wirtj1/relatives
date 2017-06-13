@@ -81,6 +81,10 @@ public class Patient extends Person {
         return movement;
     }
 
+    public List<Medication> getMedications() {
+        return medications;
+    }
+
     public void setGoals(String goals) {
         this.goals = goals;
     }

@@ -21,12 +21,14 @@ public class MvpNavigator extends BaseNavigator {
 
     private MenuBar navigationBar;
     private List<BaseView> views = new ArrayList<>();
+    private List<Class> viewHistory;
 
 
     public MvpNavigator(BaseUI ui, ComponentContainer container, MenuBar navigation)
     {
         super(ui, container);
         this.navigationBar = navigation;
+        this.viewHistory = new ArrayList<>();
     }
 
     /**
@@ -60,6 +62,7 @@ public class MvpNavigator extends BaseNavigator {
     {
         // Navigation to logon view is always possible
         if (getUI().sessionActive() || destinationView.equals(LogonView.class)){
+            viewHistory.add(destinationView);
             views.stream()
                     .filter(components -> components.getClass().equals(destinationView))
                     .findFirst()
@@ -67,11 +70,24 @@ public class MvpNavigator extends BaseNavigator {
         } else { // Navigation to other view than logon despite no valid session
             ParameterSet parameter = new ParameterSet();
             parameter.addParameter("timeout", "true");
+            viewHistory.add(LogonView.class);
             views.stream()
                     .filter(components -> components.getClass().equals(LogonView.class))
                     .findFirst()
                     .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameter)));
         }
+    }
+
+    public void navigateBack()
+    {
+        if (viewHistory.size() > 2){
+            // Navigate to last view. Current view is size -1, last view is size -2
+            navigateTo(viewHistory.get(viewHistory.size() - 2));
+        }
+    }
+
+    public void resetViewHistory(){
+        viewHistory.clear();
     }
 
     /**

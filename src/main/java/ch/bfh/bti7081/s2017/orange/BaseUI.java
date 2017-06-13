@@ -32,6 +32,7 @@ public abstract class BaseUI extends UI {
         if (session != null)
         {
             getSession().setAttribute(Session.class, null);
+            getNavigator().resetViewHistory();
             getNavigator().navigateTo(LogonView.class);
         }
     }

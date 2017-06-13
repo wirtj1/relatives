@@ -18,7 +18,7 @@ public class Professional extends Person {
         super(firstName, lastName);
     }
 
-    protected Professional() {
+    public Professional() {
         super("", "");
     }
 
