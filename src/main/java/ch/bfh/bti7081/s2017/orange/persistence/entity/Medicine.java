@@ -11,6 +11,12 @@ import javax.persistence.Entity;
 public class Medicine extends Identity {
     private static final long serialVersionUID = 1L;
 
+    public Medicine(String productName, String description, byte[] document) {
+        this.productName = productName;
+        this.description = description;
+        this.document = document.clone();
+    }
+
     public String getProductName() {
         return productName;
     }
