@@ -51,7 +51,7 @@ public class Bootstrap extends BaseUI {
 
         setNavigator(navigator);
 
-        if (sessionRegistered()) {
+        if (sessionActive()) {
             getNavigator().navigateTo(PersonDataView.class);
         } else {
             getNavigator().navigateTo(LogonView.class);

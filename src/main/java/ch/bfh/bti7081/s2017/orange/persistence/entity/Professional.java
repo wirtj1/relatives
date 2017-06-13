@@ -9,6 +9,8 @@ import javax.persistence.MappedSuperclass;
  */
 @Entity
 public class Professional extends Person {
+    private static final long serialVersionUID = 1L;
+
     private boolean onEmergency;
     private Role role;
 

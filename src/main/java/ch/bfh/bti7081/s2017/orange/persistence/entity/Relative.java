@@ -8,6 +8,8 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Relative extends Person {
+    private static final long serialVersionUID = 1L;
+
     public Relative() {
         super("No", "Name");
     }
