@@ -83,8 +83,11 @@ public class PinboardView extends BaseView implements IPinboardView
     {
         Panel pinPanel = new Panel(entry.getTitle());
         VerticalLayout panelLayout = new VerticalLayout();
-
         panelLayout.setSizeFull();
+        HorizontalLayout firstRow = new HorizontalLayout();
+//        firstRow.addComponent(new Image(VaadinIcons.ABACUS));
+
+
 
         pinPanel.setContent(panelLayout);
         pinPanel.setSizeFull();
@@ -93,7 +96,7 @@ public class PinboardView extends BaseView implements IPinboardView
         Label lblType = new Label(msgType.name().toUpperCase());
         lblType.setStyleName(
                 msgType.equals(Type.ALERT) ? "pinboardAlert" :
-                        msgType.equals(Type.WARNING) ? "pinboardWarning" : "");
+                        msgType.equals(Type.WARNING) ? "pinboardWarning" : "pinboardInformation");
 
 
         String nameAuthor = entry.getAuthor().getFirstName() + " " + entry.getAuthor().getLastName();

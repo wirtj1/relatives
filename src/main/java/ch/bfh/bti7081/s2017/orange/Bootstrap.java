@@ -52,7 +52,7 @@ public class Bootstrap extends BaseUI {
         setNavigator(navigator);
 
         if (sessionActive()) {
-            getNavigator().navigateTo(PersonDataView.class);
+            getNavigator().navigateTo(PinboardView.class);
         } else {
             getNavigator().navigateTo(LogonView.class);
         }
