@@ -30,7 +30,7 @@ public class PinboardRepository extends Repository<PinBoard> {
         return obj;
     }
 
-    // TODO: delete after merge
+    // TODO: delete after merge with jasmin stuff
     public PinBoard getAllTest() {
         return null;
     }
