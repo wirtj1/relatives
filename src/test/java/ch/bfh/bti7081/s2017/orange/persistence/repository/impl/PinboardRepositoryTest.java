@@ -1,50 +1,61 @@
 package ch.bfh.bti7081.s2017.orange.persistence.repository.impl;
 
-import ch.bfh.bti7081.s2017.orange.persistence.entity.*;
-import org.junit.After;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Professional;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
- * @author Leandro on 5/6/2017.
+ * @author yvesbeutler
+ * Unit tests for the pinboard repository. These tests are based on the
+ * arrange-act-assert pattern.
  */
 public class PinboardRepositoryTest {
-    PinBoard pinBoard;
-    PinboardRepository pinboardRepository;
-    PinBoardEntryRepository pinBoardEntryRepository;
-    PersonRepository personRepository;
+    private PinboardRepository pinboardRepository;
+    private PersonRepository personRepository;
 
     @Before
     public void setUp() throws Exception {
         pinboardRepository = new PinboardRepository();
-        pinBoardEntryRepository = new PinBoardEntryRepository();
         personRepository = new PersonRepository();
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
     }
 
     @Test
-    public void getAll() throws Exception {
+    public void shouldPersistPinboard() throws Exception {
+        // arrange
+        List<PinBoardEntry> entries = new ArrayList<>();
+        PinBoardEntry entry1 = new PinBoardEntry();
+        Professional author1 = (Professional) personRepository.find(30).get();
+        entry1.setAuthor(author1);
+        entry1.setTitle("Patient geflohen");
+        entry1.setMessage("Bitte helfen Sie mir, Ihren Opa zu finden");
+        entries.add(entry1);
 
+        PinBoardEntry entry2 = new PinBoardEntry();
+        Relative author2 = (Relative) personRepository.find(40).get();
+        entry2.setAuthor(author2);
+        entry2.setTitle("Keine Panik");
+        entry2.setMessage("Der ist schon so alt, der wird nicht weit kommen.");
+        entries.add(entry2);
+
+        PinBoard pinBoard = new PinBoard();
+        pinBoard.setEntries(entries);
+
+        // act
+        PinBoard result = pinboardRepository.persist(pinBoard);
+
+        // assert
+        assertEquals(result.getEntries().size(), 2);
+        assertEquals(result.getEntries().get(0).getAuthor(), author1);
+        assertEquals(result.getEntries().get(0).getTitle(), "Patient geflohen");
+        assertEquals(result.getEntries().get(1).getAuthor(), author2);
+        assertEquals(result.getEntries().get(1).getTitle(), "Keine Panik");
     }
-
-    @Test
-    public void persist() throws Exception {
-        List<Person> all = personRepository.getAll();
-        Patient patient = (Patient) all.stream().filter(person -> person.getClass().equals(Patient.class)).findFirst().orElse(null);
-        pinBoard = patient.getPinboard();
-        PinBoardEntry pinBoardEntry = new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date());
-        pinBoardEntryRepository.persist(pinBoardEntry);
-        pinBoard.addEntry(new PinBoardEntry(Type.ALERT, "Title 1", "Message 1", patient, new Date()));
-        pinboardRepository.persist(pinBoard);
-    }
-
 }
