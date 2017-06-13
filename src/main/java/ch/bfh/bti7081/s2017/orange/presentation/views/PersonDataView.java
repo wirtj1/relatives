@@ -10,20 +10,23 @@ import ch.bfh.bti7081.s2017.orange.presentation.views.components.ProfessionalGri
 import ch.bfh.bti7081.s2017.orange.presentation.views.components.RelativeGrid;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.Scrollable;
-import com.vaadin.ui.*;
+import com.vaadin.ui.Accordion;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.VerticalLayout;
 import org.hibernate.cfg.NotYetImplementedException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
  * This view shows the BasicData of the persons and is connected to the presenter {@link ch.bfh.bti7081.s2017.orange.presentation.presenter.PersonDataPresenter} and the model {@link ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel}
  *
  * @author Joy
  */
-public class PersonDataView extends BaseView implements IPersonDataView {
+public class PersonDataView extends BaseView implements IPersonDataView
+{
 
     private List<IPersonDataListener> listeners;
 
@@ -33,62 +36,76 @@ public class PersonDataView extends BaseView implements IPersonDataView {
     private Label messageLabel;
     private Accordion personAccordion;
 
-    public PersonDataView() {
+
+    public PersonDataView()
+    {
         listeners = new ArrayList<>();
         messageLabel = new Label();
-
         layout = new VerticalLayout();
         layout.addComponent(messageLabel);
+
+        setViewTitle(layout);
         setCompositionRoot(layout);
     }
 
 
     @Override
-    public void setToEditMode(PersonGrid personGrid) {
-        if(personGrid!=null) {
+    public void setToEditMode(PersonGrid personGrid)
+    {
+        if (personGrid != null)
+        {
             personGrid.setToEditMode();
         }
     }
 
     @Override
-    public void setToViewMode(PersonGrid personGrid) {
+    public void setToViewMode(PersonGrid personGrid)
+    {
         Iterator<Component> iterator = personAccordion.iterator();
-        while (iterator.hasNext()) {
+        while (iterator.hasNext())
+        {
             PersonGrid next = (PersonGrid) iterator.next();
             next.setToViewMode();
         }
     }
 
     @Override
-    public void setMessage(String value) {
+    public void setMessage(String value)
+    {
         messageLabel.setValue(value);
     }
 
     @Override
-    public void addListener(IPersonDataListener listener) {
+    public void addListener(IPersonDataListener listener)
+    {
         listeners.add(listener);
     }
 
     @Override
-    public void removeListener(IPersonDataListener listener) {
+    public void removeListener(IPersonDataListener listener)
+    {
         listeners.remove(listener);
     }
 
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
-        for (IPersonDataListener listener : listeners) {
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
+    {
+        for (IPersonDataListener listener : listeners)
+        {
             listener.onViewEnter();
         }
     }
 
     @Override
-    public String getViewName() {
+    public String getViewName()
+    {
         return "PersonDataView";
     }
 
     @Override
-    public String getCaption() {
+    public String getCaption()
+    {
         return "Stammdaten Person";
     }
 
@@ -98,14 +115,18 @@ public class PersonDataView extends BaseView implements IPersonDataView {
      *
      * @param personList
      */
-    public void fillAccordion(List<Person> personList) {
-        if (personAccordion == null) {
+    public void fillAccordion(List<Person> personList)
+    {
+        if (personAccordion == null)
+        {
             personAccordion = new Accordion();
-        } else {
+        } else
+        {
             personAccordion.removeAllComponents();
         }
 
-        for (Person person : personList) {
+        for (Person person : personList)
+        {
             PersonGrid personGrid = getGrid(person);
             personGrid.getCancelButton().addClickListener(clickEvent -> onCancel(personGrid));
             personGrid.getDeleteButton().addClickListener(clickEvent -> onDelete(personGrid));
@@ -116,42 +137,56 @@ public class PersonDataView extends BaseView implements IPersonDataView {
         layout.addComponent(personAccordion);
     }
 
-    private PersonGrid getGrid(Person person) {
-        if(person instanceof Relative){
-           return new RelativeGrid((Relative)person);
-        }else if(person instanceof Patient){
+    private PersonGrid getGrid(Person person)
+    {
+        if (person instanceof Relative)
+        {
+            return new RelativeGrid((Relative) person);
+        } else if (person instanceof Patient)
+        {
             return new PatientGrid((Patient) person);
-        }else if(person instanceof Professional){
+        } else if (person instanceof Professional)
+        {
             return new ProfessionalGrid((Professional) person);
-        }else{
+        } else
+        {
             throw new NotYetImplementedException("fuuu");
         }
     }
 
-    public PersonGrid getActivePersonGrid(){
+    public PersonGrid getActivePersonGrid()
+    {
         return (PersonGrid) personAccordion.getSelectedTab();
     }
 
-    private void onEdit(PersonGrid personGrid) {
-        for (IPersonDataListener listener : listeners) {
+    private void onEdit(PersonGrid personGrid)
+    {
+        for (IPersonDataListener listener : listeners)
+        {
             listener.onEditButtonClicked(personGrid);
         }
     }
 
-    private void onCancel(PersonGrid personGrid) {
-        for (IPersonDataListener listener : listeners) {
+    private void onCancel(PersonGrid personGrid)
+    {
+        for (IPersonDataListener listener : listeners)
+        {
             listener.onCancelButtonClicked(personGrid);
         }
     }
 
-    private void onSave(PersonGrid personGrid) {
-        for (IPersonDataListener listener : listeners) {
+    private void onSave(PersonGrid personGrid)
+    {
+        for (IPersonDataListener listener : listeners)
+        {
             listener.onSaveButtonClicked(personGrid);
         }
     }
 
-    private void onDelete(PersonGrid personGrid) {
-        for (IPersonDataListener listener : listeners) {
+    private void onDelete(PersonGrid personGrid)
+    {
+        for (IPersonDataListener listener : listeners)
+        {
             listener.onDeleteButtonClicked(personGrid);
         }
     }

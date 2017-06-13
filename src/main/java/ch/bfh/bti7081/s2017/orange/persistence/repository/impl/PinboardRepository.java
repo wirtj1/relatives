@@ -12,29 +12,42 @@ import java.util.Locale;
 /**
  * @author Leandro on 30/5/2017.
  */
-public class PinboardRepository extends Repository<PinBoard> {
+public class PinboardRepository extends Repository<PinBoard>
+{
     private PinBoardEntryRepository pinBoardEntryRepository;
 
-    public PinboardRepository(Class<PinBoard> entityClass) {
+    public PinboardRepository(Class<PinBoard> entityClass)
+    {
         super(entityClass);
         pinBoardEntryRepository = new PinBoardEntryRepository();
     }
 
-    public PinboardRepository() {
+    public PinboardRepository()
+    {
         super(PinBoard.class);
         pinBoardEntryRepository = new PinBoardEntryRepository();
     }
 
 
-    public List<PinBoard> getAll() {
+    public List<PinBoard> getAll()
+    {
         List<PinBoard> pinBoards = getEm().createQuery("select p from PinBoard p").getResultList();
         return pinBoards;
     }
 
+    public PinBoard getPinboardByRelative(Person relative)
+    {
+        List<PinBoard> allPinboards = getAll();
+
+        return (allPinboards
+                .stream()
+                .filter(person -> person.getClass().equals(Patient.class))
+                .findFirst().orElse(new PinBoard()));
+    }
+
     @Override
-    public PinBoard persist(PinBoard obj) {
-
-
+    public PinBoard persist(PinBoard obj)
+    {
         obj.getEntries().stream()
                 .filter(entry -> entry.getId() == 0)
                 .forEach(entry -> pinBoardEntryRepository.persist(entry));
@@ -42,17 +55,17 @@ public class PinboardRepository extends Repository<PinBoard> {
         super.persist(obj);
 
         return obj;
-
-
     }
 
 
-    public PinBoard getAllTest() {
+    public PinBoard getAllTest()
+    {
         PinboardModel pinboard = new PinboardModel();
         Relative relative = new Relative("John", "Master");
         Patient patient = new Patient("Hans", "Muster");
 
-        try {
+        try
+        {
             pinboard.addEntry(new PinBoardEntry(Type.ALERT, "Neighbour", "Our neighbour disappeard!", relative,
                     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.GERMAN).parse("2017-05-20 19:46:47")));
 
@@ -62,7 +75,8 @@ public class PinboardRepository extends Repository<PinBoard> {
             pinboard.addEntry(new PinBoardEntry(Type.WARNING, "Not cured", "John seems  not to be cured", patient,
                     new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.GERMAN).parse("2017-05-21 19:46:47")));
 
-        } catch (ParseException e) {
+        } catch (ParseException e)
+        {
             e.printStackTrace();
         }
         return pinboard.getPinboard();

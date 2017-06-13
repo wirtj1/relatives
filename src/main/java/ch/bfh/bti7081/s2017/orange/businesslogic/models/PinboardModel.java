@@ -3,7 +3,6 @@ package ch.bfh.bti7081.s2017.orange.businesslogic.models;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +12,6 @@ import java.util.List;
  **/
 public class PinboardModel extends BaseModel
 {
-
     private PinBoard pinboard;
 
     public PinboardModel()

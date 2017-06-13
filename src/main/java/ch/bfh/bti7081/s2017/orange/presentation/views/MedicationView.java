@@ -28,6 +28,7 @@ public class MedicationView extends BaseView implements IMedicationView {
         VerticalLayout layout = new VerticalLayout();
         layout.addComponent(medications);
 
+        setViewTitle(layout);
         setCompositionRoot(layout);
     }
 

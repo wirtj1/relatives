@@ -5,6 +5,7 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.ViewChangeListener;
+import com.vaadin.server.ClassResource;
 import com.vaadin.ui.*;
 
 import java.text.SimpleDateFormat;
@@ -84,19 +85,19 @@ public class PinboardView extends BaseView implements IPinboardView
         Panel pinPanel = new Panel(entry.getTitle());
         VerticalLayout panelLayout = new VerticalLayout();
         panelLayout.setSizeFull();
-        HorizontalLayout firstRow = new HorizontalLayout();
-//        firstRow.addComponent(new Image(VaadinIcons.ABACUS));
+        HorizontalLayout firstRowLayout = new HorizontalLayout();
+        Image blackCircle = new Image(null, new ClassResource("circle_black.png"));
+        firstRowLayout.addComponent(blackCircle);
+        firstRowLayout.setComponentAlignment(blackCircle, Alignment.TOP_LEFT);
 
-
-
-        pinPanel.setContent(panelLayout);
-        pinPanel.setSizeFull();
 
         Type msgType = entry.getType();
         Label lblType = new Label(msgType.name().toUpperCase());
         lblType.setStyleName(
                 msgType.equals(Type.ALERT) ? "pinboardAlert" :
                         msgType.equals(Type.WARNING) ? "pinboardWarning" : "pinboardInformation");
+        firstRowLayout.addComponent(lblType);
+        firstRowLayout.setComponentAlignment(lblType, Alignment.MIDDLE_RIGHT);
 
 
         String nameAuthor = entry.getAuthor().getFirstName() + " " + entry.getAuthor().getLastName();
@@ -106,8 +107,11 @@ public class PinboardView extends BaseView implements IPinboardView
         Label lblAuthorAndDate = new Label(nameAuthor + ", " + formattedDate);
         lblAuthorAndDate.setStyleName("pinboardSubtitle");
 
-        panelLayout.addComponents(lblType, lblAuthorAndDate, new Label(entry.getMessage()));
-        panelLayout.setComponentAlignment(lblType, Alignment.TOP_RIGHT);
+        panelLayout.addComponents(firstRowLayout, lblAuthorAndDate, new Label(entry.getMessage()));
+
+
+        pinPanel.setContent(panelLayout);
+        pinPanel.setSizeFull();
 
         return pinPanel;
     }
