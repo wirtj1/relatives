@@ -2,12 +2,19 @@ package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PersonDataModel;
 import ch.bfh.bti7081.s2017.orange.businesslogic.service.PersonDataService;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Patient;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Professional;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.presentation.presenter.states.PersonDataViewState;
+import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.IPersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.PersonDataView;
 import ch.bfh.bti7081.s2017.orange.presentation.views.components.PersonGrid;
+import com.vaadin.server.VaadinSession;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -53,11 +60,26 @@ public class PersonDataPresenter extends BaseContextPresenter<PersonDataView, Pe
 
 	@Override
 	public void onViewEnter() {
-		List<Person> personen = personDataService.getPersonList();
+		Session session = getView().getUI().getCurrentSession();
+		Person person = session.getAccount().getPerson();
+		List<Person> personen = new ArrayList<>();
+		if(person instanceof Professional){
+			personen.addAll(getPersonsForProfessional((Professional) person));
+		}else if(person instanceof Relative){
+			personen.addAll(getPersonsForRelative((Relative) person));
+		}
 		model.setPersonList(personen);
 		view.fillAccordion(model.getPersonList());
 		model.setActivePersonGrid(view.getActivePersonGrid());
 		getState().setMode();
+	}
+
+	private Collection<? extends Person> getPersonsForRelative(Relative relative) {
+		return personDataService.getPersonsForRelative(relative);
+	}
+
+	private Collection<? extends Person> getPersonsForProfessional(Professional professional) {
+		return personDataService.getPersonList();
 	}
 
 	@Override
