@@ -49,6 +49,7 @@ public class Bootstrap extends BaseUI {
         navigator.addView(new PinCreationPresenter(new PinCreationView(), pinBoardModel), false);
         navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS ,true);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP,true);
+        navigator.addView(new ChangePasswordPresenter(new ChangePasswordView(), new ChangePasswordModel()), false );
 
         setNavigator(navigator);
 
@@ -71,7 +72,9 @@ public class Bootstrap extends BaseUI {
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         navigationBar.setResponsive(true);
         MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
-        settings.addItem("Account", VaadinIcons.USER, null);
+        settings.addItem("Change password", VaadinIcons.PASSWORD, menuItem -> {
+            this.getNavigator().navigateTo(ChangePasswordView.class);
+        });
         settings.addItem("Logout", VaadinIcons.SIGN_OUT, menuItem -> doLogout());
 
         Label footer = new Label("PMS - Patient Management System / Created by Team Orange for SE @ BFH");

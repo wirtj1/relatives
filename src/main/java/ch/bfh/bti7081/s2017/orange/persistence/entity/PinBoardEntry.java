@@ -26,7 +26,9 @@ public class PinBoardEntry extends Identity {
         this.title = title;
         this.message = message;
         this.author = author;
-        this.creationDate = creationDate;
+
+        // Prevent storing a object which is mutable from outside
+        this.creationDate = new Date(creationDate.getTime());
     }
 
     public PinBoardEntry() {
@@ -66,11 +68,13 @@ public class PinBoardEntry extends Identity {
     }
 
     public Date getCreationDate() {
-        return creationDate;
+        // Return a new object to prevent mutations from outside
+        return new Date(creationDate.getTime());
     }
 
     public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+        // Prevent storing a object which is mutable from outside
+        this.creationDate = new Date(creationDate.getTime());
     }
 
 

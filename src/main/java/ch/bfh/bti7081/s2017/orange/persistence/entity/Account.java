@@ -19,6 +19,10 @@ public class Account extends Identity {
         return password;
     }
 
+    public void setPassword(String newPw) {
+        this.password = newPw;
+    }
+
     public Person getPerson() {
         return person;
     }

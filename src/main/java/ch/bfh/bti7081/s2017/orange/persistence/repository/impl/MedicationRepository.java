@@ -11,12 +11,7 @@ import java.util.List;
  */
 public class MedicationRepository extends Repository<Medication> {
 
-    public MedicationRepository(Class<Medication> entityClass) {
+    MedicationRepository(Class<Medication> entityClass) {
         super(entityClass);
-    }
-
-    public List<Medication> getAll()
-    {
-        return getEm().createQuery("select m from Medication m").getResultList();
     }
 }

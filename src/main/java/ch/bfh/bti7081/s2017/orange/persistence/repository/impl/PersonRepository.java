@@ -4,8 +4,9 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.Patient;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.repository.Repository;
-
+import static java.util.stream.Collectors.toList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author yvesbeutler
@@ -22,8 +23,18 @@ public class PersonRepository extends Repository<Person>
 
     public List<Patient> getPatientsByRelative(Relative relative)
     {
-        return getEm().createQuery("select p from Person p where p.id = :rel").setParameter("rel", relative.getId()).getResultList();
+        List<Patient> patients = getEm()
+                .createQuery("select p from Patient p")
+                .getResultList();
+
+
+        patients.stream()
+                .filter(patient -> patient.getRelatives().contains(relative))
+                .collect(toList());
+
+        return patients;
     }
+
     public Person savePerson(Person person){
 //        return super.persist(person);
         return null;
