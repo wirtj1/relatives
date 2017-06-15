@@ -11,10 +11,11 @@ import java.util.List;
 
 /**
  * @author yvesbeutler
- * Representation of a patient with his prescribed {@link Medication}.
+ *         Representation of a patient with his prescribed {@link Medication}.
  */
 @Entity
-public class Patient extends Person {
+public class Patient extends Person
+{
     private static final long serialVersionUID = 1L;
 
     @NotNull
@@ -37,13 +38,16 @@ public class Patient extends Person {
     @OneToOne
     private PinBoard pinBoard;
 
-    public Patient(String firstName, String lastName) {
+    public Patient(String firstName, String lastName)
+    {
         super(firstName, lastName);
+        movement = new Movement();
     }
 
     protected Patient()
     {
         super("", "");
+        movement = new Movement();
     }
 
 
@@ -53,83 +57,103 @@ public class Patient extends Person {
     }
 
 
-    public List<Relative> getRelatives() {
+    public List<Relative> getRelatives()
+    {
         return Collections.unmodifiableList(relatives);
     }
 
-    public String getOasi() {
+    public String getOasi()
+    {
         return oasi;
     }
 
-    public List<Insurance> getInsurances() {
+    public List<Insurance> getInsurances()
+    {
         return insurances;
     }
 
-    public String getGoals() {
+    public String getGoals()
+    {
         return goals;
     }
 
-    public String getWeekendInformation() {
+    public String getWeekendInformation()
+    {
         return weekendInformation;
     }
 
-    public String getYearPlanning() {
+    public String getYearPlanning()
+    {
         return yearPlanning;
     }
 
-    public Movement getMovement() {
+    public Movement getMovement()
+    {
         return movement;
     }
 
-    public List<Medication> getMedications() {
+    public List<Medication> getMedications()
+    {
         return medications;
     }
 
-    public void setGoals(String goals) {
+    public void setGoals(String goals)
+    {
         this.goals = goals;
     }
 
-    public void setOasi(String oasi) {
+    public void setOasi(String oasi)
+    {
         this.oasi = oasi;
     }
 
-    public void setProfessionals(List<Professional> professionals) {
+    public void setProfessionals(List<Professional> professionals)
+    {
         this.professionals = professionals;
     }
 
-    public void setInsurances(List<Insurance> insurances) {
+    public void setInsurances(List<Insurance> insurances)
+    {
         this.insurances = insurances;
     }
 
-    public void setMedications(List<Medication> medications) {
+    public void setMedications(List<Medication> medications)
+    {
         this.medications = medications;
     }
 
-    public void setRelatives(List<Relative> relatives) {
+    public void setRelatives(List<Relative> relatives)
+    {
         this.relatives = relatives;
     }
 
-    public void setWeekendInformation(String weekendInformation) {
+    public void setWeekendInformation(String weekendInformation)
+    {
         this.weekendInformation = weekendInformation;
     }
 
-    public void setYearPlanning(String yearPlanning) {
+    public void setYearPlanning(String yearPlanning)
+    {
         this.yearPlanning = yearPlanning;
     }
 
-    public void setMovement(Movement movement) {
+    public void setMovement(Movement movement)
+    {
         this.movement = movement;
     }
 
-    public void setPinboard(PinBoard pinBoard) {
+    public void setPinboard(PinBoard pinBoard)
+    {
         this.pinBoard = pinBoard;
     }
 
-    public List<Professional> getProfessionals() {
+    public List<Professional> getProfessionals()
+    {
         return professionals;
     }
 
-    public PinBoard getPinboard() {
+    public PinBoard getPinboard()
+    {
         return pinBoard;
     }
 }

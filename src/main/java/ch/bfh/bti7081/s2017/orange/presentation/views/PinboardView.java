@@ -1,10 +1,13 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views;
 
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PinboardModel;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Movement;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Patient;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.ViewChangeListener;
+import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.*;
 
 import java.text.SimpleDateFormat;
@@ -25,12 +28,13 @@ public class PinboardView extends BaseView implements IPinboardView
     private VerticalLayout mainLayout;
 
 
-    VerticalLayout pinboardLayoutWithPins;
+    private VerticalLayout pinboardLayoutWithPins;
+
+    private Label lblCurrMovement;
 
 
     public PinboardView()
     {
-
         listeners = new ArrayList<>();
 
         mainLayout = new VerticalLayout();
@@ -39,10 +43,19 @@ public class PinboardView extends BaseView implements IPinboardView
 
         pinboardLayoutWithPins = new VerticalLayout();
 
+        HorizontalLayout horizontalLayout = new HorizontalLayout();
+        horizontalLayout.setSizeFull();
+
+        lblCurrMovement = new Label("");
+        lblCurrMovement.setIcon(VaadinIcons.MAP_MARKER);
+        horizontalLayout.addComponent(lblCurrMovement);
+        horizontalLayout.setComponentAlignment(lblCurrMovement, Alignment.TOP_LEFT);
+
         Button createPinButton = new Button(VaadinIcons.PLUS_CIRCLE);
-        mainLayout.addComponent(createPinButton);
-        mainLayout.setComponentAlignment(createPinButton, Alignment.TOP_RIGHT);
+        horizontalLayout.addComponent(createPinButton);
+        horizontalLayout.setComponentAlignment(createPinButton, Alignment.TOP_RIGHT);
         createPinButton.addClickListener(this::navigateToAddPinEntryView);
+        mainLayout.addComponent(horizontalLayout);
 
         setCompositionRoot(mainLayout);
     }
@@ -139,8 +152,21 @@ public class PinboardView extends BaseView implements IPinboardView
         mainLayout.addComponent(pinboardLayoutWithPins);
     }
 
+    public void setPatient(Patient patient)
+    {
+        Movement movement = patient.getMovement();
+
+        movement = movement == null ? new Movement() : movement;
+
+        ;
+        lblCurrMovement.setValue("Arrival: " + movement.getArrival() + "\n" +
+                "Departure: " + movement.getDeparture());
+        lblCurrMovement.setContentMode(ContentMode.PREFORMATTED);
+    }
+
     @Override
-    public void addListener(IBaseViewListener listener) {
+    public void addListener(IBaseViewListener listener)
+    {
         if (listener instanceof IPinboardViewListener)
             listeners.add((IPinboardViewListener) listener);
     }

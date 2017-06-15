@@ -44,9 +44,10 @@ public class Bootstrap extends BaseUI
 
         MvpNavigator navigator = new MvpNavigator(this, contentLayout, navigationBar);
 
+        PinboardModel pinboardModel = new PinboardModel();
+
         // Add views
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        PinboardModel pinboardModel = new PinboardModel();
         navigator.addView(new PinCreationPresenter(new PinCreationView(), pinboardModel), false);
         navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS, true);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP, true);
@@ -95,15 +96,15 @@ public class Bootstrap extends BaseUI
         rootLayout.setComponentAlignment(navigationBar, Alignment.TOP_CENTER);
         rootLayout.setComponentAlignment(footer, Alignment.BOTTOM_CENTER);
 
+
         contentLayout = new VerticalLayout();
         //3 contentLayout.setHeight("100%");
-
-
         Panel panel = new Panel();
         panel.setSizeFull();
         panel.setContent(contentLayout);
         panel.setResponsive(true);
         panel.setStyleName(ValoTheme.PANEL_BORDERLESS);
+
 
         rootLayout.addComponent(panel, 0, 1);
         rootLayout.setComponentAlignment(panel, Alignment.MIDDLE_CENTER);
