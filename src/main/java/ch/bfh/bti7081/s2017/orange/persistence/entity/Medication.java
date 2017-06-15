@@ -26,6 +26,11 @@ public class Medication extends Identity {
         this.notes = notes;
     }
 
+    /**
+     * Empty Constructor for Hibernate
+     */
+    public Medication(){}
+
     public int getInterval() {
         return interval;
     }

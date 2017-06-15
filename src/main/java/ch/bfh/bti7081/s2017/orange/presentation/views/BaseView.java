@@ -23,7 +23,7 @@ public abstract class BaseView extends CustomComponent implements IBaseView {
         HorizontalLayout titleBar = new HorizontalLayout();
         Label title = new Label(getCaption());
 
-        title.setStyleName("toolbarTitle");
+        title.setStyleName("viewTitle");
 
         titleBar.addComponent(title);
         titleBar.setExpandRatio(title, 1.0f); // Expand

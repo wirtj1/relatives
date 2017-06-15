@@ -1,6 +1,7 @@
 package ch.bfh.bti7081.s2017.orange.presentation.utils;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Account;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.AccountRepository;
 
 import java.util.Date;
@@ -17,6 +18,10 @@ public class Session {
 
     public String getUser() {
         return account.getUserName();
+    }
+
+    public Person getPerson() {
+        return account.getPerson();
     }
 
     public Session(Account account)

@@ -57,6 +57,7 @@ public class PersonDataService {
 		for (Patient patient : patientsByRelative) {
 			personList.addAll(patient.getProfessionals());
 			personList.addAll(patient.getRelatives());
+			personList.add(patient);
 		}
 		return personList;
 	}

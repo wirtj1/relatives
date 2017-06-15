@@ -10,10 +10,11 @@ import java.util.Date;
  *         communication between {@link Relative} and {@link Professional}.
  */
 @Entity
-public class PinBoardEntry extends Identity {
+public class PinBoardEntry extends Identity
+{
     private static final long serialVersionUID = 1L;
 
-    private Type type;
+    private int type;
     private String title;
     private String message;
     @ManyToOne
@@ -21,8 +22,9 @@ public class PinBoardEntry extends Identity {
     private Date creationDate;
 
 
-    public PinBoardEntry(Type type, String title, String message, Person author, Date creationDate) {
-        this.type = type;
+    public PinBoardEntry(Type type, String title, String message, Person author, Date creationDate)
+    {
+        this.type = type.typeValue();
         this.title = title;
         this.message = message;
         this.author = author;
@@ -31,57 +33,69 @@ public class PinBoardEntry extends Identity {
         this.creationDate = new Date(creationDate.getTime());
     }
 
-    public PinBoardEntry() {
+    public PinBoardEntry()
+    {
     }
 
 
-    public Type getType() {
+    public int getType()
+    {
         return type;
     }
 
-    public String getTitle() {
+    public String getTitle()
+    {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title)
+    {
         this.title = title;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setType(Type type)
+    {
+        this.type = type.typeValue();
     }
 
-    public String getMessage() {
+    public String getMessage()
+    {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(String message)
+    {
         this.message = message;
     }
 
-    public Person getAuthor() {
+    public Person getAuthor()
+    {
         return author;
     }
 
-    public void setAuthor(Person author) {
+    public void setAuthor(Person author)
+    {
         this.author = author;
     }
 
-    public Date getCreationDate() {
+    public Date getCreationDate()
+    {
         // Return a new object to prevent mutations from outside
         return new Date(creationDate.getTime());
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Date creationDate)
+    {
         // Prevent storing a object which is mutable from outside
         this.creationDate = new Date(creationDate.getTime());
     }
 
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "PinBoardEntry{" +
-                "type=" + type.name() +
+                "type=" + Type.valueOf(type) +
                 ", title='" + title + '\'' +
                 ", message='" + message + '\'' +
                 ", author=" + author.getFirstName() +

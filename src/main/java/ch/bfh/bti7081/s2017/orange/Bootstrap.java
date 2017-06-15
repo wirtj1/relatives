@@ -14,17 +14,18 @@ import com.vaadin.ui.themes.ValoTheme;
 import javax.servlet.annotation.WebServlet;
 
 /**
- * This UI is the application entry point. A UI may either represent a browser window 
+ * This UI is the application entry point. A UI may either represent a browser window
  * (or tab) or some part of a html page where a Vaadin application is embedded.
- *
- * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
+ * <p>
+ * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be
  * overridden to add component to the user interface and initialize non-component functionality.
  *
  * @author Sascha
  * @author Leandro
  */
 @Theme("mytheme")
-public class Bootstrap extends BaseUI {
+public class Bootstrap extends BaseUI
+{
 
     private GridLayout rootLayout;
     private VerticalLayout contentLayout;
@@ -36,7 +37,8 @@ public class Bootstrap extends BaseUI {
      * @param vaadinRequest: The Vaadin request issued
      */
     @Override
-    protected void init(VaadinRequest vaadinRequest) {
+    protected void init(VaadinRequest vaadinRequest)
+    {
 
         buildLayout();
 
@@ -44,17 +46,20 @@ public class Bootstrap extends BaseUI {
 
         // Add views
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
-        navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS ,true);
-        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP,true);
-        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), VaadinIcons.TASKS, true);
-        navigator.addView(new ChangePasswordPresenter(new ChangePasswordView(), new ChangePasswordModel()), false );
+        PinboardModel pinboardModel = new PinboardModel();
+        navigator.addView(new PinCreationPresenter(new PinCreationView(), pinboardModel), false);
+        navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS, true);
+        navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP, true);
+        navigator.addView(new PinboardPresenter(new PinboardView(), pinboardModel), VaadinIcons.TASKS, true);
+        navigator.addView(new ChangePasswordPresenter(new ChangePasswordView(), new ChangePasswordModel()), false);
 
         setNavigator(navigator);
 
-        if (sessionActive()) {
-            getNavigator().navigateTo(PersonDataView.class);
-        } else {
+        if (sessionActive())
+        {
+            getNavigator().navigateTo(PinboardView.class);
+        } else
+        {
             getNavigator().navigateTo(LogonView.class);
         }
     }
@@ -62,7 +67,8 @@ public class Bootstrap extends BaseUI {
     /**
      * Builds the layout
      */
-    private void buildLayout() {
+    private void buildLayout()
+    {
         rootLayout = new GridLayout(1, 3);
         //1 rootLayout.setStyleName(ValoTheme.PANEL_BORDERLESS);
         //2 rootLayout.setMargin(false);
@@ -71,7 +77,8 @@ public class Bootstrap extends BaseUI {
         navigationBar.setStyleName(ValoTheme.MENUBAR_BORDERLESS);
         navigationBar.setResponsive(true);
         MenuBar.MenuItem settings = navigationBar.addItem("", VaadinIcons.COGS, null);
-        settings.addItem("Change password", VaadinIcons.PASSWORD, menuItem -> {
+        settings.addItem("Change password", VaadinIcons.PASSWORD, menuItem ->
+        {
             this.getNavigator().navigateTo(ChangePasswordView.class);
         });
         settings.addItem("Logout", VaadinIcons.SIGN_OUT, menuItem -> doLogout());
@@ -117,6 +124,7 @@ public class Bootstrap extends BaseUI {
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = Bootstrap.class, productionMode = false)
-    public static class MyUIServlet extends VaadinServlet {
+    public static class MyUIServlet extends VaadinServlet
+    {
     }
 }
