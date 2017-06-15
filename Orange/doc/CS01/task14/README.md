@@ -194,14 +194,22 @@ Das Resultat im Master Branch sieht folgendermassen aus:
 
 ### Story board
 
+Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war für die Kreativphase sehr hilfreich und es sind viele gute Ideen aufgekommen.
+
+
 ### Requirements
+
+Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
 
 ### Design
 
+Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
 
 ### Implementation
 
-Build Job wäre praktisch
+Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
+
+Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich komische Differenzen zwischen verschiedenen Entwicklern hat.
 
 
 ### Scrum Retrospective
