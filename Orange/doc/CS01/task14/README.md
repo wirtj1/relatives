@@ -177,6 +177,13 @@ Das Resultat im Master Branch sieht folgendermassen aus:
 
 ## Architektur
 
+Wir haben Basisklassen für die MVP Struktur, die Bedienung mit Vaadin und für die Repositories erstellt. Basisklassen überschreiben bzw. erweitern Grundfunktionalität zur Navigation und Zugriff auf Vaadin-Resourcen bzw. Runtime-Informationen.
+
+Der MVPNavigator nimmt ein MVP Packet an und sorgt dafür, dass diese in die Navigation eingegliedert wird. Für die Übergabe von Parameter haben wir ebenfalls Hilfsklassen (MVPNavigator, ParameterSet) erstellt, welche die Bedienung deutlich vereinfachen sollen.
+
+Parameterübergabe zwischen Views konnten wir jedoch umgehen, in dem wir allgemein relevante Informationen in der Session speichern. Die Parameterübergabe ist jedoch getestet und Browserkonform, d.h. Parameter werden über die URL übergeben, was das hinzufügen von Detailansichten in die Favoritenleiste erlaubt.
+
+
 ![Architektur](Structure.png)
 
 ## Contributions
