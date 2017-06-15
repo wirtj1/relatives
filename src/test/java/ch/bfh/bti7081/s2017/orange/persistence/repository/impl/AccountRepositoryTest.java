@@ -22,7 +22,7 @@ public class AccountRepositoryTest {
     @Test
     public void shouldGetUserWithCorrectPassword() throws Exception {
         // arrange
-        String expectedUsername = "superprof";
+        String expectedUsername = "marge_scared";
         String expectedPassword = "myPW";
 
         // act
