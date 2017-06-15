@@ -227,6 +227,6 @@ Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich ko
 
 Es war teilweise ein Hindernis, dass der Product Owner nicht anwesend war bzw. selten dabei war, da der Dozent den Product Owner darstellte und dieser natürlich bei allen Gruppen dabei sein musste.
 
-Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sher hilfreich, da diese ziemlich gut die Situation darstellten.
+Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sehr hilfreich, da diese ziemlich gut die Situation darstellten.
 
 Den Entwicklungsprozess kann man noch verfeinern (Code Reviews, CI/CD, Verantwortlichkeiten noch mehr definieren)
