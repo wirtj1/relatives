@@ -2,7 +2,6 @@ package ch.bfh.bti7081.s2017.orange.presentation.views;
 
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
-import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
 import com.vaadin.data.Binder;
 import com.vaadin.navigator.ViewChangeListener;
@@ -16,7 +15,8 @@ import java.util.List;
 /**
  * Created by Jasmin on 16.05.2017.
  */
-public class PinCreationView extends BaseView implements IPinboardView {
+public class PinCreationView extends BaseView implements IPinboardView
+{
 
     private List<IPinCreationViewListener> listeners;
 
@@ -28,7 +28,8 @@ public class PinCreationView extends BaseView implements IPinboardView {
     private ComboBox<Type> cmdMsgType;
     private TextArea txtaMessage;
 
-    public PinCreationView() {
+    public PinCreationView()
+    {
         listeners = new ArrayList<>();
         VerticalLayout mainLayout = new VerticalLayout();
         mainLayout.setSizeFull();
@@ -40,31 +41,36 @@ public class PinCreationView extends BaseView implements IPinboardView {
     }
 
 
-    public void setAuthorName(String author) {
-
+    public void setAuthorName(String author)
+    {
         if (author.isEmpty()) author = "Current User";
         txtAuthor.setValue(author);
     }
 
 
     @Override
-    public String getViewName() {
+    public String getViewName()
+    {
         return "PinboradCreationView";
     }
 
     @Override
-    public String getCaption() {
+    public String getCaption()
+    {
         return "Pinnwand Eintrag erstellen";
     }
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
-        for (IPinCreationViewListener listener : listeners) {
+    public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent)
+    {
+        for (IPinCreationViewListener listener : listeners)
+        {
             listener.onViewEnter();
         }
     }
 
-    private FormLayout createFormLayout() {
+    private FormLayout createFormLayout()
+    {
         FormLayout form = new FormLayout();
         form.setSizeFull();
 
@@ -94,35 +100,39 @@ public class PinCreationView extends BaseView implements IPinboardView {
         return form;
     }
 
-    private PinBoardEntry bindFieldsToPinEntryWithoutBinder() {
+    private PinBoardEntry bindFieldsToPinEntry()
+    {
         String title = txtTitle.getValue();
         String message = txtaMessage.getValue();
         Type type = cmdMsgType.getSelectedItem().get();
-        String author = txtAuthor.getValue();
-        Relative relative = new Relative(author, "");
 
-        return new PinBoardEntry(type, title, message, relative, getCurrentDate());
+        return new PinBoardEntry(type, title, message, null, getCurrentDate());
     }
 
 
-    private void saveNewPinEntry(Button.ClickEvent event) {
+    private void saveNewPinEntry(Button.ClickEvent event)
+    {
 
-        PinBoardEntry newPinBoardEntry = bindFieldsToPinEntryWithoutBinder();
+        PinBoardEntry newPinBoardEntry = bindFieldsToPinEntry();
 
-        for (IPinCreationViewListener listener : listeners) {
+        for (IPinCreationViewListener listener : listeners)
+        {
             listener.createPinEntry(newPinBoardEntry);
         }
     }
 
 
-    private Date getCurrentDate() {
+    private Date getCurrentDate()
+    {
         return new Date();
     }
 
 
     @Override
-    public void addListener(IBaseViewListener listener) {
-        if (listener instanceof IPinCreationViewListener) {
+    public void addListener(IBaseViewListener listener)
+    {
+        if (listener instanceof IPinCreationViewListener)
+        {
             listeners.add((IPinCreationViewListener) listener);
         }
     }

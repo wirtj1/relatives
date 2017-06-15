@@ -29,7 +29,12 @@ public class PinCreationPresenter extends BasePresenter<PinCreationView, Pinboar
     @Override
     public void createPinEntry(PinBoardEntry entry)
     {
+        Person currentUser
+                = view.getUI().getSession().getAttribute(Session.class).getPerson();
+
+        entry.setAuthor(currentUser);
         model.addEntry(entry);
+        
         pinboardRepo.persist(model.getPinboard());
         view.getUI().getNavigator().navigateTo(PinboardView.class);
     }

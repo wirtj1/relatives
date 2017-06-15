@@ -100,7 +100,7 @@ public class PinboardView extends BaseView implements IPinboardView
 //            e.printStackTrace();
 //        }
 
-        Type msgType = entry.getType();
+        Type msgType = Type.valueOf(entry.getType());
         Label lblType = new Label(msgType.name().toUpperCase());
         lblType.setStyleName(
                 msgType.equals(Type.ALERT) ? "pinboardAlert" :
@@ -134,7 +134,6 @@ public class PinboardView extends BaseView implements IPinboardView
 
     public void setPinboardModel(PinboardModel pinboardModel)
     {
-
         updatePinboardLayoutWithPins(pinboardModel);
         mainLayout.addComponent(pinboardLayoutWithPins);
     }

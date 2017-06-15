@@ -3,6 +3,7 @@ package ch.bfh.bti7081.s2017.orange.presentation.presenter;
 import ch.bfh.bti7081.s2017.orange.businesslogic.models.PinboardModel;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoard;
+import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.repository.impl.PinboardRepository;
 import ch.bfh.bti7081.s2017.orange.presentation.utils.Session;
 import ch.bfh.bti7081.s2017.orange.presentation.views.IPinboardView;
@@ -34,8 +35,7 @@ public class PinboardPresenter extends BasePresenter<PinboardView, PinboardModel
     public void onViewEnter()
     {
         Person user = view.getUI().getSession().getAttribute(Session.class).getPerson();
-//        model.setPinboard(pinboardRepo.getPinboardByRelative((Relative) user));
-        model.setPinboard(pinboardRepo.getAllTest());
+        model.setPinboard(pinboardRepo.getPinboardByRelative((Relative) user));
 
         view.setPinboardModel(model);
     }

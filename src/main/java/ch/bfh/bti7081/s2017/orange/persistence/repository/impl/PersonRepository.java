@@ -4,9 +4,10 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.Patient;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Person;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Relative;
 import ch.bfh.bti7081.s2017.orange.persistence.repository.Repository;
-import static java.util.stream.Collectors.toList;
+
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @author yvesbeutler
@@ -44,5 +45,7 @@ public class PersonRepository extends Repository<Person>
     {
         return getEm().createQuery("select p from Person p").getResultList();
     }
+
+
 
 }
