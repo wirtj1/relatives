@@ -17,6 +17,11 @@ public class Medicine extends Identity {
         this.document = document.clone();
     }
 
+    public Medicine()
+    {
+
+    }
+
     public String getProductName() {
         return productName;
     }

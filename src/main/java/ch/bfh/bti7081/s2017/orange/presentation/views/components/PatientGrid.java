@@ -1,9 +1,8 @@
 package ch.bfh.bti7081.s2017.orange.presentation.views.components;
 
-import ch.bfh.bti7081.s2017.orange.persistence.entity.Insurance;
-import ch.bfh.bti7081.s2017.orange.persistence.entity.Movement;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Patient;
 import com.vaadin.data.Binder;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 
@@ -15,62 +14,61 @@ import com.vaadin.ui.TextField;
 public class PatientGrid extends PersonGrid {
 
 
-    private TextField oasi = new TextField("AHV-Nummer", "");
-    private TextArea goals = new TextArea("Ziele", "");
-    private TextArea weekendInformation = new TextArea("Wochenend Informationen", "");
-    private TextArea yearPlanning = new TextArea("Jahresplanung", "");
-    //TODO Säscheler: villich chasch das bruche
-//    private List<Medication> medications;
+	private TextField oasi = new TextField("AHV-Nummer", "");
+	private TextArea goals = new TextArea("Ziele", "");
+	private TextArea weekendInformation = new TextArea("Wochenend Informationen", "");
+	private TextArea yearPlanning = new TextArea("Jahresplanung", "");
 
-    //TODO wijo
-//    private Movement movement;
-//    private List<Insurance> insurances;
+	public PatientGrid(Patient patient) {
+		super(patient);
+		setAccordionTitle(patient.getName());
+		setAccordionIcon(VaadinIcons.USER_HEART);
+		Binder<Patient> binder = getBinder();
+		binder.forField(oasi)
+				.asRequired("Darf nicht leer sein")
+				.withValidator(v -> v.length() >= 15, "Muss mindestens 15 Zeichen sein (756.1234.5678.9)")
+				.bind(Patient::getOasi, Patient::setOasi);
+		binder.bind(goals, Patient::getGoals, Patient::setOasi);
+		binder.bind(weekendInformation, Patient::getWeekendInformation, Patient::setWeekendInformation);
+		binder.bind(yearPlanning, Patient::getYearPlanning, Patient::setYearPlanning);
+		super.getGrid().addComponent(oasi);
+		super.getGrid().addComponent(goals);
+		super.getGrid().addComponent(weekendInformation);
+		super.getGrid().addComponent(yearPlanning);
+		binder.readBean(patient);
+	}
 
-    public PatientGrid(Patient patient) {
-        super(patient);
-        Binder<Patient> binder = getBinder();
-        binder.bind(oasi,Patient::getOasi,Patient::setOasi);
-        binder.bind(goals, Patient::getGoals, Patient::setOasi);
-        binder.bind(weekendInformation, Patient::getWeekendInformation, Patient::setWeekendInformation);
-        binder.bind(yearPlanning, Patient::getYearPlanning, Patient::setYearPlanning);
-        super.getGrid().addComponent(oasi);
-        super.getGrid().addComponent(goals);
-        super.getGrid().addComponent(weekendInformation);
-        super.getGrid().addComponent(yearPlanning);
-        binder.readBean(patient);
-    }
+	@Override
+	public void setToEditMode() {
+		super.setToEditMode();
+		oasi.setEnabled(true);
+		goals.setEnabled(true);
+		weekendInformation.setEnabled(true);
+		yearPlanning.setEnabled(true);
+	}
 
-    @Override
-    public void setToEditMode() {
-        super.setToEditMode();
-        oasi.setEnabled(true);
-        goals.setEnabled(true);
-        weekendInformation.setEnabled(true);
-        yearPlanning.setEnabled(true);
-    }
+	@Override
+	public void setToViewMode() {
+		super.setToViewMode();
+		oasi.setEnabled(false);
+		goals.setEnabled(false);
+		weekendInformation.setEnabled(false);
+		yearPlanning.setEnabled(false);
+	}
 
-    @Override
-    public void setToViewMode() {
-        super.setToViewMode();
-        oasi.setEnabled(false);
-        goals.setEnabled(false);
-        weekendInformation.setEnabled(false);
-        yearPlanning.setEnabled(false);
-    }
+	public TextField getOasi() {
+		return oasi;
+	}
 
-    public TextField getOasi() {
-        return oasi;
-    }
+	public TextArea getGoals() {
+		return goals;
+	}
 
-    public TextArea getGoals() {
-        return goals;
-    }
+	public TextArea getWeekendInformation() {
+		return weekendInformation;
+	}
 
-    public TextArea getWeekendInformation() {
-        return weekendInformation;
-    }
-
-    public TextArea getYearPlanning() {
-        return yearPlanning;
-    }
+	public TextArea getYearPlanning() {
+		return yearPlanning;
+	}
 }

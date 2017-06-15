@@ -100,4 +100,8 @@ public abstract class Person extends Identity {
         Date date = sdf.parse(bday);
         this.birthdate = date;
     }
+
+    public String getName() {
+        return this.firstName +" "+ this.lastName;
+    }
 }
