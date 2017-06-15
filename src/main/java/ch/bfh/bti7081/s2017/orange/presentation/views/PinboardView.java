@@ -10,6 +10,7 @@ import com.vaadin.ui.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -101,7 +102,7 @@ public class PinboardView extends BaseView implements IPinboardView
 //        }
 
         Type msgType = Type.valueOf(entry.getType());
-        Label lblType = new Label(msgType.name().toUpperCase());
+        Label lblType = new Label(msgType.name().toUpperCase(Locale.ENGLISH));
         lblType.setStyleName(
                 msgType.equals(Type.ALERT) ? "pinboardAlert" :
                         msgType.equals(Type.WARNING) ? "pinboardWarning" : "pinboardInformation");
@@ -139,9 +140,8 @@ public class PinboardView extends BaseView implements IPinboardView
     }
 
     @Override
-    public void addListener(IBaseViewListener listener)
-    {
-        listeners.add((IPinboardViewListener) listener);
-
+    public void addListener(IBaseViewListener listener) {
+        if (listener instanceof IPinboardViewListener)
+            listeners.add((IPinboardViewListener) listener);
     }
 }

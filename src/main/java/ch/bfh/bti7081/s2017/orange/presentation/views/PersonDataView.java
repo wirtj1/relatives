@@ -30,7 +30,6 @@ public class PersonDataView extends BaseView implements IPersonDataView {
 	private List<IPersonDataListener> listeners;
 
 	// define used view components here
-	private Scrollable scrollable;
 	private VerticalLayout layout;
 	private Label messageLabel;
 	private Accordion personAccordion;
