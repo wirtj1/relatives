@@ -12,7 +12,7 @@ Zusätzlich wurde der Master Branch gesperrt, so dass man nur via Pull Requests 
 
 Das Resultat im Master Branch sieht folgendermassen aus:
 
-![Commits Master](Commits_Master.bmp)
+![Commits Master](Commits_Master.png)
 
 ## Architektur
 
