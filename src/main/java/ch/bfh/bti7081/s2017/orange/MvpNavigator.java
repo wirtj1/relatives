@@ -45,7 +45,6 @@ public class MvpNavigator extends BaseNavigator {
             MenuBar.MenuItem firstMenuItem = navigationBar.getItems().get(0);
             navigationBar.addItemBefore(presenter.getView().getCaption(), icon, menuItem -> navigateTo(presenter.getView().getClass()), firstMenuItem);
         }
-
     }
 
     public void addView(BasePresenter presenter, boolean addToMenu){
@@ -78,6 +77,9 @@ public class MvpNavigator extends BaseNavigator {
         }
     }
 
+    /**
+     * Navigates one step back
+     */
     public void navigateBack()
     {
         if (viewHistory.size() > 2){
@@ -86,6 +88,9 @@ public class MvpNavigator extends BaseNavigator {
         }
     }
 
+    /**
+     * Resets Navigation history
+     */
     public void resetViewHistory(){
         viewHistory.clear();
     }
