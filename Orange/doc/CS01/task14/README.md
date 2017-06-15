@@ -210,7 +210,7 @@ Während der Requirementsanalyse haben wir ein sehr interessantes Interview gef�
 
 #### Use Cases
 
-Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die Arbeit einfliessen lassen könnte.
+Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 zu implementierenden ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die weitere Arbeit einfliessen lassen könnte.
 
 ### Design
 
