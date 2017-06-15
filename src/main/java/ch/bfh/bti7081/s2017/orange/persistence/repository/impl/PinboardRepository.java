@@ -35,14 +35,10 @@ public class PinboardRepository extends Repository<PinBoard>
         return pinBoards;
     }
 
-    public PinBoard getPinboardByRelative(Person relative)
+    public PinBoard getPinboardByRelative(Relative relative)
     {
-        List<PinBoard> allPinboards = getAll();
-
-        return (allPinboards
-                .stream()
-                .filter(person -> person.getClass().equals(Patient.class))
-                .findFirst().orElse(new PinBoard()));
+        //TODO
+        return null;
     }
 
     @Override

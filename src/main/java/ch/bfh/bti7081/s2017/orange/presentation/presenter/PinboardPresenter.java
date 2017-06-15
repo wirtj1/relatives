@@ -18,7 +18,6 @@ public class PinboardPresenter extends BasePresenter<PinboardView, PinboardModel
 
     private PinboardRepository pinboardRepo = new PinboardRepository(PinBoard.class);
 
-
     public PinboardPresenter(PinboardView view, PinboardModel model)
     {
         super(view, model);
@@ -35,7 +34,8 @@ public class PinboardPresenter extends BasePresenter<PinboardView, PinboardModel
     public void onViewEnter()
     {
         Person user = view.getUI().getSession().getAttribute(Session.class).getPerson();
-        model.setPinboard(pinboardRepo.getPinboardByRelative(user));
+//        model.setPinboard(pinboardRepo.getPinboardByRelative((Relative) user));
+        model.setPinboard(pinboardRepo.getAllTest());
 
         view.setPinboardModel(model);
     }

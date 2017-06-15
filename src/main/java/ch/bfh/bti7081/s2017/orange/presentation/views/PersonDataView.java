@@ -41,7 +41,8 @@ public class PersonDataView extends BaseView implements IPersonDataView {
 
 		layout = new VerticalLayout();
 		layout.addComponent(messageLabel);
-		setCompositionRoot(layout);
+        setViewTitle(layout);
+        setCompositionRoot(layout);
 	}
 
 

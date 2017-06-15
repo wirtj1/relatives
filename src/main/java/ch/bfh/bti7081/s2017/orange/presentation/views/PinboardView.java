@@ -5,7 +5,6 @@ import ch.bfh.bti7081.s2017.orange.persistence.entity.PinBoardEntry;
 import ch.bfh.bti7081.s2017.orange.persistence.entity.Type;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.server.ClassResource;
 import com.vaadin.ui.*;
 
 import java.text.SimpleDateFormat;
@@ -80,16 +79,26 @@ public class PinboardView extends BaseView implements IPinboardView
     }
 
 
-    private static Panel createPinEntry(PinBoardEntry entry)
+    private Panel createPinEntry(PinBoardEntry entry)
     {
         Panel pinPanel = new Panel(entry.getTitle());
         VerticalLayout panelLayout = new VerticalLayout();
         panelLayout.setSizeFull();
         HorizontalLayout firstRowLayout = new HorizontalLayout();
-        Image blackCircle = new Image(null, new ClassResource("circle_black.png"));
-        firstRowLayout.addComponent(blackCircle);
-        firstRowLayout.setComponentAlignment(blackCircle, Alignment.TOP_LEFT);
 
+        Image blackCircle;
+//        try
+//        {
+//            URI uri = getClass().getResource("circle_black.png").toURI();
+//            blackCircle = new Image(null, new FileResource(new File('circle_black.png');
+//
+//            firstRowLayout.addComponent(blackCircle);
+//            firstRowLayout.setComponentAlignment(blackCircle, Alignment.TOP_LEFT);
+
+//        } catch (URISyntaxException e)
+//        {
+//            e.printStackTrace();
+//        }
 
         Type msgType = entry.getType();
         Label lblType = new Label(msgType.name().toUpperCase());
