@@ -23,7 +23,8 @@ public class MvpNavigator extends BaseNavigator {
         if (addToMenu)
         {
             MenuBar.MenuItem firstMenuItem = navigationBar.getItems().get(0);
-            navigationBar.addItemBefore(presenter.getView().getCaption(), icon, menuItem -> navigateTo(presenter.getView().getClass()), firstMenuItem);
+            navigationBar.addItemBefore(presenter.getView().getCaption(), icon, menuItem 
+                -> navigateTo(presenter.getView().getClass()), firstMenuItem);
         }
     }
     
@@ -41,7 +42,8 @@ public class MvpNavigator extends BaseNavigator {
                 views.stream()
                         .filter(components -> components.getClass().equals(destinationView))
                         .findFirst()
-                        .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameterSet)));
+                        .ifPresent(components -> navigateTo(NavigationUtils
+                            .combineNameAndParams(components.getViewName(), parameterSet)));
             } else { // Navigation to other view than logon despite no valid session
                 ParameterSet parameter = new ParameterSet();
                 parameter.addParameter("timeout", "true");
@@ -49,7 +51,8 @@ public class MvpNavigator extends BaseNavigator {
                 views.stream()
                         .filter(components -> components.getClass().equals(LogonView.class))
                         .findFirst()
-                        .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameter)));
+                        .ifPresent(components -> navigateTo(NavigationUtils
+                            .combineNameAndParams(components.getViewName(), parameter)));
             }
         }
     
@@ -77,7 +80,7 @@ public class MvpNavigator extends BaseNavigator {
 ### Vaadin Data Binder
 
 + Databinding mit vaadin Data Binder (package com.vaadin.data;)
-+ Databinding mittels Predicated
++ Databinding mittels Predicates
 
 ```java
 public abstract class PersonGrid<P extends Person> extends VerticalLayout {
@@ -179,54 +182,56 @@ Das Resultat im Master Branch sieht folgendermassen aus:
 
 Wir haben Basisklassen für die MVP Struktur, die Bedienung mit Vaadin und für die Repositories erstellt. Basisklassen überschreiben bzw. erweitern Grundfunktionalität zur Navigation und Zugriff auf Vaadin-Resourcen bzw. Runtime-Informationen.
 
-Der MVPNavigator nimmt ein MVP Packet an und sorgt dafür, dass diese in die Navigation eingegliedert wird. Für die Übergabe von Parameter haben wir ebenfalls Hilfsklassen (MVPNavigator, ParameterSet) erstellt, welche die Bedienung deutlich vereinfachen sollen.
+Der MVP-Navigator nimmt ein MVP Paket an und sorgt dafür, dass diese in die Navigation eingegliedert wird. Für die Übergabe von Parameter haben wir ebenfalls Hilfsklassen (MVPNavigator, ParameterSet) erstellt, welche die Bedienung deutlich vereinfachen sollen.
 
-Parameterübergabe zwischen Views konnten wir jedoch umgehen, in dem wir allgemein relevante Informationen in der Session speichern. Die Parameterübergabe ist jedoch getestet und Browserkonform, d.h. Parameter werden über die URL übergeben, was das hinzufügen von Detailansichten in die Favoritenleiste erlaubt.
+Parameterübergabe zwischen Views konnten wir jedoch bis jetzt umgehen, indem wir allgemein relevante Informationen in der Session speichern. Die Parameterübergabe ist jedoch getestet und browserkonform, d.h. Parameter werden über die URL übergeben, was das Hinzufügen von Detailansichten in die Favoritenleiste erlaubt.
 
 
 ![Architektur](Structure.png)
 
 ## Contributions
 
-| Teammember                         | Contribution                                                      |
-|------------------------------------|-------------------------------------------------------------------|
-| Yves Beutler                       | Repository, Testing, Entities                                     |
-| Sascha Wittwer                     | Project Initialisation, Medication View, Navigator                |
-| Boris Djurdjevic                   | Test data, Repository, Data base, Find Bugs                       |
-| Joy Wirth                          | Entities, Stammdaten view, MVP, States pattern, Services          |
-| Jasmin Thevathas                   | Pinboard View, JDBC, Tests                                        |
-| Leandro Lerena <br> (SCRUM Master) | Project initialisation, Repository, Entities, MVP, States pattern |
+| Teammember       | Responsibility | Contribution                                                      |
+|------------------|----------------|-------------------------------------------------------------------|
+| Yves Beutler     | Repository     | Repository, Testing, Entities                                     |
+| Sascha Wittwer   | Architecture   | Project initialization, Medication View, Navigator, Architecture  |
+| Boris Djurdjevic | Database       | Test data, Repository, Database, Find Bugs                        |
+| Joy Wirth        | Views          | Entities, Stammdaten view, MVP, States pattern, Services          |
+| Jasmin Thevathas | JDBC           | Pinboard View, JDBC, Tests                                        |
+| Leandro Lerena   | SCRUM Master   | Project initialization, Repository, Entities, MVP, States pattern |
 
 ## Lessons learned
 
 ### Story board
 
-Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war für die Kreativphase sehr hilfreich und es sind viele gute Ideen aufgekommen.
++ Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war für die Kreativphase sehr hilfreich und es sind viele gute Ideen aufgekommen.
 
 
 ### Requirements
 
-Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
++ Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
 
 #### Use Cases
 
-Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die Arbeit einfliessen lassen könnte.
++ Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 zu implementierenden ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die weitere Arbeit einfliessen lassen könnte.
 
 ### Design
 
-Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
++ Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
+
++ Erster Entwurf vom UML Diagramm lieber weniger detailliert dafür die Schnittstellen und Zusammenhänge besser durchdenken.
 
 ### Implementation
 
-Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
++ Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
 
-Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich komische Differenzen zwischen verschiedenen Entwicklern hat.
++ Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich komische Differenzen zwischen verschiedenen Entwicklern hat.
 
 
 ### Scrum Retrospective
 
-Es war teilweise ein Hindernis, dass der Product Owner nicht anwesend war bzw. selten dabei war, da der Dozent den Product Owner darstellte und dieser natürlich bei allen Gruppen dabei sein musste.
++ Es war teilweise ein Hindernis, dass der Product Owner nicht anwesend war bzw. selten dabei war, da der Dozent den Product Owner darstellte und dieser natürlich bei allen Gruppen dabei sein musste.
 
-Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sher hilfreich, da diese ziemlich gut die Situation darstellten.
++ Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sehr hilfreich, da diese ziemlich gut die Situation darstellten.
 
-Den Entwicklungsprozess kann man noch verfeinern (Code Reviews, CI/CD, Verantwortlichkeiten noch mehr definieren)
++ Den Entwicklungsprozess kann man noch verfeinern (Code Reviews, CI/CD, Verantwortlichkeiten noch mehr definieren)
