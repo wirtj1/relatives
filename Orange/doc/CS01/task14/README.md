@@ -191,11 +191,11 @@ Parameterübergabe zwischen Views konnten wir jedoch bis jetzt umgehen, indem wi
 | Teammember       | Responsibility | Contribution                                                      |
 |------------------|----------------|-------------------------------------------------------------------|
 | Yves Beutler     | Repository     | Repository, Testing, Entities                                     |
-| Sascha Wittwer   | Architecture   | Project Initialisation, Medication View, Navigator, Architecture  |
+| Sascha Wittwer   | Architecture   | Project initialization, Medication View, Navigator, Architecture  |
 | Boris Djurdjevic | Database       | Test data, Repository, Database, Find Bugs                        |
 | Joy Wirth        | Views          | Entities, Stammdaten view, MVP, States pattern, Services          |
 | Jasmin Thevathas | JDBC           | Pinboard View, JDBC, Tests                                        |
-| Leandro Lerena   | SCRUM Master   | Project initialisation, Repository, Entities, MVP, States pattern |
+| Leandro Lerena   | SCRUM Master   | Project initialization, Repository, Entities, MVP, States pattern |
 
 ## Lessons learned
 
