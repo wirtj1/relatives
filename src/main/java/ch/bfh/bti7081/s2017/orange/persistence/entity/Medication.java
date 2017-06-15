@@ -19,6 +19,13 @@ public class Medication extends Identity {
     @ManyToOne
     private Medicine medicine;
 
+    public Medication(int interval, String dose, Medicine medicine, String notes) {
+        this.interval = interval;
+        this.dose = dose;
+        this.medicine = medicine;
+        this.notes = notes;
+    }
+
     public int getInterval() {
         return interval;
     }
