@@ -216,6 +216,8 @@ Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufz
 
 Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
 
+Erster Entwurf vom UML Diagramm lieber weniger detailliert dafür die Schnittstellen und Zusammenhänge besser durchdenken.
+
 ### Implementation
 
 Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
