@@ -201,34 +201,34 @@ Parameterübergabe zwischen Views konnten wir jedoch bis jetzt umgehen, indem wi
 
 ### Story board
 
-Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war für die Kreativphase sehr hilfreich und es sind viele gute Ideen aufgekommen.
++ Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war für die Kreativphase sehr hilfreich und es sind viele gute Ideen aufgekommen.
 
 
 ### Requirements
 
-Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
++ Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
 
 #### Use Cases
 
-Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 zu implementierenden ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die weitere Arbeit einfliessen lassen könnte.
++ Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 zu implementierenden ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die weitere Arbeit einfliessen lassen könnte.
 
 ### Design
 
-Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
++ Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
 
-Erster Entwurf vom UML Diagramm lieber weniger detailliert dafür die Schnittstellen und Zusammenhänge besser durchdenken.
++ Erster Entwurf vom UML Diagramm lieber weniger detailliert dafür die Schnittstellen und Zusammenhänge besser durchdenken.
 
 ### Implementation
 
-Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
++ Für die Implementation haben wir für uns den Entwicklungsprozess definiert. Dieser hat sich sehr bewährt, da für jeden klar war, wo man spielen und testen kann und wie man an features / tasks arbeitet.
 
-Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich komische Differenzen zwischen verschiedenen Entwicklern hat.
++ Ein Build Job wäre allgemein praktisch gewesen, so dass man nicht plötzlich komische Differenzen zwischen verschiedenen Entwicklern hat.
 
 
 ### Scrum Retrospective
 
-Es war teilweise ein Hindernis, dass der Product Owner nicht anwesend war bzw. selten dabei war, da der Dozent den Product Owner darstellte und dieser natürlich bei allen Gruppen dabei sein musste.
++ Es war teilweise ein Hindernis, dass der Product Owner nicht anwesend war bzw. selten dabei war, da der Dozent den Product Owner darstellte und dieser natürlich bei allen Gruppen dabei sein musste.
 
-Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sehr hilfreich, da diese ziemlich gut die Situation darstellten.
++ Ansonsten waren die Cockpits auf Github bzw. TFS für SCRUM sehr hilfreich, da diese ziemlich gut die Situation darstellten.
 
-Den Entwicklungsprozess kann man noch verfeinern (Code Reviews, CI/CD, Verantwortlichkeiten noch mehr definieren)
++ Den Entwicklungsprozess kann man noch verfeinern (Code Reviews, CI/CD, Verantwortlichkeiten noch mehr definieren)
