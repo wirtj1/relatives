@@ -18,12 +18,27 @@ public abstract class BaseUI extends UI {
         return (BaseNavigator) super.getNavigator();
     }
 
+    /**
+     * Checks, if session is still active
+     * @return true, if active.
+     */
     public Boolean sessionActive(){
         Session session = getSession().getAttribute(Session.class);
         if (session == null)
             return false;
 
         return session.isActive();
+    }
+
+    /**
+     * Gets current Session object
+     * @return Session object
+     */
+    public Session getCurrentSession()
+    {
+        Session session = getSession().getAttribute(Session.class);
+
+        return session;
     }
 
     public void doLogout()
