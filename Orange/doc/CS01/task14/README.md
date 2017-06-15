@@ -17,3 +17,14 @@ Das Resultat im Master Branch sieht folgendermassen aus:
 ## Architektur
 
 ![Architektur](Structure.png)
+
+## Contributions
+
+| Teammember                         | Contribution                                                      |
+|------------------------------------|-------------------------------------------------------------------|
+| Yves Beutler                       | Repository, Testing, Entities                                     |
+| Sascha Wittwer                     | Project Initialisation, Medication View, Navigator                |
+| Boris Djurdjevic                   | Test data, Repository, Data base, Find Bugs                       |
+| Joy Wirth                          | Entities, Stammdaten view, MVP, States pattern, Services          |
+| Jasmin Thevathas                   | Pinboard View, JDBC, Tests                                        |
+| Leandro Lerena <br> (SCRUM Master) | Project initialisation, Repository, Entities, MVP, States pattern |
