@@ -17,23 +17,19 @@ public class PersonDataViewState extends BasePresenterState<PersonDataPresenter>
 
     @Override
     public void onSaveButtonClicked(PersonGrid personGrid) {
-        getPresenter().getModel().setActivePersonGrid(personGrid);
-        //not yet implemented
+        //noop
     }
 
     @Override
     public void onDeleteButtonClicked(PersonGrid personGrid) {
         getPresenter().getModel().setActivePersonGrid(personGrid);
-        //not yet implemented
     }
 
     @Override
     public void onEditButtonClicked(PersonGrid personGrid) {
         getPresenter().getModel().setActivePersonGrid(personGrid);
-        //change to Edit mode
         PersonDataPresenter presenter = getPresenter();
         PersonDataView view = presenter.getView();
-
         presenter.setState(new PersonDataEditState(presenter));
         view.addListener(presenter.getState());
         presenter.getState().setMode();
@@ -49,7 +45,7 @@ public class PersonDataViewState extends BasePresenterState<PersonDataPresenter>
 
     @Override
     public void onViewEnter() {
-
+        //noop
     }
 
     @Override

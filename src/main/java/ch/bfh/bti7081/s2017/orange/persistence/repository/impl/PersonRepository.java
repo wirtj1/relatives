@@ -36,8 +36,7 @@ public class PersonRepository extends Repository<Person>
     }
 
     public Person savePerson(Person person){
-//        return super.persist(person);
-        return null;
+        return super.persist(person);
     }
 
 
