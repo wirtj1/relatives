@@ -44,11 +44,10 @@ public class Bootstrap extends BaseUI {
 
         // Add views
         navigator.addView(new LogonPresenter(new LogonView(), new LogonModel()), false);
-        PinboardModel pinBoardModel = new PinboardModel();
-        navigator.addView(new PinboardPresenter(new PinboardView(), pinBoardModel), VaadinIcons.TASKS, true);
-        navigator.addView(new PinCreationPresenter(new PinCreationView(), pinBoardModel), false);
+        navigator.addView(new PinCreationPresenter(new PinCreationView(), new PinboardModel()), false);
         navigator.addView(new MedicationPresenter(new MedicationView(), new MedicationModel()), VaadinIcons.PILLS ,true);
         navigator.addView(new PersonDataPresenter(new PersonDataView(), new PersonDataModel()), VaadinIcons.GROUP,true);
+        navigator.addView(new PinboardPresenter(new PinboardView(), new PinboardModel()), VaadinIcons.TASKS, true);
         navigator.addView(new ChangePasswordPresenter(new ChangePasswordView(), new ChangePasswordModel()), false );
 
         setNavigator(navigator);

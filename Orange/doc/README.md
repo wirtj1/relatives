@@ -35,3 +35,7 @@
 | 22.05.2017 | Did the sprint planing of Sprint 2 | All
 | 23.05.2017 | Started working on the tasks of Sprint 2 | All
 | 30.05.2017 | Working on the tasks of Sprint 2 | All
+| 06.06.2017 | Adding tests, fixing DB issues | All
+| 12.06.2017 | Initial code review | All
+| 13.06.2017 | Finalizing repositories | All
+| 15.06.2017 | Finishing code | All
