@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author yvesbeutler
@@ -25,6 +26,12 @@ public class PinboardRepositoryTest {
     public void setUp() throws Exception {
         pinboardRepository = new PinboardRepository();
         personRepository = new PersonRepository();
+    }
+
+    @Test
+    public void getAllTest()
+    {
+        List<PinBoard> all = pinboardRepository.getAll();
     }
 
     @Test
