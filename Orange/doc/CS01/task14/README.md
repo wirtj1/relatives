@@ -23,7 +23,8 @@ public class MvpNavigator extends BaseNavigator {
         if (addToMenu)
         {
             MenuBar.MenuItem firstMenuItem = navigationBar.getItems().get(0);
-            navigationBar.addItemBefore(presenter.getView().getCaption(), icon, menuItem -> navigateTo(presenter.getView().getClass()), firstMenuItem);
+            navigationBar.addItemBefore(presenter.getView().getCaption(), icon, menuItem 
+                -> navigateTo(presenter.getView().getClass()), firstMenuItem);
         }
     }
     
@@ -41,7 +42,8 @@ public class MvpNavigator extends BaseNavigator {
                 views.stream()
                         .filter(components -> components.getClass().equals(destinationView))
                         .findFirst()
-                        .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameterSet)));
+                        .ifPresent(components -> navigateTo(NavigationUtils
+                            .combineNameAndParams(components.getViewName(), parameterSet)));
             } else { // Navigation to other view than logon despite no valid session
                 ParameterSet parameter = new ParameterSet();
                 parameter.addParameter("timeout", "true");
@@ -49,7 +51,8 @@ public class MvpNavigator extends BaseNavigator {
                 views.stream()
                         .filter(components -> components.getClass().equals(LogonView.class))
                         .findFirst()
-                        .ifPresent(components -> navigateTo(NavigationUtils.combineNameAndParams(components.getViewName(), parameter)));
+                        .ifPresent(components -> navigateTo(NavigationUtils
+                            .combineNameAndParams(components.getViewName(), parameter)));
             }
         }
     
