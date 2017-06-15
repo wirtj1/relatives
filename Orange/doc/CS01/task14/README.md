@@ -201,6 +201,10 @@ Während der Erstellung der Story Boards haben wir viel Spass gehabt. Das war f�
 
 Während der Requirementsanalyse haben wir ein sehr interessantes Interview geführt. Es wäre sehr interessant gewesen, noch mehr solche durchzuführen, um noch andere Domänen und Meinungen zu hören.
 
+#### Use Cases
+
+Während den Projekttasks hatten wir die Aufgabe, die wichtigsten Use Cases aufzuführen. Da diese sehr High Level sind und somit viel Vorarbeit voraussetzen, konnten diese in den ersten 3 Sprints nicht umgesetzt werden. Es wäre für uns hilfreicher gewesen, wenn die Aufgabenstellung eine Beschreibung der 2 ersten Use Cases gewesen wäre, so dass man die Ergebnisse direkt in die Arbeit einfliessen lassen könnte.
+
 ### Design
 
 Durch viele interessante Diskussionen hatten wir schon alle ähnliche Vorstellungen, wie das Design aussehen solle.
