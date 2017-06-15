@@ -90,7 +90,7 @@ public abstract class PersonGrid<P extends Person> extends VerticalLayout {
         binder.forField(firstName)
         .asRequired("Darf nicht leer sein")
         .bind(Person::getFirstName, Person::setFirstName);
-        binder.readBean(patient)
+        binder.readBean(patient);
     }    
     
      @Override
@@ -129,7 +129,7 @@ public abstract class Repository<T extends Identity> {
            
            /**
             * Removes a given object from the database.
-            * @param obj Subtype of {@link Identity}
+            * @param obj Subtype of Identity
             * @return true if successfully removed
             */
            public boolean remove(T obj){
@@ -198,8 +198,11 @@ Das Resultat im Master Branch sieht folgendermassen aus:
 
 ### Design
 
+
 ### Implementation
 
 Build Job wäre praktisch
 
+
 ### Scrum Retrospective
+
