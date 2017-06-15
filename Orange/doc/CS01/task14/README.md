@@ -80,7 +80,7 @@ public class MvpNavigator extends BaseNavigator {
 ### Vaadin Data Binder
 
 + Databinding mit vaadin Data Binder (package com.vaadin.data;)
-+ Databinding mittels Predicated
++ Databinding mittels Predicates
 
 ```java
 public abstract class PersonGrid<P extends Person> extends VerticalLayout {
